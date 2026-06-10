@@ -1,20 +1,7 @@
 "use client";
 import Link from "next/link";
 
-const WorldSkyMark = () => (
-  <svg
-    width="28"
-    height="28"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <line x1="12" y1="1" x2="12" y2="23" stroke="#005840" strokeWidth="2" strokeLinecap="round" />
-    <line x1="1" y1="12" x2="23" y2="12" stroke="#005840" strokeWidth="2" strokeLinecap="round" />
-    <line x1="3.51" y1="3.51" x2="20.49" y2="20.49" stroke="#005840" strokeWidth="2" strokeLinecap="round" />
-    <line x1="20.49" y1="3.51" x2="3.51" y2="20.49" stroke="#005840" strokeWidth="2" strokeLinecap="round" />
-  </svg>
-);
+
 
 const navLinks = [
   { label: "HOME", href: "/", active: true },
@@ -37,9 +24,9 @@ export default function Navbar() {
         <div className="flex items-center gap-16">
           {/* Logo */}
           <div className="flex items-center gap-2.5">
-            <WorldSkyMark />
+            <img src="/Touristsaver_logo-1600x468.jpeg" alt="Tourist Saver Logo" className="w-10 h-10 object-contain"/>
             <span className="font-bold text-[15px] tracking-[0.14em] text-[#005840]">
-              WORLDSKY
+              Tourist Saver
             </span>
           </div>
 

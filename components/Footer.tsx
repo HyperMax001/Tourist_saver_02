@@ -30,7 +30,7 @@ export default function Footer() {
             <div className="flex items-center gap-2.5 text-white">
               <WorldSkyMarkWhite />
               <span className="font-bold text-[15px] tracking-[0.14em]">
-                WORLDSKY
+                Tourist Saver
               </span>
             </div>
             <p className="text-neutral-400 text-[14px] leading-relaxed max-w-[320px]">
