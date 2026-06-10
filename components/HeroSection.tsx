@@ -13,9 +13,8 @@ export default function HeroSection() {
             backgroundPosition: "left center",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
 
-          <div className="absolute bottom-44 left-16 z-10 pr-12">
+          <div className="absolute bottom-60 left-16 z-10 pr-12">
             <h1 className="text-[66px] xl:text-[78px] font-medium text-white leading-[1.05] tracking-tight">
               Refreshing<br />exploration of<br />the world
             </h1>
@@ -35,7 +34,6 @@ export default function HeroSection() {
             backgroundPosition: "right center",
           }}
         >
-          <div className="absolute inset-0 bg-black/10" />
 
           {/* ── EMPTY WHITE CARD PLACEHOLDER ── */}
           {/* Add your content here */}
@@ -43,17 +41,23 @@ export default function HeroSection() {
             className="
               absolute
               top-1/2 left-1/2
-              -translate-x-1/2 -translate-y-[52%]
-              w-[87%]
+              -translate-x-1/2 -translate-y-1/2
+              w-[65%]
+              h-[75%]
               bg-white
-              rounded-[20px]
+              rounded-[24px]
               shadow-[0_20px_60px_rgba(0,0,0,0.18)]
-              p-6
-              min-h-[300px]
+              p-8
               z-10
+              flex
+              items-center
+              justify-center
+              text-center
             "
           >
-            {/* ← your content goes here */}
+            <p className="text-gray-500 font-medium text-[16px] tracking-wide leading-relaxed">
+              CTA for app will be added here
+            </p>
           </div>
         </div>
 
