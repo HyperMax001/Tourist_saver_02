@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "WorldSky – Journey Beyond the Ordinary",
+  title: "Tourist Saver – Journey Beyond the Ordinary",
   description: "Australia's leading travel savings app. Discover destinations, save smart, explore more.",
 };
 
