@@ -30,7 +30,7 @@ export default function Footer() {
             <div className="flex items-center gap-2.5 text-white">
               <WorldSkyMarkWhite />
               <span className="font-bold text-[15px] tracking-[0.14em]">
-                WORLDSKY
+                TOURIST SAVER
               </span>
             </div>
             <p className="text-neutral-400 text-[14px] leading-relaxed max-w-[320px]">
@@ -99,7 +99,7 @@ export default function Footer() {
 
         {/* Bottom Row */}
         <div className="flex flex-col sm:flex-row items-center justify-between pt-8 gap-4 text-neutral-400 text-[13.5px]">
-          <span>©2024 worldsky. All rights reserved.</span>
+          <span>©2024 Tourist Saver. All rights reserved.</span>
           <div className="flex gap-6">
             <Link href="#terms" className="hover:text-white transition-colors duration-150">Terms</Link>
             <Link href="#privacy" className="hover:text-white transition-colors duration-150">Privacy</Link>
