@@ -131,44 +131,60 @@ export default function HeroSection() {
           </motion.button>
         </div>
 
-        {/* Bottom Right Cards Selector */}
-        <div className="absolute bottom-1 left-1/2 -translate-x-1/2 z-20 flex gap-2 w-[calc(100%-32px)] max-w-[1550px] overflow-x-auto scrollbar-none justify-start lg:justify-center items-center py-2 px-4 bg-white/10 dark:bg-black/25 backdrop-blur-lg border border-white/20 dark:border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.18)] rounded-[20px]">
-          {countries.map((country, idx) => {
+        {/* Left & Right Navigation Arrows */}
+        <button
+          onClick={() => {
+            setActiveIndex((prev) => (prev === 0 ? countries.length - 1 : prev - 1));
+            startTimer();
+          }}
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 text-white/75 hover:text-white transition-all duration-300 active:scale-95 group"
+          aria-label="Previous Slide"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-6 h-6 md:w-8 md:h-8 transition-transform duration-300 group-hover:-translate-x-0.5"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </button>
+
+        <button
+          onClick={() => {
+            setActiveIndex((prev) => (prev + 1) % countries.length);
+            startTimer();
+          }}
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 text-white/75 hover:text-white transition-all duration-300 active:scale-95 group"
+          aria-label="Next Slide"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-6 h-6 md:w-8 md:h-8 transition-transform duration-300 group-hover:translate-x-0.5"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          </svg>
+        </button>
+
+        {/* Bottom Dotted Pagination */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2 items-center justify-center py-1.5 px-3 bg-white/10 dark:bg-black/25 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.15)] rounded-full">
+          {countries.map((_, idx) => {
             const isActive = idx === activeIndex;
             return (
-              <div
-                key={country.name}
+              <button
+                key={idx}
                 onClick={() => handleCardClick(idx)}
-                className={`relative w-[105px] md:w-[136px] h-[50px] md:h-[60px] rounded-[8px] overflow-hidden cursor-pointer transition-all duration-300 flex-shrink-0 ${
-                  isActive ? "scale-103" : "hover:scale-102 hover:opacity-90"
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  isActive ? "w-4 bg-white shadow-[0_0_6px_rgba(255,255,255,0.6)]" : "w-1.5 bg-white/40 hover:bg-white/60"
                 }`}
-              >
-                {/* Thumbnail Image */}
-                <img
-                  src={country.image}
-                  alt={country.name}
-                  className="w-full h-full object-cover"
-                />
-                {/* Card Title Overlay */}
-                <div className="absolute inset-0 bg-black/35 flex items-center justify-center p-2 transition-colors duration-300 hover:bg-black/25">
-                  <span className="text-white font-semibold text-[12px] md:text-[14px] leading-tight text-center tracking-wide">
-                    {country.name}
-                  </span>
-                </div>
-
-                {/* Local blur fade active border */}
-                <AnimatePresence>
-                  {isActive && (
-                    <motion.div
-                      initial={{ opacity: 0, filter: "blur(6px)" }}
-                      animate={{ opacity: 1, filter: "blur(0px)" }}
-                      exit={{ opacity: 0, filter: "blur(6px)" }}
-                      transition={{ duration: 0.35, ease: "easeInOut" }}
-                      className="absolute inset-0 border-2 border-white rounded-[8px] pointer-events-none z-20 shadow-[0_0_12px_rgba(255,255,255,0.4)]"
-                    />
-                  )}
-                </AnimatePresence>
-              </div>
+                aria-label={`Go to slide ${idx + 1}`}
+              />
             );
           })}
         </div>
