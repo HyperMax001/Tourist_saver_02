@@ -11,112 +11,141 @@ interface Destination {
 
 const destinations: Destination[] = [
   {
-    id: "bali",
-    name: "Bali, Indonesia",
-    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&q=80",
-    coords: { left: "70.5%", top: "54%" }
-  },
-  {
-    id: "new-york",
-    name: "New York, USA",
-    image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=400&q=80",
-    coords: { left: "24%", top: "35%" }
-  },
-  {
-    id: "paris",
-    name: "Paris, France",
-    image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=400&q=80",
-    coords: { left: "50%", top: "26%" }
-  },
-  {
-    id: "tokyo",
-    name: "Tokyo, Japan",
-    image: "https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?auto=format&fit=crop&w=400&q=80",
-    coords: { left: "84%", top: "33%" }
-  },
-  {
     id: "sydney",
     name: "Sydney, Australia",
-    image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=400&q=80",
-    coords: { left: "85%", top: "74%" }
+    image: "",
+    coords: { left: "91.28%", top: "75.58%" }
   },
   {
-    id: "rio",
-    name: "Rio de Janeiro, Brazil",
-    image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=400&q=80",
-    coords: { left: "35%", top: "68%" }
+    id: "melbourne",
+    name: "Melbourne, Australia",
+    image: "",
+    coords: { left: "89.45%", top: "78.73%" }
   },
   {
-    id: "cape-town",
-    name: "Cape Town, South Africa",
-    image: "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=400&q=80",
-    coords: { left: "54%", top: "75%" }
+    id: "perth",
+    name: "Perth, Australia",
+    image: "",
+    coords: { left: "84.40%", top: "74.01%" }
   },
   {
-    id: "london",
-    name: "London, UK",
-    image: "https://images.unsplash.com/photo-1513635269975-59663e0ca1ad?auto=format&fit=crop&w=400&q=80",
-    coords: { left: "48%", top: "24%" }
-  },
-  {
-    id: "cairo",
-    name: "Cairo, Egypt",
-    image: "https://images.unsplash.com/photo-1572252009286-268acec5a0af?auto=format&fit=crop&w=400&q=80",
-    coords: { left: "56%", top: "39%" }
-  },
-  {
-    id: "vancouver",
+    id: "canada",
     name: "Vancouver, Canada",
-    image: "https://images.unsplash.com/photo-1506605296071-70022e934d53?auto=format&fit=crop&w=400&q=80",
-    coords: { left: "15%", top: "25%" }
+    image: "",
+    coords: { left: "16.06%", top: "22.04%" }
+  },
+  {
+    id: "singapore",
+    name: "Singapore",
+    image: "",
+    coords: { left: "73.85%", top: "50.39%" }
+  },
+  {
+    id: "vietnam",
+    name: "Hanoi, Vietnam",
+    image: "",
+    coords: { left: "75.69%", top: "44.09%" }
+  },
+  {
+    id: "thailand",
+    name: "Bangkok, Thailand",
+    image: "",
+    coords: { left: "73.39%", top: "45.66%" }
+  },
+  {
+    id: "fiji",
+    name: "Fiji",
+    image: "",
+    coords: { left: "95.50%", top: "66.00%" }
+  },
+  {
+    id: "indonesia",
+    name: "Bali, Indonesia",
+    image: "",
+    coords: { left: "73.39%", top: "51.96%" }
+  },
+  {
+    id: "south-africa",
+    name: "Cape Town, South Africa",
+    image: "",
+    coords: { left: "54.59%", top: "75.58%" }
+  },
+  {
+    id: "usa",
+    name: "New York, USA",
+    image: "",
+    coords: { left: "24.31%", top: "34.64%" }
+  },
+  {
+    id: "england",
+    name: "London, England",
+    image: "",
+    coords: { left: "49.54%", top: "23.62%" }
+  },
+  {
+    id: "ireland",
+    name: "Dublin, Ireland",
+    image: "",
+    coords: { left: "46.20%", top: "23.00%" }
+  },
+  {
+    id: "scotland",
+    name: "Edinburgh, Scotland",
+    image: "",
+    coords: { left: "48.62%", top: "20.47%" }
+  },
+  {
+    id: "nz",
+    name: "Auckland, New Zealand",
+    image: "",
+    coords: { left: "92.66%", top: "83.45%" }
   }
 ];
 
 const MapPin = ({ active }: { active?: boolean }) => (
   <svg
-    width="20"
-    height="26"
+    width="22"
+    height="28"
     viewBox="0 0 24 32"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className={`filter drop-shadow-md transition-all duration-200 ${
-      active ? "scale-120" : "hover:scale-120"
-    }`}
+    className={`filter drop-shadow-sm transition-all duration-300 ${active ? "scale-115 opacity-100" : "scale-100 opacity-80 hover:opacity-100"
+      }`}
   >
     <path
       d="M12 0C5.37258 0 0 5.37258 0 12C0 21 12 32 12 32C12 32 24 21 24 12C24 5.37258 18.6274 0 12 0Z"
-      fill={active ? "#005840" : "black"}
+      fill="black"
     />
-    <circle cx="12" cy="12" r="4" fill="white" />
+    <circle cx="12" cy="12" r="3.5" fill="white" />
   </svg>
 );
 
 export default function PlacesAndDeals() {
-  const [activeId, setActiveId] = useState<string>("bali");
+  const [activeId, setActiveId] = useState<string>("sydney");
 
   const activeDest = destinations.find((d) => d.id === activeId) || destinations[0];
 
   return (
     <section className="bg-white py-20 px-8 w-full overflow-hidden">
       <div className="max-w-[1600px] mx-auto flex flex-col items-center gap-12">
-        
+
         {/* Header Block */}
         <div className="text-center flex flex-col gap-2">
-          <span className="text-[11px] font-semibold tracking-[0.2em] text-neutral-400 uppercase">
-            /Popular places to visit
+          <span className="text-[11.5px] font-semibold tracking-[0.22em] text-neutral-400 uppercase">
+            /Popular holiday places
           </span>
           <h2 className="text-[38px] md:text-[46px] font-semibold text-[#005840] tracking-tight leading-none">
-            Discover top places and deals
+            Discover top routes and deals
           </h2>
         </div>
 
         {/* Map Container */}
-        <div className="relative w-full max-w-[1100px] aspect-[109/55] select-none mt-6">
+        <div className="relative w-full max-w-[1300px] aspect-[109/55] select-none mt-6">
           {/* Dotted Map Background */}
           <img
             src="/world-map-dots.svg"
             alt="World Dotted Map"
-            className="w-full h-full object-contain opacity-85"
+            className="w-full h-full object-contain opacity-95"
             draggable={false}
           />
 
@@ -126,6 +155,7 @@ export default function PlacesAndDeals() {
             return (
               <button
                 key={dest.id}
+                onMouseEnter={() => setActiveId(dest.id)}
                 onClick={() => setActiveId(dest.id)}
                 className="absolute focus:outline-none transition-transform duration-200"
                 style={{
@@ -142,7 +172,7 @@ export default function PlacesAndDeals() {
 
           {/* Active Tooltip Card */}
           <div
-            className="absolute bg-white rounded-[16px] shadow-[0_12px_40px_rgba(0,0,0,0.15)] overflow-hidden transition-all duration-300 w-[180px] z-30"
+            className="absolute bg-white rounded-[16px] shadow-[0_12px_40px_rgba(0,0,0,0.12)] overflow-hidden transition-all duration-300 w-[180px] z-30"
             style={{
               left: activeDest.coords.left,
               top: activeDest.coords.top,
@@ -150,16 +180,22 @@ export default function PlacesAndDeals() {
             }}
           >
             {/* Card Image */}
-            <div className="h-[95px] w-full overflow-hidden">
-              <img
-                src={activeDest.image}
-                alt={activeDest.name}
-                className="w-full h-full object-cover"
-              />
+            <div className="h-[95px] w-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center text-neutral-400 border-b border-neutral-100">
+              {activeDest.image ? (
+                <img
+                  src={activeDest.image}
+                  alt={activeDest.name}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <span className="text-[10.5px] font-semibold tracking-wider uppercase text-neutral-500">
+                  {activeDest.name.split(",")[0]}
+                </span>
+              )}
             </div>
             {/* Card Label */}
             <div className="py-2.5 px-3 text-center bg-white">
-              <span className="text-[12.5px] font-semibold text-black tracking-wide block truncate">
+              <span className="text-[12.5px] font-semibold text-[#005840] tracking-wide block truncate">
                 {activeDest.name}
               </span>
             </div>
