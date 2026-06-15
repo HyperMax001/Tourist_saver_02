@@ -6,7 +6,7 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="bg-[#ecf0ef] py-20 px-8">
+    <section className="bg-white py-20 px-8">
       <div className="max-w-[1600px] mx-auto flex items-center gap-20">
 
         {/* ── LEFT — Image ── */}
