@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
+        handwritten: ["var(--font-patrick-hand)", "cursive"],
       },
       animation: {
         shine: "shine var(--duration) infinite linear",
