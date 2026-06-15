@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Highlighter } from "@/registry/magicui/highlighter";
 
 interface Destination {
   id: string;
@@ -126,8 +127,8 @@ export default function PlacesAndDeals() {
   const activeDest = destinations.find((d) => d.id === activeId) || destinations[0];
 
   return (
-    <section className="bg-white py-20 px-8 w-full overflow-hidden">
-      <div className="max-w-[1600px] mx-auto flex flex-col items-center gap-12">
+    <section className="bg-white pt-8 pb-20 px-4 w-full overflow-hidden">
+      <div className="w-full mx-auto bg-[#f0f7f4] rounded-[28px] py-16 px-8 flex flex-col items-center gap-12 shadow-sm">
 
         {/* Header Block */}
         <div className="text-center flex flex-col gap-2">
@@ -135,7 +136,7 @@ export default function PlacesAndDeals() {
             /Popular holiday places
           </span>
           <h2 className="text-[38px] md:text-[46px] font-semibold text-[#005840] tracking-tight leading-none">
-            Discover top routes and deals
+            Discover best <Highlighter action="highlight" color="#d1f843">places and deals</Highlighter>
           </h2>
         </div>
 
