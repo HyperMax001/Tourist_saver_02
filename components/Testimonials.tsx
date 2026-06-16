@@ -75,7 +75,6 @@ export default function Testimonials() {
           
           <div
             ref={scrollContainerRef}
-            data-lenis-prevent
             className="w-full flex gap-6 overflow-x-auto scrollbar-none snap-x snap-proximity py-4 scroll-smooth"
             style={{
               scrollbarWidth: "none",
