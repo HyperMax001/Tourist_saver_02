@@ -46,3 +46,13 @@ html.lenis-pure {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* Hide default cursor on desktop/fine-pointer devices */
+@media (pointer: fine) {
+  html, body {
+    cursor: none !important;
+  }
+  a, button, [role="button"], input, select, textarea, svg, [onClick] {
+    cursor: none !important;
+  }
+}
