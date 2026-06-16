@@ -4,54 +4,54 @@ import { motion, AnimatePresence } from "motion/react";
 
 const countries = [
   {
-    name: "Switzerland",
-    image: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1600&q=80",
-    tagline: "Alpine Heights"
+    name: "Lake Louise, Canada",
+    image: "/Hero Section images/for hero section/Lake Louise, Canada.jpg",
+    tagline: "Alpine Serenity"
   },
   {
-    name: "Japan",
-    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=80",
-    tagline: "Eastern Sunrise"
+    name: "Toronto, Canada",
+    image: "/Hero Section images/for hero section/Beautiful sunset view of Toronto skyline with CN Tower and city lights reflecting on the lake.jpg",
+    tagline: "Sunset Skyline"
   },
   {
-    name: "Italy",
-    image: "https://images.unsplash.com/photo-1498307833015-e7b400441eb8?auto=format&fit=crop&w=1600&q=80",
-    tagline: "Amalfi Breeze"
+    name: "Mù Cang Chải, Vietnam",
+    image: "/Hero Section images/for hero section/Mù Cang Chải, Mù Cang Chải District, Yên Bái, Vietnam.jpg",
+    tagline: "Golden Terraces"
   },
   {
-    name: "Iceland",
-    image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1600&q=80",
-    tagline: "Northern Fire"
+    name: "James Bond Island, Thailand",
+    image: "/Hero Section images/for hero section/Stunning rock formations at James Bond Island, Thailand with vibrant green waters and blue skies..jpg",
+    tagline: "Emerald Waters"
   },
   {
-    name: "France",
-    image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80",
-    tagline: "Parisian Glow"
+    name: "Tây Ninh, Vietnam",
+    image: "/Hero Section images/for hero section/Stunning view of Cao Dai Temple during sunset in Tây Ninh, Vietnam, showcasing its unique architecture.jpg",
+    tagline: "Temple Sunset"
   },
   {
-    name: "Canada",
-    image: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1600&q=80",
-    tagline: "Rocky Valleys"
+    name: "Sunshine Coast, Australia",
+    image: "/Hero Section images/for hero section/Sunshine Coast, Queensland, Australia.jpg",
+    tagline: "Golden Beaches"
   },
   {
-    name: "Australia",
-    image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1600&q=80",
-    tagline: "Outback Trails"
+    name: "Vancouver, Canada",
+    image: "/Hero Section images/for hero section/Vancouver, Canada.jpg",
+    tagline: "Coastal Metropolis"
   },
   {
-    name: "Norway",
-    image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1600&q=80",
-    tagline: "Fjord Magic"
+    name: "London, England",
+    image: "/Hero Section images/for hero section/london, england.jpg",
+    tagline: "Historic Charm"
   },
   {
-    name: "Egypt",
-    image: "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?auto=format&fit=crop&w=1600&q=80",
-    tagline: "Ancient Pyramids"
+    name: "Singapore",
+    image: "/Hero Section images/for hero section/singapore3.jpg",
+    tagline: "Modern Marvels"
   },
   {
-    name: "USA",
-    image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=1600&q=80",
-    tagline: "Neon Skylines"
+    name: "Sydney, Australia",
+    image: "/Hero Section images/for hero section/sydney opera house with sea.jpg",
+    tagline: "Iconic Opera House"
   }
 ];
 
@@ -93,7 +93,7 @@ export default function HeroSection() {
               exit={{ opacity: 0, filter: "blur(15px)", scale: 1.04 }}
               transition={{ duration: 1.4, ease: "easeInOut" }}
               className="absolute inset-0 w-full h-full bg-cover bg-center"
-              style={{ backgroundImage: `url(${countries[activeIndex].image})` }}
+              style={{ backgroundImage: `url('${countries[activeIndex].image}')` }}
             />
           </AnimatePresence>
           {/* Soft Shadow Overlays */}
