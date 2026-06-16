@@ -1,56 +1,57 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import Image from "next/image";
 
 const countries = [
   {
     name: "Lake Louise, Canada",
-    image: "/Hero Section images/for hero section/Lake Louise, Canada.jpg",
+    image: "/Hero Section images/for hero section/Lake Louise, Canada.avif",
     tagline: "Alpine Serenity"
   },
   {
     name: "Toronto, Canada",
-    image: "/Hero Section images/for hero section/Beautiful sunset view of Toronto skyline with CN Tower and city lights reflecting on the lake.jpg",
+    image: "/Hero Section images/for hero section/Beautiful sunset view of Toronto skyline with CN Tower and city lights reflecting on the lake.avif",
     tagline: "Sunset Skyline"
   },
   {
     name: "Mù Cang Chải, Vietnam",
-    image: "/Hero Section images/for hero section/Mù Cang Chải, Mù Cang Chải District, Yên Bái, Vietnam.jpg",
+    image: "/Hero Section images/for hero section/Mù Cang Chải, Mù Cang Chải District, Yên Bái, Vietnam.avif",
     tagline: "Golden Terraces"
   },
   {
     name: "James Bond Island, Thailand",
-    image: "/Hero Section images/for hero section/Stunning rock formations at James Bond Island, Thailand with vibrant green waters and blue skies..jpg",
+    image: "/Hero Section images/for hero section/Stunning rock formations at James Bond Island, Thailand with vibrant green waters and blue skies..avif",
     tagline: "Emerald Waters"
   },
   {
     name: "Tây Ninh, Vietnam",
-    image: "/Hero Section images/for hero section/Stunning view of Cao Dai Temple during sunset in Tây Ninh, Vietnam, showcasing its unique architecture.jpg",
+    image: "/Hero Section images/for hero section/Stunning view of Cao Dai Temple during sunset in Tây Ninh, Vietnam, showcasing its unique architecture.avif",
     tagline: "Temple Sunset"
   },
   {
     name: "Sunshine Coast, Australia",
-    image: "/Hero Section images/for hero section/Sunshine Coast, Queensland, Australia.jpg",
+    image: "/Hero Section images/for hero section/Sunshine Coast, Queensland, Australia.avif",
     tagline: "Golden Beaches"
   },
   {
     name: "Vancouver, Canada",
-    image: "/Hero Section images/for hero section/Vancouver, Canada.jpg",
+    image: "/Hero Section images/for hero section/Vancouver, Canada.avif",
     tagline: "Coastal Metropolis"
   },
   {
     name: "London, England",
-    image: "/Hero Section images/for hero section/london, england.jpg",
+    image: "/Hero Section images/for hero section/london, england.avif",
     tagline: "Historic Charm"
   },
   {
     name: "Singapore",
-    image: "/Hero Section images/for hero section/singapore3.jpg",
+    image: "/Hero Section images/for hero section/singapore3.avif",
     tagline: "Modern Marvels"
   },
   {
     name: "Sydney, Australia",
-    image: "/Hero Section images/for hero section/sydney opera house with sea.jpg",
+    image: "/Hero Section images/for hero section/sydney opera house with sea.avif",
     tagline: "Iconic Opera House"
   }
 ];
@@ -92,10 +93,32 @@ export default function HeroSection() {
               animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
               exit={{ opacity: 0, filter: "blur(15px)", scale: 1.04 }}
               transition={{ duration: 1.4, ease: "easeInOut" }}
-              className="absolute inset-0 w-full h-full bg-cover bg-center"
-              style={{ backgroundImage: `url('${countries[activeIndex].image}')` }}
-            />
+              className="absolute inset-0 w-full h-full"
+            >
+              <Image
+                src={countries[activeIndex].image}
+                alt={`${countries[activeIndex].name} landscape`}
+                fill
+                sizes="100vw" 
+                priority={true}
+                unoptimized
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
+              />
+            </motion.div>
           </AnimatePresence>
+          
+          {/* Invisible Preload for the NEXT image to prevent lag on slide change */}
+          <div className="hidden relative">
+            <Image
+              src={countries[(activeIndex + 1) % countries.length].image}
+              alt="preload next"
+              fill
+              sizes="100vw"
+              priority={true}
+              unoptimized
+            />
+          </div>
+
           {/* Soft Shadow Overlays */}
           <div className="absolute inset-0 bg-black/25 z-0" />
           <div className="absolute bottom-0 left-0 right-0 h-[250px] bg-gradient-to-t from-black/30 to-transparent z-0" />
