@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Patrick_Hand } from "next/font/google";
 import "./globals.css";
 import SmoothScrolling from "@/components/SmoothScrolling";
+import CustomCursor from "@/components/CustomCursor";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${patrickHand.variable} font-sans antialiased bg-white`}>
+        <CustomCursor />
         <SmoothScrolling>{children}</SmoothScrolling>
       </body>
     </html>
