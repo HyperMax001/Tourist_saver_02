@@ -1,10 +1,34 @@
-const stats = [
-  { value: "95%",  label: ["Customer",    "Satisfaction"] },
-  { value: "80+",  label: ["Popular",     "Destinations"] },
-  { value: "250+", label: ["Experienced", "Guide"]        },
-];
+"use client";
+
+import { useCountry } from "@/context/CountryContext";
+
+function getCurrencyText(countryName: string): { value: string; label: string[] } {
+  switch (countryName.toLowerCase()) {
+    case "australia": return { value: "$75 AUD", label: ["Equivalent to", "50 USD"] };
+    case "canada": return { value: "$68 CAD", label: ["Equivalent to", "50 USD"] };
+    case "singapore": return { value: "$67 SGD", label: ["Equivalent to", "50 USD"] };
+    case "vietnam": return { value: "1.27M VND", label: ["Equivalent to", "50 USD"] };
+    case "thailand": return { value: "1,750 THB", label: ["Equivalent to", "50 USD"] };
+    case "fiji": return { value: "$112 FJD", label: ["Equivalent to", "50 USD"] };
+    case "indonesia": return { value: "800k IDR", label: ["Equivalent to", "50 USD"] };
+    case "south africa": return { value: "R940 ZAR", label: ["Equivalent to", "50 USD"] };
+    case "usa": return { value: "$50 USD", label: ["Equivalent to", "50 USD"] };
+    case "england": return { value: "£39 GBP", label: ["Equivalent to", "50 USD"] };
+    case "ireland": return { value: "€46 EUR", label: ["Equivalent to", "50 USD"] };
+    case "scotland": return { value: "£39 GBP", label: ["Equivalent to", "50 USD"] };
+    case "new zealand": return { value: "$83 NZD", label: ["Equivalent to", "50 USD"] };
+    default: return { value: "$50 USD", label: ["Equivalent to", "50 USD"] };
+  }
+}
 
 export default function StatsSection() {
+  const { selectedCountry } = useCountry();
+
+  const stats = [
+    { value: "95%",  label: ["Customer",    "Satisfaction"] },
+    { value: "80+",  label: ["Popular",     "Destinations"] },
+    getCurrencyText(selectedCountry),
+  ];
   return (
     <section className="bg-white py-20 px-8">
       <div className="max-w-[1600px] mx-auto flex items-center gap-20">
@@ -24,9 +48,8 @@ export default function StatsSection() {
         <div className="flex-1">
 
           <h2 className="text-[42px] xl:text-[46px] font-normal text-black leading-[1.15] tracking-[-0.01em]">
-            Traveling makes you rich<br />
-            in stories, experiences,<br />
-            and memories
+            CTA/ APP showcase section<br />
+            (under progress).
           </h2>
 
           <p className="mt-4 text-[13.5px] font-normal text-gray-400 leading-relaxed max-w-sm">

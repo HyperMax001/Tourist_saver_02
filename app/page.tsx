@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import TaglineSection from "@/components/TaglineSection";
 import StatsSection from "@/components/StatsSection";
 import PlacesAndDeals from "@/components/PlacesAndDeals";
-import TravelDeals from "@/components/TravelDeals";
+import CountrySelection from "@/components/CountrySelection";
 import Testimonials from "@/components/Testimonials";
 import FAQSection from "@/components/FAQSection";
 import DownloadAppBanner from "@/components/DownloadAppBanner";
@@ -15,7 +15,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <TaglineSection />
-      <TravelDeals />
+      <CountrySelection />
       <PlacesAndDeals />
       <StatsSection />
       <Testimonials />
