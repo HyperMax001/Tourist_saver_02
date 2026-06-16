@@ -148,9 +148,23 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="px-6 py-2.5 mt-1 bg-white text-black font-semibold text-[13.5px] rounded-full hover:bg-[#005840] hover:text-white active:scale-98 transition-all duration-300 shadow-md"
+            className="group px-8 py-3.5 mt-4 bg-white text-[#005840] font-semibold text-[15px] rounded-full hover:bg-[#e6f0ec] hover:shadow-[0_10px_30px_rgba(0,88,64,0.12)] active:scale-95 transition-all duration-300 flex items-center gap-2"
           >
-            Explore Destinations
+            <span>Explore Destinations</span>
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="transform transition-transform duration-300 group-hover:translate-x-1"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
           </motion.button>
         </div>
 
