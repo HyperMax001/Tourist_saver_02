@@ -184,7 +184,7 @@ export default function CustomCursor() {
 
               ctx.beginPath();
               ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
-              ctx.fillStyle = `rgba(0, 88, 64, ${opacity})`; // brand green trail
+              ctx.fillStyle = `rgba(209, 248, 67, ${opacity})`; // highlight lime-green trail matching the plane
               ctx.fill();
             }
           }
