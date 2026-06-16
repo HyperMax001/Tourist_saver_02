@@ -47,14 +47,14 @@ export default function Testimonials() {
       const cardWidth = 300;
       const gap = 24;
       const scrollAmount = cardWidth + gap; // 324px
-      
+
       let scrollTo = direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount;
-      
+
       // Loop back to start if we scroll right at the end
       if (direction === "right" && scrollLeft + clientWidth >= scrollWidth - 15) {
         scrollTo = 0;
       }
-      
+
       scrollContainerRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
     }
   };
@@ -62,17 +62,96 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="relative w-full py-12 px-4 md:px-8 overflow-hidden bg-white select-none">
       <div className="max-w-[1600px] mx-auto w-full bg-[#f0f7f4] rounded-[48px] py-20 flex flex-col gap-16 shadow-sm relative overflow-hidden">
-        
+
         {/* Title Header (Centered and aligned to standard grid width) */}
         <div className="max-w-[1200px] mx-auto px-8 text-center flex flex-col gap-1.5 z-10 w-full">
-          <h3 className="text-[34px] md:text-[40px] font-bold text-[#0d2137] leading-tight tracking-tight">
-            Loved by<br />explorers everywhere
+          <h3 className="text-[38px] md:text-[44px] font-semibold text-[#005840] tracking-tight leading-tight flex flex-col items-center gap-1 w-full">
+            <div className="flex items-center justify-center gap-x-3 flex-wrap">
+              <div className="relative inline-block">
+                <span className="font-handwritten text-[58px] md:text-[66px] font-normal bg-[#d1f843] text-[#005840] px-4 py-1.5 rounded-[16px] inline-block transform -rotate-1 leading-none shadow-[0_4px_12px_rgba(209,248,67,0.15)]">
+                  Loved
+                </span>
+                {/* Larger decorative heart (top-left) */}
+                <div className="absolute -top-6 -left-3 transform -rotate-12 animate-pulse z-20">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="#d1f843"
+                    stroke="#005840"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                  </svg>
+                </div>
+                {/* Smaller decorative heart (top-left, staggered) */}
+                <div className="absolute -top-2 -left-8 transform rotate-12 animate-bounce z-20">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="#d1f843"
+                    stroke="#005840"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                  </svg>
+                </div>
+              </div>
+              <span>by explorers everywhere</span>
+            </div>
+            <div>
+              in{" "}
+              <span className="relative inline-block">
+                <span className="underline decoration-[#d1f843] decoration-[6px] underline-offset-4">
+                  World!
+                </span>
+                {/* Larger decorative heart (top-right) */}
+                <div className="absolute -top-4 -right-2 transform rotate-12 animate-pulse z-20">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="#d1f843"
+                    stroke="#005840"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                  </svg>
+                </div>
+                {/* Smaller decorative heart (top-right, staggered) */}
+                <div className="absolute -top-1 -right-5 transform -rotate-12 animate-bounce z-20">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="#d1f843"
+                    stroke="#005840"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                  </svg>
+                </div>
+              </span>
+            </div>
           </h3>
         </div>
 
         {/* Carousel Wrapper */}
         <div className="relative max-w-[1012px] md:max-w-[1076px] mx-auto w-full flex items-center z-10">
-          
+
           <div
             ref={scrollContainerRef}
             className="w-full flex gap-6 overflow-x-auto scrollbar-none snap-x snap-proximity py-4 scroll-smooth"
@@ -82,16 +161,16 @@ export default function Testimonials() {
           >
             {/* Left Spacer to create gap on the left side */}
             <div className="flex-shrink-0 w-8 md:w-16" />
-            
+
             {/* Column 1: Video Card (Courtney Allan) */}
-            <div className="flex-shrink-0 w-[300px] h-[500px] rounded-[32px] overflow-hidden relative group snap-start cursor-pointer">
+            <div className="flex-shrink-0 w-[300px] h-[500px] rounded-[32px] overflow-hidden relative group snap-start cursor-pointer border-2 border-[#005840]/30">
               <img
                 src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=500&q=80"
                 alt="Courtney Allan hiking"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
-              
+
               {/* User Info Header */}
               <div className="absolute top-6 left-6 flex items-center gap-4">
                 <img
@@ -100,8 +179,8 @@ export default function Testimonials() {
                   className="w-12 h-12 rounded-full border-2 border-white/40 object-cover"
                 />
                 <div className="flex flex-col">
-                  <span className="text-[16px] font-bold text-white leading-tight">Courtney Allan</span>
-                  <span className="text-[11.5px] font-handwritten font-semibold text-white/80 tracking-[0.1em] uppercase mt-0.5">Hitchhiker</span>
+                  <span className="text-[18px] font-bold text-white leading-tight">Courtney Allan</span>
+                  <span className="text-[13px] font-handwritten font-semibold text-white/80 tracking-[0.1em] uppercase mt-0.5">Hitchhiker</span>
                 </div>
               </div>
 
@@ -114,39 +193,39 @@ export default function Testimonials() {
             {/* Column 2: Stacked Text Cards (Conor & Jenny) */}
             <div className="flex-shrink-0 w-[300px] h-[500px] flex flex-col gap-6 snap-start">
               {/* Conor's Review */}
-              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start">
+              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#005840]/30">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[14px] font-bold text-[#0d2137] leading-tight">Perfect for tracking trips</h4>
-                  <span className="text-[10px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">CONOR, MARCH 9 2026</span>
+                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Perfect for tracking trips</h4>
+                  <span className="text-[13px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">CONOR, MARCH 9 2026</span>
                 </div>
                 <StarRating />
-                <p className="text-[12.5px] text-neutral-500 leading-relaxed font-normal">
+                <p className="text-[14px] text-neutral-500 leading-relaxed font-normal">
                   I love this app! It's perfect for tracking trips and I've ordered a few of the travel books which are very good quality and really nice to look at.
                 </p>
               </div>
 
               {/* Jenny's Review */}
-              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start">
+              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#005840]/30">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[14px] font-bold text-[#0d2137] leading-tight">Love the app</h4>
-                  <span className="text-[10px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">JENNY, MARCH 24 2026</span>
+                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Love the app</h4>
+                  <span className="text-[13px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">JENNY, MARCH 24 2026</span>
                 </div>
                 <StarRating />
-                <p className="text-[12.5px] text-neutral-500 leading-relaxed font-normal">
+                <p className="text-[14px] text-neutral-500 leading-relaxed font-normal">
                   I love the app, it tracks where you've been during the day and you can add your photos and comments later. Great to look back on over the years.
                 </p>
               </div>
             </div>
 
             {/* Column 3: Video Card (Alex Hubin) */}
-            <div className="flex-shrink-0 w-[300px] h-[500px] rounded-[32px] overflow-hidden relative group snap-start cursor-pointer">
+            <div className="flex-shrink-0 w-[300px] h-[500px] rounded-[32px] overflow-hidden relative group snap-start cursor-pointer border-2 border-[#005840]/30">
               <img
                 src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=500&q=80"
                 alt="Alex Hubin wave roadtrip"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
-              
+
               {/* User Info Header */}
               <div className="absolute top-6 left-6 flex items-center gap-4">
                 <img
@@ -155,8 +234,8 @@ export default function Testimonials() {
                   className="w-12 h-12 rounded-full border-2 border-white/40 object-cover"
                 />
                 <div className="flex flex-col">
-                  <span className="text-[16px] font-bold text-white leading-tight">Alex Hubin</span>
-                  <span className="text-[11.5px] font-handwritten font-semibold text-white/80 tracking-[0.1em] uppercase mt-0.5">Adventurer</span>
+                  <span className="text-[18px] font-bold text-white leading-tight">Alex Hubin</span>
+                  <span className="text-[13px] font-handwritten font-semibold text-white/80 tracking-[0.1em] uppercase mt-0.5">Adventurer</span>
                 </div>
               </div>
 
@@ -169,39 +248,39 @@ export default function Testimonials() {
             {/* Column 4: Stacked Text Cards (Rachel & Deborah) */}
             <div className="flex-shrink-0 w-[300px] h-[500px] flex flex-col gap-6 snap-start">
               {/* Rachel's Review */}
-              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start">
+              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#005840]/30">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[14px] font-bold text-[#0d2137] leading-tight">Easy to use</h4>
-                  <span className="text-[10px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">RACHEL, MARCH 15 2026</span>
+                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Easy to use</h4>
+                  <span className="text-[13px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">RACHEL, MARCH 15 2026</span>
                 </div>
                 <StarRating />
-                <p className="text-[12.5px] text-neutral-500 leading-relaxed font-normal">
+                <p className="text-[14px] text-neutral-500 leading-relaxed font-normal">
                   I've been using this app for months now. Easy peasy to share with family and friends, and we can all view the photos as well now. We go on many trips. Love this!
                 </p>
               </div>
 
               {/* Deborah's Review */}
-              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start">
+              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#005840]/30">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[14px] font-bold text-[#0d2137] leading-tight">Stops me wasting time</h4>
-                  <span className="text-[10px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">DEBORAH, MARCH 18 2026</span>
+                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Stops me wasting time</h4>
+                  <span className="text-[13px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">DEBORAH, MARCH 18 2026</span>
                 </div>
                 <StarRating />
-                <p className="text-[12.5px] text-neutral-500 leading-relaxed font-normal">
+                <p className="text-[14px] text-neutral-500 leading-relaxed font-normal">
                   Just completed our first big trip using this. Totally amazing. It helps me remember the route and stops me wasting time posting updates. Highly recommend sharing this link!
                 </p>
               </div>
             </div>
 
             {/* Column 5: Video Card (Marcus Vance) */}
-            <div className="flex-shrink-0 w-[300px] h-[500px] rounded-[32px] overflow-hidden relative group snap-start cursor-pointer">
+            <div className="flex-shrink-0 w-[300px] h-[500px] rounded-[32px] overflow-hidden relative group snap-start cursor-pointer border-2 border-[#005840]/30">
               <img
                 src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=500&q=80"
                 alt="Marcus Vance snowboarding"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50" />
-              
+
               {/* User Info Header */}
               <div className="absolute top-6 left-6 flex items-center gap-4">
                 <img
@@ -210,8 +289,8 @@ export default function Testimonials() {
                   className="w-12 h-12 rounded-full border-2 border-white/40 object-cover"
                 />
                 <div className="flex flex-col">
-                  <span className="text-[16px] font-bold text-white leading-tight">Marcus Vance</span>
-                  <span className="text-[11.5px] font-handwritten font-semibold text-white/80 tracking-[0.1em] uppercase mt-0.5">Snowboarder</span>
+                  <span className="text-[18px] font-bold text-white leading-tight">Marcus Vance</span>
+                  <span className="text-[13px] font-handwritten font-semibold text-white/80 tracking-[0.1em] uppercase mt-0.5">Snowboarder</span>
                 </div>
               </div>
 
@@ -224,25 +303,25 @@ export default function Testimonials() {
             {/* Column 6: Stacked Text Cards (Liam & Sophia) */}
             <div className="flex-shrink-0 w-[300px] h-[500px] flex flex-col gap-6 snap-start">
               {/* Liam's Review */}
-              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start">
+              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#005840]/30">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[14px] font-bold text-[#0d2137] leading-tight">Best travel planner</h4>
-                  <span className="text-[10px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">LIAM, MARCH 28 2026</span>
+                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Best travel planner</h4>
+                  <span className="text-[13px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">LIAM, MARCH 28 2026</span>
                 </div>
                 <StarRating />
-                <p className="text-[12.5px] text-neutral-500 leading-relaxed font-normal">
+                <p className="text-[14px] text-neutral-500 leading-relaxed font-normal">
                   This app has completely changed how we plan our family holidays. Extremely easy to share routes and photos with everyone. A must-have!
                 </p>
               </div>
 
               {/* Sophia's Review */}
-              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start">
+              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#005840]/30">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[14px] font-bold text-[#0d2137] leading-tight">Highly recommend</h4>
-                  <span className="text-[10px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">SOPHIA, APRIL 2 2026</span>
+                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Highly recommend</h4>
+                  <span className="text-[13px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">SOPHIA, APRIL 2 2026</span>
                 </div>
                 <StarRating />
-                <p className="text-[12.5px] text-neutral-500 leading-relaxed font-normal">
+                <p className="text-[14px] text-neutral-500 leading-relaxed font-normal">
                   Simple to use, beautiful interface, and the physical travel books are stunning. I recommend it to all my friends who travel frequently.
                 </p>
               </div>
