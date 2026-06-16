@@ -60,7 +60,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="relative w-full py-12 px-4 md:px-8 overflow-hidden bg-white select-none">
+    <section id="testimonials" className="relative w-full py-12 px-4 md:px-8 overflow-hidden bg-white select-none">
       <div className="max-w-[1600px] mx-auto w-full bg-[#f0f7f4] rounded-[48px] py-20 flex flex-col gap-16 shadow-sm relative overflow-hidden">
         
         {/* Title Header (Centered and aligned to standard grid width) */}

@@ -2,7 +2,7 @@
 
 export default function DownloadAppBanner() {
   return (
-    <section className="bg-white pb-20 pt-8 px-8 w-full overflow-hidden">
+    <section id="download-app" className="bg-white pb-20 pt-8 px-8 w-full overflow-hidden">
       <div 
         className="max-w-[1600px] mx-auto w-full h-[450px] rounded-[48px] overflow-hidden relative flex flex-col justify-center items-center text-center px-6 shadow-[0_20px_50px_rgba(0,0,0,0.15)] group"
       >

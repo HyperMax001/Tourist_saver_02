@@ -80,7 +80,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="w-full h-screen p-4 bg-[#ecf0ef] select-none relative">
+    <section id="hero" className="w-full h-screen p-4 bg-[#ecf0ef] select-none relative">
       <div className="w-full h-full rounded-[16px] overflow-hidden relative flex flex-col justify-center items-center text-center px-8 shadow-sm">
         
         {/* Background Transitions */}

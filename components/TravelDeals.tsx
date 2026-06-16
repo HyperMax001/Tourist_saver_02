@@ -155,7 +155,7 @@ export default function TravelDeals() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <section className="bg-white pt-8 pb-8 px-4 w-full overflow-hidden">
+    <section id="deals" className="bg-white pt-8 pb-8 px-4 w-full overflow-hidden">
       <div className="w-full mx-auto flex flex-col gap-10">
 
         {/* Header Block */}
