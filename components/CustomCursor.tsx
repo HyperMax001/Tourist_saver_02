@@ -237,7 +237,7 @@ export default function CustomCursor() {
   if (isTouchDevice) return null;
 
   return (
-    <>
+    <div className="hidden md:block">
       {/* Jet Stream Trail Canvas */}
       <canvas
         ref={canvasRef}
@@ -271,6 +271,6 @@ export default function CustomCursor() {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 }
