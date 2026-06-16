@@ -45,13 +45,16 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="bg-white py-16 px-8 w-full overflow-hidden">
-      <div className="max-w-[1600px] mx-auto w-full bg-[#f8f8f8] rounded-[48px] py-20 px-6 md:px-16 flex flex-col items-center gap-12 shadow-sm">
+    <section className="bg-white py-16 px-4 md:px-8 w-full overflow-hidden">
+      <div className="max-w-[1600px] mx-auto w-full bg-[#f0f7f4] rounded-[48px] py-20 px-6 md:px-16 flex flex-col items-center gap-12 shadow-sm relative overflow-hidden">
         
         {/* Header Block */}
         <div className="text-center flex flex-col gap-3 max-w-2xl">
-          <h2 className="text-[38px] md:text-[44px] font-semibold text-black tracking-tight leading-tight">
-            Frequently Asked Questions
+          <h2 className="text-[38px] md:text-[44px] font-semibold text-[#005840] tracking-tight leading-tight flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
+            <span>Frequently Asked</span>
+            <span className="font-handwritten text-[52px] md:text-[60px] font-normal bg-[#d1f843] text-[#005840] px-4 py-1.5 rounded-[16px] inline-block transform -rotate-1 leading-none shadow-[0_4px_12px_rgba(209,248,67,0.15)]">
+              Questions
+            </span>
           </h2>
           <p className="text-[14px] text-neutral-500 font-normal leading-relaxed">
             FAQs address common inquiries and provide essential information, helping users find solutions quickly.
@@ -65,16 +68,18 @@ export default function FAQSection() {
             return (
               <div
                 key={item.id}
-                className={`w-full rounded-[16px] overflow-hidden transition-all duration-300 border shadow-sm ${
+                className={`w-full rounded-[16px] overflow-hidden transition-all duration-300 border shadow-sm group ${
                   isOpen
-                    ? "bg-[#121212] border-neutral-800 text-white"
-                    : "bg-white border-neutral-100 text-black hover:border-neutral-200"
+                    ? "bg-[#005840] border-[#004b36] text-white"
+                    : "bg-white border-neutral-100 text-[#0d2137] hover:border-[#005840]/30 hover:bg-[#f0f7f4]/40"
                 }`}
               >
                 {/* Accordion Trigger Header */}
                 <button
                   onClick={() => toggleFAQ(item.id)}
-                  className="w-full text-left py-5 px-6 flex items-center justify-between font-semibold text-[16px] tracking-tight focus:outline-none"
+                  className={`w-full text-left py-5 px-6 flex items-center justify-between font-semibold text-[16px] tracking-tight focus:outline-none transition-colors duration-200 ${
+                    isOpen ? "text-white" : "text-[#0d2137] group-hover:text-[#005840]"
+                  }`}
                 >
                   <span>{item.question}</span>
                   <svg
@@ -89,7 +94,7 @@ export default function FAQSection() {
                   >
                     <path
                       d="M1 1L7 7L13 1"
-                      stroke={isOpen ? "white" : "black"}
+                      stroke="currentColor"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -106,7 +111,7 @@ export default function FAQSection() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.25, ease: "easeInOut" }}
                     >
-                      <div className="px-6 pb-6 pt-1 text-[14px] text-neutral-400 leading-relaxed font-normal">
+                      <div className="px-6 pb-6 pt-1 text-[14px] text-[#e2f0ec] leading-relaxed font-normal">
                         {item.answer}
                       </div>
                     </motion.div>
