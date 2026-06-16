@@ -152,12 +152,11 @@ export default function CustomCursor() {
         while (diff > 180) diff -= 360;
 
         angle.current += diff * 0.16; // rotation speed
-      } else {
-        // Slowly float back to a neutral, slight upward tilt when resting
-        const neutralAngle = -15;
-        const diff = neutralAngle - angle.current;
-        angle.current += diff * 0.05;
       }
+
+      // Calculate flight angle in radians for offset calculations
+      const flightAngleRad = (angle.current - 45) * (Math.PI / 180);
+      const offsetR = 18; // offset radius to shift position so nose acts as the pointer
 
       // 4. Update the Canvas Trail
       if (canvasRef.current) {
@@ -165,35 +164,54 @@ export default function CustomCursor() {
         if (ctx) {
           ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
 
-          // Append current coordinate to trail array
-          trailPoints.current.unshift({ x: cursor.current.x, y: cursor.current.y });
+          // Append tail coordinate to trail array so smoke starts from the back
+          const tailX = cursor.current.x - 2 * offsetR * Math.cos(flightAngleRad);
+          const tailY = cursor.current.y - 2 * offsetR * Math.sin(flightAngleRad);
+          trailPoints.current.unshift({ x: tailX, y: tailY });
 
-          // Keep trail size restricted to last 18 coordinates
-          if (trailPoints.current.length > 18) {
+          // Keep trail size restricted to last 35 coordinates for a longer visible path
+          if (trailPoints.current.length > 30) {
             trailPoints.current.pop();
           }
 
-          // Draw fading jet stream trail
+          // Draw fading dashed line jet stream trail
           if (trailPoints.current.length > 1) {
-            for (let i = 1; i < trailPoints.current.length; i++) {
-              const p = trailPoints.current[i];
-              // Decelerating size and opacity down the trail
-              const ratio = (trailPoints.current.length - i) / trailPoints.current.length;
-              const radius = ratio * 3.5;
-              const opacity = ratio * 0.35 * (isVisible ? 1 : 0); // hide trail when cursor is out of bounds
+            const startPt = trailPoints.current[0];
+            const endPt = trailPoints.current[trailPoints.current.length - 1];
 
-              ctx.beginPath();
-              ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
-              ctx.fillStyle = `rgba(209, 248, 67, ${opacity})`; // highlight lime-green trail matching the plane
-              ctx.fill();
+            const dx = startPt.x - endPt.x;
+            const dy = startPt.y - endPt.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist > 2) {
+              const grad = ctx.createLinearGradient(startPt.x, startPt.y, endPt.x, endPt.y);
+              grad.addColorStop(0, `rgba(209, 248, 67, ${0.9 * (isVisible ? 1 : 0)})`); // bright at the tail
+              grad.addColorStop(1, "rgba(209, 248, 67, 0)"); // fades to transparent
+              ctx.strokeStyle = grad;
+            } else {
+              ctx.strokeStyle = `rgba(209, 248, 67, ${0.9 * (isVisible ? 1 : 0)})`;
             }
+
+            ctx.beginPath();
+            ctx.setLineDash([8, 6]); // 8px dash, 6px gap
+            ctx.lineWidth = 3.5; // nice and visible
+            ctx.lineCap = "round";
+            ctx.lineJoin = "round";
+
+            ctx.moveTo(startPt.x, startPt.y);
+            for (let i = 1; i < trailPoints.current.length; i++) {
+              ctx.lineTo(trailPoints.current[i].x, trailPoints.current[i].y);
+            }
+            ctx.stroke();
           }
         }
       }
 
-      // 5. Update custom cursor position
+      // 5. Update custom cursor position (aligned to nose tip)
       if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate3d(${cursor.current.x}px, ${cursor.current.y}px, 0)`;
+        const displayX = cursor.current.x - offsetR * Math.cos(flightAngleRad);
+        const displayY = cursor.current.y - offsetR * Math.sin(flightAngleRad);
+        cursorRef.current.style.transform = `translate3d(${displayX}px, ${displayY}px, 0)`;
       }
 
       // 6. Update inner plane rotation/scale
