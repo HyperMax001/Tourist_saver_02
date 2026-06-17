@@ -142,7 +142,7 @@ export default function Navbar() {
                                       router.push(`/${country.id}`);
                                     }}
                                   >
-                                    {country.isAvailable && (
+                                    {country.isAvailable && country.id !== "australia" && (
                                       <span className="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#005840] animate-pulse opacity-60" />
                                     )}
                                     
