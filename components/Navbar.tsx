@@ -119,7 +119,7 @@ export default function Navbar() {
                             onClick={() => setDestinationsOpen(false)}
                           />
 
-                          <div className="absolute top-full left-0 mt-6 w-[550px] z-50">
+                          <div className="absolute top-full left-0 mt-6 w-[900px] xl:w-[1050px] z-50">
                             <motion.div
                               initial={{ opacity: 0, y: -5, scale: 0.98 }}
                               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -132,11 +132,11 @@ export default function Navbar() {
                               <h4 className="text-[12px] font-semibold text-neutral-400 tracking-[0.15em] uppercase mb-4 pl-1 relative z-10">
                                 Select Destination Country
                               </h4>
-                              <div className="grid grid-cols-3 gap-3 relative z-10">
+                              <div className="grid grid-cols-7 gap-3 relative z-10">
                                 {countriesList.filter(c => c.id !== "international").map((country) => (
                                   <div
                                     key={country.id}
-                                    className={`group relative p-5 rounded-2xl border flex flex-col justify-center items-center gap-1.5 transition-all duration-200 border-neutral-200 bg-white hover:border-[#005840] hover:bg-[#005840]/5 hover:shadow-[0_8px_20px_rgba(0,88,64,0.06)] cursor-pointer active:scale-98`}
+                                    className={`group relative p-3 xl:p-4 rounded-2xl border flex flex-col justify-center items-center gap-1.5 transition-all duration-200 border-neutral-200 bg-white hover:border-[#005840] hover:bg-[#005840]/5 hover:shadow-[0_8px_20px_rgba(0,88,64,0.06)] cursor-pointer active:scale-98`}
                                     onClick={() => {
                                       setDestinationsOpen(false);
                                       router.push(`/${country.id}`);
