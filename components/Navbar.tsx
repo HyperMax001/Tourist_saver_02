@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useLenis } from "lenis/react";
 import { usePathname, useRouter } from "next/navigation";
+import { countriesList, getCountryIcon } from "@/data/countries";
+import { motion, AnimatePresence } from "motion/react";
+import { ShineBorder } from "@/registry/magicui/shine-border";
 
 const WorldSkyMark = () => (
   <svg
@@ -36,6 +39,7 @@ const rightLinks = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [destinationsOpen, setDestinationsOpen] = useState(false);
   const lenis = useLenis();
   const pathname = usePathname();
   const router = useRouter();
@@ -86,20 +90,101 @@ export default function Navbar() {
           <div className={`hidden lg:flex items-center flex-1 transition-all duration-300 ${
             isScrolled ? "gap-4 xl:gap-6" : "gap-8"
           }`}>
-            {leftLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={`cursor-pointer whitespace-nowrap text-[15px] font-medium tracking-wide transition-all duration-200 hover:-translate-y-0.5 ${
-                  isScrolled || isLightBgPage
-                    ? "text-neutral-800 hover:text-black"
-                    : "text-white/80 hover:text-white"
-                }`}
-              >
-                {link.label}
-              </a>
-            ))}
+            {leftLinks.map((link) => {
+              if (link.label === "Destinations") {
+                return (
+                  <div key={link.label} className="relative flex items-center">
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setDestinationsOpen(!destinationsOpen);
+                      }}
+                      className={`cursor-pointer whitespace-nowrap text-[15px] font-medium tracking-wide transition-all duration-200 flex items-center gap-1.5 hover:-translate-y-0.5 ${
+                        isScrolled || isLightBgPage
+                          ? "text-neutral-800 hover:text-black"
+                          : "text-white/80 hover:text-white"
+                      }`}
+                    >
+                      {link.label}
+                      <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" className={`transition-transform duration-200 ${destinationsOpen ? 'rotate-180' : ''}`}>
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </button>
+
+                    <AnimatePresence>
+                      {destinationsOpen && (
+                        <>
+                          <div
+                            className="fixed inset-0 z-40 bg-transparent cursor-default"
+                            onClick={() => setDestinationsOpen(false)}
+                          />
+
+                          <div className="absolute top-full left-0 mt-6 w-[550px] z-50">
+                            <motion.div
+                              initial={{ opacity: 0, y: -5, scale: 0.98 }}
+                              animate={{ opacity: 1, y: 0, scale: 1 }}
+                              exit={{ opacity: 0, y: -5, scale: 0.98 }}
+                              transition={{ duration: 0.2, ease: "easeOut" }}
+                              className="relative bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,88,64,0.12),0_10px_20px_-5px_rgba(0,0,0,0.08)] p-6 w-full cursor-default border border-neutral-100"
+                            >
+                              <ShineBorder borderWidth={1.5} duration={8} borderRadius={24} shineColor={["#005840", "#bfff00", "#a2d2c7"]} />
+                              
+                              <h4 className="text-[12px] font-semibold text-neutral-400 tracking-[0.15em] uppercase mb-4 pl-1 relative z-10">
+                                Select Destination Country
+                              </h4>
+                              <div className="grid grid-cols-3 gap-3 relative z-10">
+                                {countriesList.filter(c => c.id !== "international").map((country) => (
+                                  <div
+                                    key={country.id}
+                                    className={`group relative p-5 rounded-2xl border flex flex-col justify-center items-center gap-1.5 transition-all duration-200 border-neutral-200 bg-white hover:border-[#005840] hover:bg-[#005840]/5 hover:shadow-[0_8px_20px_rgba(0,88,64,0.06)] cursor-pointer active:scale-98`}
+                                    onClick={() => {
+                                      setDestinationsOpen(false);
+                                      router.push(`/${country.id}`);
+                                    }}
+                                  >
+                                    {country.isAvailable && (
+                                      <span className="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#005840] animate-pulse opacity-60" />
+                                    )}
+                                    
+                                    {getCountryIcon(
+                                      country.id,
+                                      `w-7 h-7 mb-1 transition-transform duration-300 text-[#005840]/70 group-hover:scale-110`
+                                    )}
+
+                                    <span className="text-[15px] font-semibold tracking-wide text-[#005840]">
+                                      {country.name}
+                                    </span>
+                                    {!country.isAvailable && (
+                                      <span className="text-[9.5px] font-bold tracking-wider uppercase text-neutral-500 bg-neutral-100 py-0.5 px-2.5 rounded-full mt-1">
+                                        Coming Soon
+                                      </span>
+                                    )}
+                                  </div>
+                                ))}
+                              </div>
+                            </motion.div>
+                          </div>
+                        </>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={`cursor-pointer whitespace-nowrap text-[15px] font-medium tracking-wide transition-all duration-200 hover:-translate-y-0.5 ${
+                    isScrolled || isLightBgPage
+                      ? "text-neutral-800 hover:text-black"
+                      : "text-white/80 hover:text-white"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </div>
 
           {/* Logo Center */}
@@ -168,17 +253,56 @@ export default function Navbar() {
         className={`fixed inset-0 bg-white/95 dark:bg-black/95 backdrop-blur-md z-40 transition-transform duration-500 ease-in-out flex flex-col items-center justify-center gap-8 lg:hidden ${mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
       >
-        <div className="flex flex-col items-center gap-6 text-[18px] font-semibold text-[#005840] dark:text-white">
-          {[...leftLinks, ...rightLinks].map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="cursor-pointer hover:scale-105 transition-transform duration-200"
-            >
-              {link.label}
-            </a>
-          ))}
+        <div className="flex flex-col items-center gap-6 text-[18px] font-semibold text-[#005840] dark:text-white w-full">
+          {[...leftLinks, ...rightLinks].map((link) => {
+            if (link.label === "Destinations") {
+              return (
+                <div key={link.label} className="flex flex-col items-center w-full">
+                  <button
+                    onClick={() => setDestinationsOpen(!destinationsOpen)}
+                    className="cursor-pointer hover:scale-105 transition-transform duration-200"
+                  >
+                    {link.label}
+                  </button>
+                  <AnimatePresence>
+                    {destinationsOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="w-full flex flex-col items-center gap-3 mt-4 overflow-hidden"
+                      >
+                        {countriesList.filter(c => c.id !== "international").map((country) => (
+                          <button
+                            key={country.id}
+                            onClick={() => {
+                              setDestinationsOpen(false);
+                              setMobileMenuOpen(false);
+                              router.push(`/${country.id}`);
+                            }}
+                            className="text-[15px] font-medium text-neutral-600 dark:text-neutral-300 flex items-center gap-2 hover:text-[#005840]"
+                          >
+                            {getCountryIcon(country.id, "w-5 h-5")}
+                            {country.name}
+                          </button>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            }
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="cursor-pointer hover:scale-105 transition-transform duration-200"
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </div>
       </div>
     </>
