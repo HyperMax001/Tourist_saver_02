@@ -1,33 +1,10 @@
 "use client";
 
-import { useCountry } from "@/context/CountryContext";
-
-function getCurrencyText(countryName: string): { value: string; label: string[] } {
-  switch (countryName.toLowerCase()) {
-    case "australia": return { value: "$75 AUD", label: ["Equivalent to", "50 USD"] };
-    case "canada": return { value: "$68 CAD", label: ["Equivalent to", "50 USD"] };
-    case "singapore": return { value: "$67 SGD", label: ["Equivalent to", "50 USD"] };
-    case "vietnam": return { value: "1.27M VND", label: ["Equivalent to", "50 USD"] };
-    case "thailand": return { value: "1,750 THB", label: ["Equivalent to", "50 USD"] };
-    case "fiji": return { value: "$112 FJD", label: ["Equivalent to", "50 USD"] };
-    case "indonesia": return { value: "800k IDR", label: ["Equivalent to", "50 USD"] };
-    case "south africa": return { value: "R940 ZAR", label: ["Equivalent to", "50 USD"] };
-    case "usa": return { value: "$50 USD", label: ["Equivalent to", "50 USD"] };
-    case "england": return { value: "£39 GBP", label: ["Equivalent to", "50 USD"] };
-    case "ireland": return { value: "€46 EUR", label: ["Equivalent to", "50 USD"] };
-    case "scotland": return { value: "£39 GBP", label: ["Equivalent to", "50 USD"] };
-    case "new zealand": return { value: "$83 NZD", label: ["Equivalent to", "50 USD"] };
-    default: return { value: "$50 USD", label: ["Equivalent to", "50 USD"] };
-  }
-}
-
 export default function StatsSection() {
-  const { selectedCountry } = useCountry();
-
   const stats = [
     { value: "95%",  label: ["Customer",    "Satisfaction"] },
     { value: "80+",  label: ["Popular",     "Destinations"] },
-    getCurrencyText(selectedCountry),
+    { value: "$50 USD", label: ["Standard", "Plan"] },
   ];
   return (
     <section className="bg-white py-12 lg:py-20 px-4 md:px-8">
