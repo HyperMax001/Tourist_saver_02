@@ -16,7 +16,7 @@ const countries = [
   },
   {
     name: "Mù Cang Chải, Vietnam",
-    image: "/hero-section-images/for-hero-section/mù-cang-chải,-mù-cang-chải-district,-yên-bái,-vietnam.avif",
+    image: "/hero-section-images/for-hero-section/tea-garden-vietnam.avif",
     tagline: "Golden Terraces"
   },
   {
@@ -26,7 +26,7 @@ const countries = [
   },
   {
     name: "Tây Ninh, Vietnam",
-    image: "/hero-section-images/for-hero-section/stunning-view-of-cao-dai-temple-during-sunset-in-tây-ninh,-vietnam,-showcasing-its-unique-architecture.avif",
+    image: "/hero-section-images/for-hero-section/stunning-view-of-cao-dai-temple.avif",
     tagline: "Temple Sunset"
   },
   {
