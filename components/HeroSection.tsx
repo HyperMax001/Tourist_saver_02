@@ -6,52 +6,52 @@ import Image from "next/image";
 const countries = [
   {
     name: "Lake Louise, Canada",
-    image: "/Hero Section images/for hero section/Lake Louise, Canada.avif",
+    image: "/hero-section-images/for-hero-section/lake-louise,-canada.avif",
     tagline: "Alpine Serenity"
   },
   {
     name: "Toronto, Canada",
-    image: "/Hero Section images/for hero section/Beautiful sunset view of Toronto skyline with CN Tower and city lights reflecting on the lake.avif",
+    image: "/hero-section-images/for-hero-section/beautiful-sunset-view-of-toronto-skyline-with-cn-tower-and-city-lights-reflecting-on-the-lake.avif",
     tagline: "Sunset Skyline"
   },
   {
     name: "Mù Cang Chải, Vietnam",
-    image: "/Hero Section images/for hero section/Mù Cang Chải, Mù Cang Chải District, Yên Bái, Vietnam.avif",
+    image: "/hero-section-images/for-hero-section/mù-cang-chải,-mù-cang-chải-district,-yên-bái,-vietnam.avif",
     tagline: "Golden Terraces"
   },
   {
     name: "James Bond Island, Thailand",
-    image: "/Hero Section images/for hero section/Stunning rock formations at James Bond Island, Thailand with vibrant green waters and blue skies..avif",
+    image: "/hero-section-images/for-hero-section/stunning-rock-formations-at-james-bond-island,-thailand-with-vibrant-green-waters-and-blue-skies..avif",
     tagline: "Emerald Waters"
   },
   {
     name: "Tây Ninh, Vietnam",
-    image: "/Hero Section images/for hero section/Stunning view of Cao Dai Temple during sunset in Tây Ninh, Vietnam, showcasing its unique architecture.avif",
+    image: "/hero-section-images/for-hero-section/stunning-view-of-cao-dai-temple-during-sunset-in-tây-ninh,-vietnam,-showcasing-its-unique-architecture.avif",
     tagline: "Temple Sunset"
   },
   {
     name: "Sunshine Coast, Australia",
-    image: "/Hero Section images/for hero section/Sunshine Coast, Queensland, Australia.avif",
+    image: "/hero-section-images/for-hero-section/sunshine-coast,-queensland,-australia.avif",
     tagline: "Golden Beaches"
   },
   {
     name: "Vancouver, Canada",
-    image: "/Hero Section images/for hero section/Vancouver, Canada.avif",
+    image: "/hero-section-images/for-hero-section/vancouver,-canada.avif",
     tagline: "Coastal Metropolis"
   },
   {
     name: "London, England",
-    image: "/Hero Section images/for hero section/london, england.avif",
+    image: "/hero-section-images/for-hero-section/london,-england.avif",
     tagline: "Historic Charm"
   },
   {
     name: "Singapore",
-    image: "/Hero Section images/for hero section/singapore3.avif",
+    image: "/hero-section-images/for-hero-section/singapore3.avif",
     tagline: "Modern Marvels"
   },
   {
     name: "Sydney, Australia",
-    image: "/Hero Section images/for hero section/sydney opera house with sea.avif",
+    image: "/hero-section-images/for-hero-section/sydney-opera-house-with-sea.avif",
     tagline: "Iconic Opera House"
   }
 ];
