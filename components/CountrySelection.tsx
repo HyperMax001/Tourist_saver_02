@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { ShineBorder } from "@/registry/magicui/shine-border";
 import { useCountry } from "@/context/CountryContext";
@@ -18,25 +19,25 @@ const dealsData: Record<string, Deal[]> = {
       id: "aus-1",
       title: "Gold Coast",
       description: "Famous for its sunny subtropical climate, surfing beaches, and theme parks.",
-      image: "https://images.unsplash.com/photo-1596773516089-6617a232709e?auto=format&fit=crop&w=600&q=80"
+      image: "/australia-country-selection/gold-coast_converted.avif"
     },
     {
       id: "aus-2",
       title: "Brisbane",
       description: "A vibrant city built around the winding Brisbane River.",
-      image: "https://images.unsplash.com/photo-1600171059902-6028a01878b2?auto=format&fit=crop&w=600&q=80"
+      image: "/australia-country-selection/brisbane_converted.avif"
     },
     {
       id: "aus-3",
       title: "Sydney",
       description: "Australia's largest city, famous for its harbourfront Opera House.",
-      image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=600&q=80"
+      image: "/australia-country-selection/sydney-opera-house-with-sea_converted.avif"
     },
     {
       id: "aus-4",
       title: "Melbourne",
       description: "A dynamic metropolis known for its cultural heritage and laneway bars.",
-      image: "https://images.unsplash.com/photo-1514395462725-fb4566210144?auto=format&fit=crop&w=600&q=80"
+      image: "/australia-country-selection/melbourne_converted.avif"
     }
   ],
   "Canada": [
@@ -366,7 +367,7 @@ export default function CountrySelection() {
         {/* Header Block */}
         <div className="text-center flex flex-col gap-3 max-w-2xl mx-auto relative z-40">
           <h2 className="text-[38px] md:text-[44px] font-semibold text-neutral-900 tracking-tight leading-[1.3] select-none flex flex-wrap items-center justify-center gap-x-3 gap-y-2 mt-5">
-            <span>Best deals in</span>
+            <span>Best Places in</span>
             <span className="relative inline-flex items-center">
               {/* Attached Grey Chip */}
               <span className="absolute bottom-full translate-y-1/2 left-1/2 -translate-x-1/2 text-[8.5px] font-bold tracking-wider text-neutral-500 uppercase bg-white border border-neutral-200/80 px-2.5 py-0.5 rounded-full whitespace-nowrap leading-none shadow-sm pointer-events-none z-10">
@@ -397,7 +398,7 @@ export default function CountrySelection() {
             </span>
           </h2>
           <p className="text-[14px] text-neutral-500 font-normal leading-relaxed">
-            Explore our travel packages for every traveler. Whether a beach getaway, mountain trek, or city exploration, we have something special!
+            Whether a beach getaway, mountain trek, or city exploration, we have something special for everything! Unlock more in the App
           </p>
 
           <AnimatePresence>
@@ -475,10 +476,12 @@ export default function CountrySelection() {
           {/* Left Column: Big Feature Card */}
           <div className="w-full lg:w-[40%] min-h-[550px] lg:min-h-auto h-[600px] bg-[#e8f2ee] rounded-[28px] p-4 shadow-[0_8px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_0_20px_rgba(0,88,64,0.18),0_10px_25px_rgba(0,88,64,0.12)] transition-all duration-300 group cursor-pointer">
             <div className="w-full h-full rounded-[20px] overflow-hidden relative">
-              <img
-                src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=800&q=80"
-                alt="Tropical nature beach"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              <Image
+                src="/australia-country-selection/1-main-Australia_converted.avif"
+                alt="Australia destination"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
 
@@ -500,10 +503,12 @@ export default function CountrySelection() {
               >
                 {/* Deal Image Container */}
                 <div className="w-full h-[220px] rounded-[20px] overflow-hidden relative">
-                  <img
+                  <Image
                     src={deal.image}
                     alt={deal.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 30vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
 
