@@ -12,28 +12,28 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     id: 1,
-    question: "How do I book a trip on Magnolia?",
-    answer: "After finding your desired flight, hotel, or activity, simply follow the on-screen prompts to select your dates, number of travelers, and any additional preferences. Then proceed to the secure payment gateway to confirm your booking."
+    question: "How do I find deals for Gold Coast, Brisbane, Sydney, and Melbourne?",
+    answer: "Simply select your destination—whether it's the beaches of Gold Coast, the vibrant city of Brisbane, the iconic Sydney, or the cultural hub of Melbourne—and we'll show you the best discounts available on the Tourist Saver app."
   },
   {
     id: 2,
-    question: "Does Magnolia offer travel insurance?",
-    answer: "Yes, we offer comprehensive travel insurance packages covering trip cancellations, medical emergencies, baggage loss, and travel delays. You can add insurance to your booking during checkout."
+    question: "Can I use the app across all these Australian cities?",
+    answer: "Yes! Tourist Saver provides discounts and travel deals seamlessly across Gold Coast, Brisbane, Sydney, and Melbourne, so you can save everywhere you go."
   },
   {
     id: 3,
-    question: "Does Magnolia provide travel recommendations?",
-    answer: "Absolutely! We provide curated travel recommendations, local guides, and top itineraries based on your interests and travel history to help you get the most out of your trip."
+    question: "Does Tourist Saver provide local travel recommendations?",
+    answer: "Absolutely! We provide curated recommendations for your Australian adventure, from surfing spots in Gold Coast to hidden laneway cafes in Melbourne."
   },
   {
     id: 4,
-    question: "Do you offer discount for group bookings?",
-    answer: "Yes, we provide special rates and discounts for group bookings of 10 or more people. Contact our support team directly to request a custom group quote."
+    question: "Do you offer deals for family trips to Sydney or Gold Coast?",
+    answer: "Yes, we provide special family-friendly deals for major attractions in Sydney and the theme parks of the Gold Coast. Check the app for specific group offers."
   },
   {
     id: 5,
-    question: "Can i cancel or reschedule my trip?",
-    answer: "Yes, you can cancel or reschedule most bookings through your account dashboard. Please check the specific terms and refund policy of your package, flight, or hotel details before modifying your trip."
+    question: "Are the discounts instantly available?",
+    answer: "Yes, once you download the Tourist Saver app, you get instant access to digital coupons for experiences and dining across Brisbane, Melbourne, Sydney, and the Gold Coast."
   }
 ];
 

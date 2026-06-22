@@ -110,7 +110,7 @@ export default function Testimonials() {
               in{" "}
               <span className="relative inline-block">
                 <span className="underline decoration-[#d1f843] decoration-[6px] underline-offset-4">
-                  World!
+                  Australia!
                 </span>
                 {/* Larger decorative heart (top-right) */}
                 <div className="absolute -top-4 -right-2 transform rotate-12 animate-pulse z-20">
@@ -195,24 +195,24 @@ export default function Testimonials() {
               {/* Conor's Review */}
               <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#005840]/30">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Perfect for tracking trips</h4>
+                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Amazing Gold Coast deals</h4>
                   <span className="text-[13px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">CONOR, MARCH 9 2026</span>
                 </div>
                 <StarRating />
                 <p className="text-[14px] text-neutral-500 leading-relaxed font-normal">
-                  I love this app! It's perfect for tracking trips and I've ordered a few of the travel books which are very good quality and really nice to look at.
+                  I love this app! It's perfect for finding the best experiences when we visited the Gold Coast. The theme park discounts were very good and really nice to have.
                 </p>
               </div>
 
               {/* Jenny's Review */}
               <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#005840]/30">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Love the app</h4>
+                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Must-have for Brisbane</h4>
                   <span className="text-[13px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">JENNY, MARCH 24 2026</span>
                 </div>
                 <StarRating />
                 <p className="text-[14px] text-neutral-500 leading-relaxed font-normal">
-                  I love the app, it tracks where you've been during the day and you can add your photos and comments later. Great to look back on over the years.
+                  I love the app, it shows you all the great spots to eat in Brisbane during the day and you can easily redeem the coupons. Great to use on our weekend trip!
                 </p>
               </div>
             </div>
@@ -250,24 +250,24 @@ export default function Testimonials() {
               {/* Rachel's Review */}
               <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#005840]/30">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Easy to use</h4>
+                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Saved money in Sydney</h4>
                   <span className="text-[13px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">RACHEL, MARCH 15 2026</span>
                 </div>
                 <StarRating />
                 <p className="text-[14px] text-neutral-500 leading-relaxed font-normal">
-                  I've been using this app for months now. Easy peasy to share with family and friends, and we can all view the photos as well now. We go on many trips. Love this!
+                  I've been using this app for months now. Easy peasy to find great deals around the Sydney Opera House. We go on many family trips and this saved us so much!
                 </p>
               </div>
 
               {/* Deborah's Review */}
               <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#005840]/30">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Stops me wasting time</h4>
+                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Perfect for Melbourne</h4>
                   <span className="text-[13px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">DEBORAH, MARCH 18 2026</span>
                 </div>
                 <StarRating />
                 <p className="text-[14px] text-neutral-500 leading-relaxed font-normal">
-                  Just completed our first big trip using this. Totally amazing. It helps me remember the route and stops me wasting time posting updates. Highly recommend sharing this link!
+                  Just completed our trip to Melbourne using this. Totally amazing. It helps me discover new cafes in the laneways and stops me wasting time. Highly recommend!
                 </p>
               </div>
             </div>
@@ -305,12 +305,12 @@ export default function Testimonials() {
               {/* Liam's Review */}
               <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#005840]/30">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Best travel planner</h4>
+                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Great Australian deals</h4>
                   <span className="text-[13px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">LIAM, MARCH 28 2026</span>
                 </div>
                 <StarRating />
                 <p className="text-[14px] text-neutral-500 leading-relaxed font-normal">
-                  This app has completely changed how we plan our family holidays. Extremely easy to share routes and photos with everyone. A must-have!
+                  This app has completely changed how we plan our Australian holidays. Extremely easy to use in Sydney and the Gold Coast. A must-have for local deals!
                 </p>
               </div>
 
@@ -322,7 +322,7 @@ export default function Testimonials() {
                 </div>
                 <StarRating />
                 <p className="text-[14px] text-neutral-500 leading-relaxed font-normal">
-                  Simple to use, beautiful interface, and the physical travel books are stunning. I recommend it to all my friends who travel frequently.
+                  Simple to use, beautiful interface, and the savings in Brisbane and Melbourne are fantastic. I recommend it to all my friends who travel around Australia.
                 </p>
               </div>
             </div>
