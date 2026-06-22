@@ -10,7 +10,7 @@ interface CountryContextType {
 const CountryContext = createContext<CountryContextType | undefined>(undefined);
 
 export function CountryProvider({ children }: { children: React.ReactNode }) {
-  const [selectedCountry, setSelectedCountry] = useState("International");
+  const [selectedCountry, setSelectedCountry] = useState("Australia");
 
   return (
     <CountryContext.Provider value={{ selectedCountry, setSelectedCountry }}>

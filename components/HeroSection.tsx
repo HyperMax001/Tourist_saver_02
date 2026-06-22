@@ -132,7 +132,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-[32px] md:text-[50px] xl:text-[58px] font-semibold text-white leading-[1.2] tracking-tight max-w-[850px] drop-shadow-md"
           >
-            Travel Smarter, Explore<br />Further Create Memories<br />That Last.
+            Plan your trip. Discover<br />amazing experiences.
           </motion.h1>
           
           <motion.p
@@ -141,7 +141,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-[14px] md:text-[15.5px] text-white/95 font-normal max-w-[620px] leading-relaxed drop-shadow-sm"
           >
-            From breathtaking landscapes to hidden local gems, we help you plan seamless journeys tailored to your style, budget, and pace.
+            Find the best things to do and travel essentials in one place.
           </motion.p>
 
           <motion.button

@@ -93,13 +93,14 @@ export default function Navbar() {
             {leftLinks.map((link) => {
               if (link.label === "Destinations") {
                 return (
-                  <div key={link.label} className="relative flex items-center">
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setDestinationsOpen(!destinationsOpen);
-                      }}
-                      className={`cursor-pointer whitespace-nowrap text-[15px] font-medium tracking-wide transition-all duration-200 flex items-center gap-1.5 hover:-translate-y-0.5 ${
+                  <div 
+                    key={link.label} 
+                    className="relative flex items-center"
+                    onMouseEnter={() => setDestinationsOpen(true)}
+                    onMouseLeave={() => setDestinationsOpen(false)}
+                  >
+                    <div 
+                      className={`cursor-default whitespace-nowrap text-[15px] font-medium tracking-wide transition-all duration-200 flex items-center gap-1.5 hover:-translate-y-0.5 ${
                         isScrolled || isLightBgPage
                           ? "text-neutral-800 hover:text-black"
                           : "text-white/80 hover:text-white"
@@ -109,17 +110,11 @@ export default function Navbar() {
                       <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" className={`transition-transform duration-200 ${destinationsOpen ? 'rotate-180' : ''}`}>
                         <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
-                    </button>
+                    </div>
 
                     <AnimatePresence>
                       {destinationsOpen && (
-                        <>
-                          <div
-                            className="fixed inset-0 z-40 bg-transparent cursor-default"
-                            onClick={() => setDestinationsOpen(false)}
-                          />
-
-                          <div className="absolute top-full left-0 mt-6 w-[900px] xl:w-[1050px] z-50">
+                          <div className="absolute top-full left-0 pt-2 w-[900px] xl:w-[1050px] z-50">
                             <motion.div
                               initial={{ opacity: 0, y: -5, scale: 0.98 }}
                               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -164,7 +159,6 @@ export default function Navbar() {
                               </div>
                             </motion.div>
                           </div>
-                        </>
                       )}
                     </AnimatePresence>
                   </div>

@@ -34,7 +34,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-neutral-400 text-[14px] leading-relaxed max-w-[320px]">
-              Solid Travel Group is a travel community of individuals with a passion for exploration and cooperation.
+              Commercial in confidence Saver Saver Pty Ltd
             </p>
           </div>
 
@@ -46,10 +46,7 @@ export default function Footer() {
                 Tour
               </span>
               <ul className="flex flex-col gap-3">
-                <li><Link href="#tour" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Australia Special</Link></li>
-                <li><Link href="#tour" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Africa</Link></li>
-                <li><Link href="#tour" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">America</Link></li>
-                <li><Link href="#tour" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Asia</Link></li>
+                <li><Link href="/australia" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Australia</Link></li>
               </ul>
             </div>
 
@@ -59,10 +56,9 @@ export default function Footer() {
                 Company
               </span>
               <ul className="flex flex-col gap-3">
-                <li><Link href="#company" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">About</Link></li>
-                <li><Link href="#company" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Press</Link></li>
-                <li><Link href="#company" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Careers</Link></li>
-                <li><Link href="#company" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Contact</Link></li>
+                <li><Link href="/about-us" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">About Us</Link></li>
+                <li><Link href="/privacy-policy" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Privacy Policy</Link></li>
+                <li><Link href="/contact-us" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Contact Us</Link></li>
               </ul>
             </div>
 
@@ -72,10 +68,7 @@ export default function Footer() {
                 Products
               </span>
               <ul className="flex flex-col gap-3">
-                <li><Link href="#products" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Package</Link></li>
-                <li><Link href="#products" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Cruise</Link></li>
-                <li><Link href="#products" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Car Hire</Link></li>
-                <li><Link href="#products" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Passport</Link></li>
+                <li><Link href="#" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Download App</Link></li>
               </ul>
             </div>
 
@@ -85,6 +78,7 @@ export default function Footer() {
                 Connect
               </span>
               <ul className="flex flex-col gap-3">
+                <li><Link href="/merchant" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">As Merchants</Link></li>
                 <li><Link href="#connect" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Instagram</Link></li>
                 <li><Link href="#connect" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">LinkedIn</Link></li>
                 <li><Link href="#connect" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Twitter</Link></li>
@@ -99,11 +93,7 @@ export default function Footer() {
 
         {/* Bottom Row */}
         <div className="flex flex-col sm:flex-row items-center justify-between pt-8 gap-4 text-neutral-400 text-[13.5px]">
-          <span>©2024 Tourist Saver. All rights reserved.</span>
-          <div className="flex gap-6">
-            <Link href="#terms" className="hover:text-white transition-colors duration-150">Terms</Link>
-            <Link href="#privacy" className="hover:text-white transition-colors duration-150">Privacy</Link>
-          </div>
+          <span>©2026 Tourist Saver. All rights reserved.</span>
         </div>
 
       </div>

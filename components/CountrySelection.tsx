@@ -13,56 +13,30 @@ interface Deal {
 }
 
 const dealsData: Record<string, Deal[]> = {
-  "International": [
-    {
-      id: "aus-1",
-      title: "Sydney Opera House & Harbour Bridge",
-      description: "The definitive Australian landmark with dramatic sail-like shells.",
-      image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-      id: "aus-2",
-      title: "The Great Barrier Reef",
-      description: "The world's largest coral reef system, visible from space.",
-      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-      id: "aus-3",
-      title: "Uluru / Ayers Rock",
-      description: "A massive sandstone monolith holding deep spiritual significance.",
-      image: "https://images.unsplash.com/photo-1529108190281-9a4f620bc2d8?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-      id: "aus-4",
-      title: "Twelve Apostles",
-      description: "Magnificent limestone stacks rising majestically from the Southern Ocean.",
-      image: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=600&q=80"
-    }
-  ],
   "Australia": [
     {
       id: "aus-1",
-      title: "Sydney Opera House & Harbour Bridge",
-      description: "The definitive Australian landmark with dramatic sail-like shells.",
-      image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=600&q=80"
+      title: "Gold Coast",
+      description: "Famous for its sunny subtropical climate, surfing beaches, and theme parks.",
+      image: "https://images.unsplash.com/photo-1596773516089-6617a232709e?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: "aus-2",
-      title: "The Great Barrier Reef",
-      description: "The world's largest coral reef system, visible from space.",
-      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80"
+      title: "Brisbane",
+      description: "A vibrant city built around the winding Brisbane River.",
+      image: "https://images.unsplash.com/photo-1600171059902-6028a01878b2?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: "aus-3",
-      title: "Uluru / Ayers Rock",
-      description: "A massive sandstone monolith holding deep spiritual significance.",
-      image: "https://images.unsplash.com/photo-1529108190281-9a4f620bc2d8?auto=format&fit=crop&w=600&q=80"
+      title: "Sydney",
+      description: "Australia's largest city, famous for its harbourfront Opera House.",
+      image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: "aus-4",
-      title: "Twelve Apostles",
-      description: "Magnificent limestone stacks rising majestically from the Southern Ocean.",
-      image: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=600&q=80"
+      title: "Melbourne",
+      description: "A dynamic metropolis known for its cultural heritage and laneway bars.",
+      image: "https://images.unsplash.com/photo-1514395462725-fb4566210144?auto=format&fit=crop&w=600&q=80"
     }
   ],
   "Canada": [
@@ -448,7 +422,7 @@ export default function CountrySelection() {
                       Select Destination Country
                     </h4>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-4 relative z-10">
-                      {countriesList.map((country) => {
+                      {countriesList.filter(c => c.id !== "international").map((country) => {
                         const isSelected = selectedCountry === country.name;
                         return (
                           <div
