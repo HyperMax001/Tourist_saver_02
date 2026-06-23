@@ -25,12 +25,11 @@ const WorldSkyMark = () => (
 
 const leftLinks = [
   { label: "Destinations", href: "#deals" },
-  { label: "Download App", href: "#download-app" },
+  { label: "For Merchant", href: "/merchant" },
   { label: "Experiences", href: "#testimonials" },
 ];
 
 const rightLinks = [
-  { label: "Merchant", href: "/merchant" },
   { label: "About Us", href: "/about-us" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Contact Us", href: "/contact-us" },
@@ -48,7 +47,7 @@ export default function Navbar() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("#")) {
       e.preventDefault();
-      
+
       if (pathname !== "/") {
         // If we're not on the home page, navigate to home with the hash
         router.push(`/${href}`);
@@ -79,86 +78,83 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed z-50 left-1/2 -translate-x-1/2 transition-all duration-300 ease-out select-none ${
-          isScrolled
+        className={`fixed z-50 left-1/2 -translate-x-1/2 transition-all duration-300 ease-out select-none ${isScrolled
             ? "top-4 w-[90%] max-w-[1200px] rounded-full bg-white/80 backdrop-blur-md border border-white/20 shadow-[0_12px_40px_rgba(0,0,0,0.08)] py-3 px-8 text-black"
             : `top-6 w-[calc(100%-32px)] md:w-[calc(100%-48px)] max-w-[1750px] rounded-none bg-transparent border-transparent py-4 px-6 md:px-12 ${isLightBgPage ? "text-black" : "text-white"}`
-        }`}
+          }`}
       >
         <div className="flex items-center justify-between w-full max-w-[1700px] mx-auto">
           {/* Left links (hidden on mobile) */}
-          <div className={`hidden lg:flex items-center flex-1 transition-all duration-300 ${
-            isScrolled ? "gap-4 xl:gap-6" : "gap-8"
-          }`}>
+          <div className={`hidden lg:flex items-center flex-1 transition-all duration-300 ${isScrolled ? "gap-4 xl:gap-6" : "gap-8"
+            }`}>
             {leftLinks.map((link) => {
               if (link.label === "Destinations") {
                 return (
-                  <div 
-                    key={link.label} 
+                  <div
+                    key={link.label}
                     className="relative flex items-center"
                     onMouseEnter={() => setDestinationsOpen(true)}
                     onMouseLeave={() => setDestinationsOpen(false)}
                   >
-                    <div 
-                      className={`cursor-default whitespace-nowrap text-[15px] font-medium tracking-wide transition-all duration-200 flex items-center gap-1.5 hover:-translate-y-0.5 ${
-                        isScrolled || isLightBgPage
+                    <div
+                      className={`cursor-default whitespace-nowrap text-[15px] font-medium tracking-wide transition-all duration-200 flex items-center gap-1.5 hover:-translate-y-0.5 ${isScrolled || isLightBgPage
                           ? "text-neutral-800 hover:text-black"
                           : "text-white/80 hover:text-white"
-                      }`}
+                        }`}
                     >
                       {link.label}
                       <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" className={`transition-transform duration-200 ${destinationsOpen ? 'rotate-180' : ''}`}>
-                        <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
 
                     <AnimatePresence>
                       {destinationsOpen && (
-                          <div className="absolute top-full left-0 pt-2 w-[900px] xl:w-[1050px] z-50">
-                            <motion.div
-                              initial={{ opacity: 0, y: -5, scale: 0.98 }}
-                              animate={{ opacity: 1, y: 0, scale: 1 }}
-                              exit={{ opacity: 0, y: -5, scale: 0.98 }}
-                              transition={{ duration: 0.2, ease: "easeOut" }}
-                              className="relative bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,88,64,0.12),0_10px_20px_-5px_rgba(0,0,0,0.08)] p-6 w-full cursor-default border border-neutral-100"
-                            >
-                              <ShineBorder borderWidth={1.5} duration={8} borderRadius={24} shineColor={["#005840", "#bfff00", "#a2d2c7"]} />
-                              
-                              <h4 className="text-[12px] font-semibold text-neutral-400 tracking-[0.15em] uppercase mb-4 pl-1 relative z-10">
-                                Select Destination Country
-                              </h4>
-                              <div className="grid grid-cols-7 gap-3 relative z-10">
-                                {countriesList.filter(c => c.id !== "international").map((country) => (
-                                  <div
-                                    key={country.id}
-                                    className={`group relative p-3 xl:p-4 rounded-2xl border flex flex-col justify-center items-center gap-1.5 transition-all duration-200 border-neutral-200 bg-white hover:border-[#005840] hover:bg-[#005840]/5 hover:shadow-[0_8px_20px_rgba(0,88,64,0.06)] cursor-pointer active:scale-98`}
-                                    onClick={() => {
-                                      setDestinationsOpen(false);
-                                      router.push(`/${country.id}`);
-                                    }}
-                                  >
-                                    {country.isAvailable && country.id !== "australia" && (
-                                      <span className="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#005840] animate-pulse opacity-60" />
-                                    )}
-                                    
-                                    {getCountryIcon(
-                                      country.id,
-                                      `w-7 h-7 mb-1 transition-transform duration-300 text-[#005840]/70 group-hover:scale-110`
-                                    )}
+                        <div className="absolute top-full left-0 pt-2 w-[900px] xl:w-[1050px] z-50">
+                          <motion.div
+                            initial={{ opacity: 0, y: -5, scale: 0.98 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: -5, scale: 0.98 }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
+                            className="relative bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,88,64,0.12),0_10px_20px_-5px_rgba(0,0,0,0.08)] p-6 w-full cursor-default border border-neutral-100"
+                          >
+                            <ShineBorder borderWidth={1.5} duration={8} borderRadius={24} shineColor={["#005840", "#bfff00", "#a2d2c7"]} />
 
-                                    <span className="text-[15px] font-semibold tracking-wide text-[#005840]">
-                                      {country.name}
+                            <h4 className="text-[12px] font-semibold text-neutral-400 tracking-[0.15em] uppercase mb-4 pl-1 relative z-10">
+                              Select Destination Country
+                            </h4>
+                            <div className="grid grid-cols-7 gap-3 relative z-10">
+                              {countriesList.filter(c => c.id !== "international").map((country) => (
+                                <div
+                                  key={country.id}
+                                  className={`group relative p-3 xl:p-4 rounded-2xl border flex flex-col justify-center items-center gap-1.5 transition-all duration-200 border-neutral-200 bg-white hover:border-[#005840] hover:bg-[#005840]/5 hover:shadow-[0_8px_20px_rgba(0,88,64,0.06)] cursor-pointer active:scale-98`}
+                                  onClick={() => {
+                                    setDestinationsOpen(false);
+                                    router.push(`/${country.id}`);
+                                  }}
+                                >
+                                  {country.isAvailable && country.id !== "australia" && (
+                                    <span className="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#005840] animate-pulse opacity-60" />
+                                  )}
+
+                                  {getCountryIcon(
+                                    country.id,
+                                    `w-7 h-7 mb-1 transition-transform duration-300 text-[#005840]/70 group-hover:scale-110`
+                                  )}
+
+                                  <span className="text-[15px] font-semibold tracking-wide text-[#005840]">
+                                    {country.name}
+                                  </span>
+                                  {!country.isAvailable && (
+                                    <span className="text-[9.5px] font-bold tracking-wider uppercase text-neutral-500 bg-neutral-100 py-0.5 px-2.5 rounded-full mt-1">
+                                      Coming Soon
                                     </span>
-                                    {!country.isAvailable && (
-                                      <span className="text-[9.5px] font-bold tracking-wider uppercase text-neutral-500 bg-neutral-100 py-0.5 px-2.5 rounded-full mt-1">
-                                        Coming Soon
-                                      </span>
-                                    )}
-                                  </div>
-                                ))}
-                              </div>
-                            </motion.div>
-                          </div>
+                                  )}
+                                </div>
+                              ))}
+                            </div>
+                          </motion.div>
+                        </div>
                       )}
                     </AnimatePresence>
                   </div>
@@ -169,11 +165,10 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`cursor-pointer whitespace-nowrap text-[15px] font-medium tracking-wide transition-all duration-200 hover:-translate-y-0.5 ${
-                    isScrolled || isLightBgPage
+                  className={`cursor-pointer whitespace-nowrap text-[15px] font-medium tracking-wide transition-all duration-200 hover:-translate-y-0.5 ${isScrolled || isLightBgPage
                       ? "text-neutral-800 hover:text-black"
                       : "text-white/80 hover:text-white"
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </a>
@@ -192,19 +187,17 @@ export default function Navbar() {
           </div>
 
           {/* Right links (hidden on mobile) */}
-          <div className={`hidden lg:flex items-center justify-end flex-1 transition-all duration-300 ${
-            isScrolled ? "gap-4 xl:gap-6" : "gap-8"
-          }`}>
+          <div className={`hidden lg:flex items-center justify-end flex-1 transition-all duration-300 ${isScrolled ? "gap-4 xl:gap-6" : "gap-8"
+            }`}>
             {rightLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`cursor-pointer whitespace-nowrap text-[15px] font-medium tracking-wide transition-all duration-200 hover:-translate-y-0.5 ${
-                  isScrolled || isLightBgPage
+                className={`cursor-pointer whitespace-nowrap text-[15px] font-medium tracking-wide transition-all duration-200 hover:-translate-y-0.5 ${isScrolled || isLightBgPage
                     ? "text-neutral-800 hover:text-black"
                     : "text-white/80 hover:text-white"
-                }`}
+                  }`}
               >
                 {link.label}
               </a>
@@ -218,25 +211,22 @@ export default function Navbar() {
             aria-label="Toggle Menu"
           >
             <span
-              className={`h-0.5 w-full rounded transition-all duration-300 origin-left ${
-                mobileMenuOpen
+              className={`h-0.5 w-full rounded transition-all duration-300 origin-left ${mobileMenuOpen
                   ? "rotate-45 bg-black dark:bg-white"
                   : "bg-current"
-              }`}
+                }`}
             />
             <span
-              className={`h-0.5 w-full rounded transition-all duration-300 ${
-                mobileMenuOpen
+              className={`h-0.5 w-full rounded transition-all duration-300 ${mobileMenuOpen
                   ? "opacity-0"
                   : "bg-current"
-              }`}
+                }`}
             />
             <span
-              className={`h-0.5 w-full rounded transition-all duration-300 origin-left ${
-                mobileMenuOpen
+              className={`h-0.5 w-full rounded transition-all duration-300 origin-left ${mobileMenuOpen
                   ? "-rotate-45 bg-black dark:bg-white"
                   : "bg-current"
-              }`}
+                }`}
             />
           </button>
         </div>

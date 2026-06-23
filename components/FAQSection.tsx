@@ -46,7 +46,7 @@ export default function FAQSection() {
 
   return (
     <section className="bg-white py-16 px-4 md:px-8 w-full overflow-hidden">
-      <div className="max-w-[1600px] mx-auto w-full bg-[#f0f7f4] rounded-[48px] py-20 px-6 md:px-16 flex flex-col items-center gap-12 shadow-sm relative overflow-hidden">
+      <div className="max-w-[1600px] mx-auto w-full bg-[#f0f7f4] rounded-[28px] py-20 px-6 md:px-16 flex flex-col items-center gap-12 shadow-sm relative overflow-hidden">
         
         {/* Header Block */}
         <div className="text-center flex flex-col gap-3 max-w-2xl">
