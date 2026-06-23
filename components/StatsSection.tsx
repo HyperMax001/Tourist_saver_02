@@ -2,9 +2,9 @@
 
 export default function StatsSection() {
   const stats = [
-    { value: "1K+", label: ["SAVINGS", "OFFERS"] },
+    { value: "1K+", label: ["UNIQUE", "TOURS"] },
     { value: "10K+", label: ["HAPPY", "TRAVELERS"] },
-    { value: "4.8+", label: ["APP STORE", "RATING"] },
+    { value: "24/7", label: ["APP", "SUPPORT"] },
   ];
 
   return (
@@ -63,7 +63,7 @@ export default function StatsSection() {
             {/* Left Column (Copy & CTA) */}
             <div className="flex-1 relative z-10 max-w-lg">
               <p className="text-[16px] sm:text-[18px] font-medium text-neutral-800 leading-relaxed -mt-2 lg:-mt-6">
-                We have the largest selection of unique travel deals. Try our easy and quick coupon selection for any request. 24-hour support is always happy to answer all your questions.
+                We have the largest selection of unique travel deals & even more on Tourist Saver App. Get a taste of a stress free and amazing travel!
               </p>
 
               <div className="mt-6">

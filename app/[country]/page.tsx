@@ -1,3 +1,5 @@
+import Navbar from "@/components/Navbar";
+
 function getCurrencyText(countryName: string): { value: string; label: string } {
   switch (countryName.toLowerCase()) {
     case "australia": return { value: "$75 AUD", label: "Equivalent to 50 USD" };
@@ -30,16 +32,19 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
   const pricing = getCurrencyText(country);
 
   return (
-    <main className="min-h-screen pt-32 px-8 flex flex-col items-center justify-center bg-white">
-      <h1 className="text-4xl font-bold text-[#005840] capitalize mb-4">{formattedCountry}</h1>
-      
-      <div className="bg-gray-50 border border-gray-100 rounded-2xl p-8 mb-8 text-center max-w-sm w-full shadow-sm">
-        <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-2">Standard Plan</h2>
-        <div className="text-5xl font-light text-black mb-2">{pricing.value}</div>
-        <div className="text-sm text-gray-400">{pricing.label}</div>
-      </div>
+    <main className="min-h-screen flex flex-col bg-white">
+      <Navbar />
+      <div className="flex-grow pt-32 px-8 flex flex-col items-center justify-center w-full">
+        <h1 className="text-4xl font-bold text-[#005840] capitalize mb-4">{formattedCountry}</h1>
+        
+        <div className="bg-gray-50 border border-gray-100 rounded-2xl p-8 mb-8 text-center max-w-sm w-full shadow-sm">
+          <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-2">Standard Plan</h2>
+          <div className="text-5xl font-light text-black mb-2">{pricing.value}</div>
+          <div className="text-sm text-gray-400">{pricing.label}</div>
+        </div>
 
-      <p className="text-neutral-500 text-lg">More information about {formattedCountry} coming soon.</p>
+        <p className="text-neutral-500 text-lg">More information about {formattedCountry} coming soon.</p>
+      </div>
     </main>
   );
 }

@@ -42,7 +42,8 @@ export default function Navbar() {
   const lenis = useLenis();
   const pathname = usePathname();
   const router = useRouter();
-  const isLightBgPage = ['/about-us', '/privacy-policy', '/merchant', '/contact-us'].includes(pathname);
+  const isCountryPage = countriesList.some(c => `/${c.id}` === pathname);
+  const isLightBgPage = ['/about-us', '/privacy-policy', '/merchant', '/contact-us'].includes(pathname) || isCountryPage;
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("#")) {
@@ -123,8 +124,8 @@ export default function Navbar() {
                             <h4 className="text-[12px] font-semibold text-neutral-400 tracking-[0.15em] uppercase mb-4 pl-1 relative z-10">
                               Select Destination Country
                             </h4>
-                            <div className="grid grid-cols-7 gap-3 relative z-10">
-                              {countriesList.filter(c => c.id !== "international").map((country) => (
+                            <div className="grid grid-cols-6 gap-3 relative z-10">
+                              {countriesList.filter(c => c.id !== "international" && c.id !== "australia").map((country) => (
                                 <div
                                   key={country.id}
                                   className={`group relative p-3 xl:p-4 rounded-2xl border flex flex-col justify-center items-center gap-1.5 transition-all duration-200 border-neutral-200 bg-white hover:border-[#005840] hover:bg-[#005840]/5 hover:shadow-[0_8px_20px_rgba(0,88,64,0.06)] cursor-pointer active:scale-98`}
@@ -256,7 +257,7 @@ export default function Navbar() {
                         exit={{ opacity: 0, height: 0 }}
                         className="w-full flex flex-col items-center gap-3 mt-4 overflow-hidden"
                       >
-                        {countriesList.filter(c => c.id !== "international").map((country) => (
+                        {countriesList.filter(c => c.id !== "international" && c.id !== "australia").map((country) => (
                           <button
                             key={country.id}
                             onClick={() => {

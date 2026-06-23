@@ -8,8 +8,8 @@ export default function DownloadAppBanner() {
       >
         {/* Background Image */}
         <img
-          src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1600&q=80"
-          alt="Aerial tropical beach view"
+          src="/before_footer_image.avif"
+          alt="Thrilling Nature Journey"
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
           draggable={false}
         />

@@ -430,13 +430,9 @@ export default function CountrySelection() {
                             key={country.id}
                             className={`group relative p-5 rounded-2xl border flex flex-col justify-center items-center gap-1.5 transition-all duration-200 ${
                               isSelected
-                                ? "border-[#005840] bg-[#005840]/5 shadow-[0_8px_24px_rgba(0,88,64,0.08)] ring-1 ring-[#005840]/20 cursor-pointer"
-                                : "border-neutral-200 bg-white hover:border-[#005840] hover:bg-[#005840]/5 hover:shadow-[0_8px_20px_rgba(0,88,64,0.06)] cursor-pointer active:scale-98"
+                                ? "border-[#005840] bg-[#005840]/5 shadow-[0_8px_24px_rgba(0,88,64,0.08)] ring-1 ring-[#005840]/20 cursor-default"
+                                : "border-neutral-200 bg-white cursor-default"
                             }`}
-                            onClick={() => {
-                              setSelectedCountry(country.name);
-                              setDropdownOpen(false);
-                            }}
                           >
                             {country.isAvailable && country.id !== "australia" && (
                               <span className={`absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#005840] ${isSelected ? "ring-2 ring-emerald-200" : "animate-pulse opacity-60"}`} />
@@ -447,7 +443,7 @@ export default function CountrySelection() {
                               `w-7 h-7 mb-1 transition-transform duration-300 ${
                                 isSelected
                                   ? "text-[#005840] scale-110"
-                                  : "text-[#005840]/70 group-hover:scale-110"
+                                  : "text-[#005840]/70"
                               }`
                             )}
 
