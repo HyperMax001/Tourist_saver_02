@@ -61,14 +61,14 @@ export default function Testimonials() {
 
   return (
     <section id="testimonials" className="relative w-full py-12 px-4 md:px-8 overflow-hidden bg-white select-none">
-      <div className="max-w-[1600px] mx-auto w-full bg-[#f0f7f4] rounded-[48px] py-20 flex flex-col gap-16 shadow-sm relative overflow-hidden">
+      <div className="max-w-[1600px] mx-auto w-full bg-[#f0f7f4] rounded-[28px] py-20 flex flex-col gap-16 shadow-sm relative overflow-hidden">
 
         {/* Title Header (Centered and aligned to standard grid width) */}
         <div className="max-w-[1200px] mx-auto px-8 text-center flex flex-col gap-1.5 z-10 w-full">
           <h3 className="text-[38px] md:text-[44px] font-semibold text-[#005840] tracking-tight leading-tight flex flex-col items-center gap-1 w-full">
             <div className="flex items-center justify-center gap-x-3 flex-wrap">
               <div className="relative inline-block">
-                <span className="font-handwritten text-[58px] md:text-[66px] font-normal bg-[#d1f843] text-[#005840] px-4 py-1.5 rounded-[16px] inline-block transform -rotate-1 leading-none shadow-[0_4px_12px_rgba(209,248,67,0.15)]">
+                <span className="font-handwritten text-[58px] md:text-[66px] font-normal text-[#005840] leading-none">
                   Loved
                 </span>
                 {/* Larger decorative heart (top-left) */}
