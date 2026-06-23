@@ -25,3 +25,5 @@ export default function Home() {
     </main>
   );
 }
+
+// we seriously need to change the names of the sections to what is actually in them...
