@@ -144,13 +144,16 @@ export default function HeroSection() {
             Find the best things to do and travel essentials in one place.
           </motion.p>
 
-          <motion.button
+          <motion.a
+            href="https://touristsaver.com"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="group px-8 py-3.5 mt-4 bg-white text-[#005840] font-semibold text-[15px] rounded-full hover:bg-[#e6f0ec] hover:shadow-[0_10px_30px_rgba(0,88,64,0.12)] active:scale-95 transition-all duration-300 flex items-center gap-2"
+            className="group px-8 py-3.5 mt-2 bg-white text-[#005840] font-semibold text-[15px] rounded-full hover:bg-[#e6f0ec] hover:shadow-[0_10px_30px_rgba(0,88,64,0.12)] active:scale-95 transition-all duration-300 flex items-center gap-2 cursor-pointer"
           >
-            <span>Explore Destinations</span>
+            <span>Download App</span>
             <svg
               width="15"
               height="15"
@@ -165,7 +168,7 @@ export default function HeroSection() {
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
-          </motion.button>
+          </motion.a>
         </div>
 
         {/* Left & Right Navigation Arrows */}
