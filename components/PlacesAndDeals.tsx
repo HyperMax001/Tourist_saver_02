@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { Highlighter } from "@/registry/magicui/highlighter";
@@ -62,14 +62,14 @@ export default function PlacesAndDeals() {
 
   return (
     <section className="bg-white pt-8 pb-20 px-4 w-full overflow-hidden">
-      <div className="w-full mx-auto bg-[#f0f7f4] rounded-[28px] py-16 px-8 flex flex-col items-center gap-12 shadow-sm">
+      <div className="w-full mx-auto bg-[#F4F8FD] rounded-[28px] py-16 px-8 flex flex-col items-center gap-12 shadow-sm">
 
         {/* Header Block */}
         <div className="text-center flex flex-col gap-2">
           <span className="text-[11.5px] font-semibold tracking-[0.22em] text-neutral-400 uppercase">
             /Popular holiday places
           </span>
-          <h2 className="text-[38px] md:text-[46px] font-semibold text-[#005840] tracking-tight leading-none">
+          <h2 className="text-[38px] md:text-[46px] font-semibold text-[#2350AA] tracking-tight leading-none">
             Discover best <Highlighter action="highlight" color="#d1f843">places for travel</Highlighter>
           </h2>
         </div>
@@ -130,7 +130,7 @@ export default function PlacesAndDeals() {
             </div>
             {/* Card Label */}
             <div className="py-2.5 px-3 text-center bg-white">
-              <span className="text-[12.5px] font-semibold text-[#005840] tracking-wide block truncate">
+              <span className="text-[12.5px] font-semibold text-[#2350AA] tracking-wide block truncate">
                 {activeDest.name}
               </span>
             </div>
@@ -145,3 +145,4 @@ export default function PlacesAndDeals() {
     </section>
   );
 }
+

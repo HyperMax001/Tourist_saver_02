@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 
@@ -32,7 +32,7 @@ export function Highlighter({
   // Default: action = "highlight"
   return (
     <span
-      className={`relative inline px-2 py-0.5 rounded-[6px] text-[#005840] font-semibold ${className}`}
+      className={`relative inline px-2 py-0.5 rounded-[6px] text-[#2350AA] font-semibold ${className}`}
       style={{
         backgroundColor: color,
       }}
@@ -41,3 +41,4 @@ export function Highlighter({
     </span>
   );
 }
+

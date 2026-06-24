@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "motion/react";
 
@@ -28,10 +28,10 @@ const lineVariants = {
 
 export default function TaglineSection() {
   const lines = [
-    "We curate unforgettable travel experiences by combining expert planning,",
-    "transparent pricing, and carefully selected destinations. Whether you're chasing",
-    "adventure, relaxation, or cultural depth, every journey is crafted with purpose and",
-    "care."
+    "Book with TouristSaver App - Discover the best tours and attractions, enjoy an additional TouristSaver discount of 10% on all experiences.",
+    "Your TouristSaver QR Code - Use your TouristSaver QR code at various fast food outlets and restaurants and much more.",
+    "Save Every Day with TouristSaver App. Enjoy ongoing discounts across the Gold Coast with TouristSaver",
+    "Valid Australia wide."
   ];
 
   return (
@@ -50,7 +50,7 @@ export default function TaglineSection() {
           >
             <motion.p
               variants={lineVariants}
-              className="text-[20px] md:text-[25px] xl:text-[29px] font-medium text-[#004b36] leading-[1.3] md:leading-[1.4] tracking-tight origin-bottom-left"
+              className="text-[20px] md:text-[25px] xl:text-[29px] font-medium text-[#19397A] leading-[1.3] md:leading-[1.4] tracking-tight origin-bottom-left"
             >
               {line}
             </motion.p>
@@ -60,3 +60,4 @@ export default function TaglineSection() {
     </section>
   );
 }
+

@@ -1,21 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
-const WorldSkyMarkWhite = () => (
-  <svg
-    width="28"
-    height="28"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    <line x1="1" y1="12" x2="23" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    <line x1="3.51" y1="3.51" x2="20.49" y2="20.49" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    <line x1="20.49" y1="3.51" x2="3.51" y2="20.49" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-  </svg>
-);
 
 export default function Footer() {
   return (
@@ -28,7 +15,9 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="md:col-span-4 flex flex-col gap-6">
             <div className="flex items-center gap-2.5 text-white">
-              <WorldSkyMarkWhite />
+              <div className="relative w-8 h-8">
+                <Image src="/Touristsaver_logos/TouristSaver Logo Icon Heart transparent.webp" alt="Tourist Saver Logo" fill sizes="32px" className="object-contain" />
+              </div>
               <span className="font-bold text-[15px] tracking-[0.14em]">
                 TOURIST SAVER
               </span>
@@ -46,7 +35,7 @@ export default function Footer() {
                 Tour
               </span>
               <ul className="flex flex-col gap-3">
-                <li><Link href="/australia" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Australia</Link></li>
+                <li><span className="text-[14px] text-neutral-300">Australia</span></li>
               </ul>
             </div>
 
@@ -78,7 +67,7 @@ export default function Footer() {
                 Connect
               </span>
               <ul className="flex flex-col gap-3">
-                <li><Link href="/merchant" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">As Merchants</Link></li>
+                <li><Link href="/merchant" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">As Merchant</Link></li>
                 <li><Link href="#connect" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Instagram</Link></li>
                 <li><Link href="#connect" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">LinkedIn</Link></li>
                 <li><Link href="#connect" className="text-[14px] text-neutral-300 hover:text-white transition-colors duration-150">Twitter</Link></li>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 
@@ -61,14 +61,14 @@ export default function Testimonials() {
 
   return (
     <section id="testimonials" className="relative w-full py-12 px-4 md:px-8 overflow-hidden bg-white select-none">
-      <div className="max-w-[1600px] mx-auto w-full bg-[#f0f7f4] rounded-[28px] py-20 flex flex-col gap-16 shadow-sm relative overflow-hidden">
+      <div className="max-w-[1600px] mx-auto w-full bg-[#F4F8FD] rounded-[28px] py-20 flex flex-col gap-16 shadow-sm relative overflow-hidden">
 
         {/* Title Header (Centered and aligned to standard grid width) */}
         <div className="max-w-[1200px] mx-auto px-8 text-center flex flex-col gap-1.5 z-10 w-full">
-          <h3 className="text-[38px] md:text-[44px] font-semibold text-[#005840] tracking-tight leading-tight flex flex-col items-center gap-1 w-full">
+          <h3 className="text-[38px] md:text-[44px] font-semibold text-[#2350AA] tracking-tight leading-tight flex flex-col items-center gap-1 w-full">
             <div className="flex items-center justify-center gap-x-3 flex-wrap">
               <div className="relative inline-block">
-                <span className="font-handwritten text-[58px] md:text-[66px] font-normal text-[#005840] leading-none">
+                <span className="font-handwritten text-[58px] md:text-[66px] font-normal text-[#2350AA] leading-none">
                   Loved
                 </span>
                 {/* Larger decorative heart (top-left) */}
@@ -78,7 +78,7 @@ export default function Testimonials() {
                     height="22"
                     viewBox="0 0 24 24"
                     fill="#d1f843"
-                    stroke="#005840"
+                    stroke="#2350AA"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -94,7 +94,7 @@ export default function Testimonials() {
                     height="16"
                     viewBox="0 0 24 24"
                     fill="#d1f843"
-                    stroke="#005840"
+                    stroke="#2350AA"
                     strokeWidth="2.2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -119,7 +119,7 @@ export default function Testimonials() {
                     height="18"
                     viewBox="0 0 24 24"
                     fill="#d1f843"
-                    stroke="#005840"
+                    stroke="#2350AA"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -135,7 +135,7 @@ export default function Testimonials() {
                     height="12"
                     viewBox="0 0 24 24"
                     fill="#d1f843"
-                    stroke="#005840"
+                    stroke="#2350AA"
                     strokeWidth="2.2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -163,7 +163,7 @@ export default function Testimonials() {
             <div className="flex-shrink-0 w-8 md:w-16" />
 
             {/* Column 1: Video Card (Courtney Allan) */}
-            <div className="flex-shrink-0 w-[300px] h-[500px] rounded-[32px] overflow-hidden relative group snap-start cursor-pointer border-2 border-[#005840]/30">
+            <div className="flex-shrink-0 w-[300px] h-[500px] rounded-[32px] overflow-hidden relative group snap-start cursor-pointer border-2 border-[#2350AA]/30">
               <img
                 src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=500&q=80"
                 alt="Courtney Allan hiking"
@@ -193,9 +193,9 @@ export default function Testimonials() {
             {/* Column 2: Stacked Text Cards (Conor & Jenny) */}
             <div className="flex-shrink-0 w-[300px] h-[500px] flex flex-col gap-6 snap-start">
               {/* Conor's Review */}
-              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#005840]/30">
+              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#2350AA]/30">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Amazing Gold Coast deals</h4>
+                  <h4 className="text-[16px] font-bold text-[#2350AA] leading-tight">Amazing Gold Coast deals</h4>
                   <span className="text-[13px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">CONOR, MARCH 9 2026</span>
                 </div>
                 <StarRating />
@@ -205,9 +205,9 @@ export default function Testimonials() {
               </div>
 
               {/* Jenny's Review */}
-              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#005840]/30">
+              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#2350AA]/30">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Must-have for Brisbane</h4>
+                  <h4 className="text-[16px] font-bold text-[#2350AA] leading-tight">Must-have for Brisbane</h4>
                   <span className="text-[13px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">JENNY, MARCH 24 2026</span>
                 </div>
                 <StarRating />
@@ -218,7 +218,7 @@ export default function Testimonials() {
             </div>
 
             {/* Column 3: Video Card (Alex Hubin) */}
-            <div className="flex-shrink-0 w-[300px] h-[500px] rounded-[32px] overflow-hidden relative group snap-start cursor-pointer border-2 border-[#005840]/30">
+            <div className="flex-shrink-0 w-[300px] h-[500px] rounded-[32px] overflow-hidden relative group snap-start cursor-pointer border-2 border-[#2350AA]/30">
               <img
                 src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=500&q=80"
                 alt="Alex Hubin wave roadtrip"
@@ -248,9 +248,9 @@ export default function Testimonials() {
             {/* Column 4: Stacked Text Cards (Rachel & Deborah) */}
             <div className="flex-shrink-0 w-[300px] h-[500px] flex flex-col gap-6 snap-start">
               {/* Rachel's Review */}
-              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#005840]/30">
+              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#2350AA]/30">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Saved money in Sydney</h4>
+                  <h4 className="text-[16px] font-bold text-[#2350AA] leading-tight">Saved money in Sydney</h4>
                   <span className="text-[13px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">RACHEL, MARCH 15 2026</span>
                 </div>
                 <StarRating />
@@ -260,9 +260,9 @@ export default function Testimonials() {
               </div>
 
               {/* Deborah's Review */}
-              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#005840]/30">
+              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#2350AA]/30">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Perfect for Melbourne</h4>
+                  <h4 className="text-[16px] font-bold text-[#2350AA] leading-tight">Perfect for Melbourne</h4>
                   <span className="text-[13px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">DEBORAH, MARCH 18 2026</span>
                 </div>
                 <StarRating />
@@ -273,7 +273,7 @@ export default function Testimonials() {
             </div>
 
             {/* Column 5: Video Card (Marcus Vance) */}
-            <div className="flex-shrink-0 w-[300px] h-[500px] rounded-[32px] overflow-hidden relative group snap-start cursor-pointer border-2 border-[#005840]/30">
+            <div className="flex-shrink-0 w-[300px] h-[500px] rounded-[32px] overflow-hidden relative group snap-start cursor-pointer border-2 border-[#2350AA]/30">
               <img
                 src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=500&q=80"
                 alt="Marcus Vance snowboarding"
@@ -303,9 +303,9 @@ export default function Testimonials() {
             {/* Column 6: Stacked Text Cards (Liam & Sophia) */}
             <div className="flex-shrink-0 w-[300px] h-[500px] flex flex-col gap-6 snap-start">
               {/* Liam's Review */}
-              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#005840]/30">
+              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#2350AA]/30">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Great Australian deals</h4>
+                  <h4 className="text-[16px] font-bold text-[#2350AA] leading-tight">Great Australian deals</h4>
                   <span className="text-[13px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">LIAM, MARCH 28 2026</span>
                 </div>
                 <StarRating />
@@ -315,9 +315,9 @@ export default function Testimonials() {
               </div>
 
               {/* Sophia's Review */}
-              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#005840]/30">
+              <div className="bg-white rounded-[24px] p-5 flex flex-col gap-2 flex-1 justify-start border-2 border-[#2350AA]/30">
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[16px] font-bold text-[#005840] leading-tight">Highly recommend</h4>
+                  <h4 className="text-[16px] font-bold text-[#2350AA] leading-tight">Highly recommend</h4>
                   <span className="text-[13px] font-handwritten font-semibold text-neutral-400 tracking-[0.05em] uppercase">SOPHIA, APRIL 2 2026</span>
                 </div>
                 <StarRating />
@@ -333,7 +333,7 @@ export default function Testimonials() {
           </div>
 
           {/* Right Fade-out Gradient Overlay */}
-          <div className="absolute top-0 right-0 h-full w-16 md:w-32 bg-gradient-to-l from-[#f0f7f4] via-[#f0f7f4]/80 to-transparent pointer-events-none z-10" />
+          <div className="absolute top-0 right-0 h-full w-16 md:w-32 bg-gradient-to-l from-[#F4F8FD] via-[#F4F8FD]/80 to-transparent pointer-events-none z-10" />
 
           {/* Next Button Navigation Overlay */}
           <button
@@ -365,3 +365,4 @@ export default function Testimonials() {
     </section>
   );
 }
+

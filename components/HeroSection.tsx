@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
@@ -15,7 +15,7 @@ const countries = [
     tagline: "Sunset Skyline"
   },
   {
-    name: "Mù Cang Chải, Vietnam",
+    name: "MÃ¹ Cang Cháº£i, Vietnam",
     image: "/hero-section-images/for-hero-section/tea-garden-vietnam.avif",
     tagline: "Golden Terraces"
   },
@@ -25,7 +25,7 @@ const countries = [
     tagline: "Emerald Waters"
   },
   {
-    name: "Tây Ninh, Vietnam",
+    name: "TÃ¢y Ninh, Vietnam",
     image: "/hero-section-images/for-hero-section/stunning-view-of-cao-dai-temple.avif",
     tagline: "Temple Sunset"
   },
@@ -81,7 +81,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="w-full h-screen p-4 bg-[#ecf0ef] select-none relative">
+    <section id="hero" className="w-full h-screen p-4 bg-[#EDF1F7] select-none relative">
       <div className="w-full h-full rounded-[16px] overflow-hidden relative flex flex-col justify-center items-center text-center px-8 shadow-sm">
         
         {/* Background Transitions */}
@@ -132,7 +132,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-[32px] md:text-[50px] xl:text-[58px] font-semibold text-white leading-[1.2] tracking-tight max-w-[850px] drop-shadow-md"
           >
-            Plan your trip. Discover<br />amazing experiences.
+            Discover More<br />Spend Less
           </motion.h1>
           
           <motion.p
@@ -151,7 +151,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="group px-8 py-3.5 mt-2 bg-white text-[#005840] font-semibold text-[15px] rounded-full hover:bg-[#e6f0ec] hover:shadow-[0_10px_30px_rgba(0,88,64,0.12)] active:scale-95 transition-all duration-300 flex items-center gap-2 cursor-pointer"
+            className="group px-8 py-3.5 mt-2 bg-white text-[#2350AA] font-semibold text-[15px] rounded-full hover:bg-[#E8EEF8] hover:shadow-[0_10px_30px_rgba(35,80,170,0.12)] active:scale-95 transition-all duration-300 flex items-center gap-2 cursor-pointer"
           >
             <span>Download App</span>
             <svg
@@ -233,3 +233,4 @@ export default function HeroSection() {
     </section>
   );
 }
+

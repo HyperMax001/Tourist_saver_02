@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+﻿import Navbar from "@/components/Navbar";
 
 function getCurrencyText(countryName: string): { value: string; label: string } {
   switch (countryName.toLowerCase()) {
@@ -35,7 +35,7 @@ export default async function CountryPage({ params }: { params: Promise<{ countr
     <main className="min-h-screen flex flex-col bg-white">
       <Navbar />
       <div className="flex-grow pt-32 px-8 flex flex-col items-center justify-center w-full">
-        <h1 className="text-4xl font-bold text-[#005840] capitalize mb-4">{formattedCountry}</h1>
+        <h1 className="text-4xl font-bold text-[#2350AA] capitalize mb-4">{formattedCountry}</h1>
         
         <div className="bg-gray-50 border border-gray-100 rounded-2xl p-8 mb-8 text-center max-w-sm w-full shadow-sm">
           <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-2">Standard Plan</h2>

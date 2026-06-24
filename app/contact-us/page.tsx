@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+﻿import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function ContactUs() {
@@ -28,7 +28,7 @@ export default function ContactUs() {
                   type="text"
                   id="firstName"
                   placeholder="John"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#005840]/20 focus:border-[#005840] transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2350AA]/20 focus:border-[#2350AA] transition-all"
                 />
               </div>
 
@@ -41,7 +41,7 @@ export default function ContactUs() {
                   type="text"
                   id="lastName"
                   placeholder="Doe"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#005840]/20 focus:border-[#005840] transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2350AA]/20 focus:border-[#2350AA] transition-all"
                 />
               </div>
             </div>
@@ -55,7 +55,7 @@ export default function ContactUs() {
                 type="email"
                 id="email"
                 placeholder="john@example.com"
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#005840]/20 focus:border-[#005840] transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2350AA]/20 focus:border-[#2350AA] transition-all"
               />
             </div>
 
@@ -68,7 +68,7 @@ export default function ContactUs() {
                 type="text"
                 id="subject"
                 placeholder="How can we help you?"
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#005840]/20 focus:border-[#005840] transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2350AA]/20 focus:border-[#2350AA] transition-all"
               />
             </div>
 
@@ -76,7 +76,7 @@ export default function ContactUs() {
             <div className="pt-2">
               <button
                 type="button"
-                className="w-full py-3.5 px-6 rounded-xl bg-[#005840]/10 hover:bg-[#005840]/20 text-[#005840] font-bold text-lg transition-colors active:scale-[0.98] flex justify-center items-center gap-2"
+                className="w-full py-3.5 px-6 rounded-xl bg-[#2350AA]/10 hover:bg-[#2350AA]/20 text-[#2350AA] font-bold text-lg transition-colors active:scale-[0.98] flex justify-center items-center gap-2"
               >
                 Send
               </button>
@@ -89,3 +89,4 @@ export default function ContactUs() {
     </main>
   );
 }
+

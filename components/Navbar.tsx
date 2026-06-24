@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useLenis } from "lenis/react";
@@ -6,34 +6,13 @@ import { usePathname, useRouter } from "next/navigation";
 import { countriesList, getCountryIcon } from "@/data/countries";
 import { motion, AnimatePresence } from "motion/react";
 import { ShineBorder } from "@/registry/magicui/shine-border";
-
-const WorldSkyMark = () => (
-  <svg
-    width="28"
-    height="28"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="transition-colors duration-300"
-  >
-    <line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-    <line x1="1" y1="12" x2="23" y2="12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-    <line x1="3.51" y1="3.51" x2="20.49" y2="20.49" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-    <line x1="20.49" y1="3.51" x2="3.51" y2="20.49" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-  </svg>
-);
+import Image from "next/image";
 
 const leftLinks = [
   { label: "Destinations", href: "#deals" },
-  { label: "For Merchant", href: "/merchant" },
-  { label: "Experiences", href: "#testimonials" },
 ];
 
-const rightLinks = [
-  { label: "About Us", href: "/about-us" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Contact Us", href: "/contact-us" },
-];
+const rightLinks: { label: string, href: string }[] = [];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -117,9 +96,9 @@ export default function Navbar() {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: -5, scale: 0.98 }}
                             transition={{ duration: 0.2, ease: "easeOut" }}
-                            className="relative bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(0,88,64,0.12),0_10px_20px_-5px_rgba(0,0,0,0.08)] p-6 w-full cursor-default border border-neutral-100"
+                            className="relative bg-white rounded-[24px] shadow-[0_20px_40px_-10px_rgba(35,80,170,0.12),0_10px_20px_-5px_rgba(0,0,0,0.08)] p-6 w-full cursor-default border border-neutral-100"
                           >
-                            <ShineBorder borderWidth={1.5} duration={8} borderRadius={24} shineColor={["#005840", "#bfff00", "#a2d2c7"]} />
+                            <ShineBorder borderWidth={1.5} duration={8} borderRadius={24} shineColor={["#2350AA", "#bfff00", "#A6C4F4"]} />
 
                             <h4 className="text-[12px] font-semibold text-neutral-400 tracking-[0.15em] uppercase mb-4 pl-1 relative z-10">
                               Select Destination Country
@@ -128,22 +107,22 @@ export default function Navbar() {
                               {countriesList.filter(c => c.id !== "international" && c.id !== "australia").map((country) => (
                                 <div
                                   key={country.id}
-                                  className={`group relative p-3 xl:p-4 rounded-2xl border flex flex-col justify-center items-center gap-1.5 transition-all duration-200 border-neutral-200 bg-white hover:border-[#005840] hover:bg-[#005840]/5 hover:shadow-[0_8px_20px_rgba(0,88,64,0.06)] cursor-pointer active:scale-98`}
+                                  className={`group relative p-3 xl:p-4 rounded-2xl border flex flex-col justify-center items-center gap-1.5 transition-all duration-200 border-neutral-200 bg-white hover:border-[#2350AA] hover:bg-[#2350AA]/5 hover:shadow-[0_8px_20px_rgba(35,80,170,0.06)] cursor-pointer active:scale-98`}
                                   onClick={() => {
                                     setDestinationsOpen(false);
                                     router.push(`/${country.id}`);
                                   }}
                                 >
                                   {country.isAvailable && country.id !== "australia" && (
-                                    <span className="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#005840] animate-pulse opacity-60" />
+                                    <span className="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#2350AA] animate-pulse opacity-60" />
                                   )}
 
                                   {getCountryIcon(
                                     country.id,
-                                    `w-7 h-7 mb-1 transition-transform duration-300 text-[#005840]/70 group-hover:scale-110`
+                                    `w-7 h-7 mb-1 transition-transform duration-300 text-[#2350AA]/70 group-hover:scale-110`
                                   )}
 
-                                  <span className="text-[15px] font-semibold tracking-wide text-[#005840]">
+                                  <span className="text-[15px] font-semibold tracking-wide text-[#2350AA]">
                                     {country.name}
                                   </span>
                                   {!country.isAvailable && (
@@ -180,7 +159,9 @@ export default function Navbar() {
           {/* Logo Center */}
           <div className="flex items-center justify-center gap-2.5 flex-shrink-0 lg:flex-1">
             <a href="#hero" onClick={(e) => handleNavClick(e, "#hero")} className="flex items-center gap-2 cursor-pointer">
-              <WorldSkyMark />
+              <div className="relative w-8 h-8">
+                <Image src="/Touristsaver_logos/TouristSaver Logo Icon Heart transparent.webp" alt="Tourist Saver Logo" fill sizes="32px" className="object-contain" />
+              </div>
               <span className="font-bold text-[16px] tracking-[0.15em]">
                 TOURIST SAVER
               </span>
@@ -238,7 +219,7 @@ export default function Navbar() {
         className={`fixed inset-0 bg-white/95 dark:bg-black/95 backdrop-blur-md z-40 transition-transform duration-500 ease-in-out flex flex-col items-center justify-center gap-8 lg:hidden ${mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
       >
-        <div className="flex flex-col items-center gap-6 text-[18px] font-semibold text-[#005840] dark:text-white w-full">
+        <div className="flex flex-col items-center gap-6 text-[18px] font-semibold text-[#2350AA] dark:text-white w-full">
           {[...leftLinks, ...rightLinks].map((link) => {
             if (link.label === "Destinations") {
               return (
@@ -265,7 +246,7 @@ export default function Navbar() {
                               setMobileMenuOpen(false);
                               router.push(`/${country.id}`);
                             }}
-                            className="text-[15px] font-medium text-neutral-600 dark:text-neutral-300 flex items-center gap-2 hover:text-[#005840]"
+                            className="text-[15px] font-medium text-neutral-600 dark:text-neutral-300 flex items-center gap-2 hover:text-[#2350AA]"
                           >
                             {getCountryIcon(country.id, "w-5 h-5")}
                             {country.name}
@@ -293,3 +274,4 @@ export default function Navbar() {
     </>
   );
 }
+

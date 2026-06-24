@@ -1,8 +1,8 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import TaglineSection from "@/components/TaglineSection";
-import StatsSection from "@/components/StatsSection";
-import PlacesAndDeals from "@/components/PlacesAndDeals";
+import AppSection from "@/components/AppSection";
+import TravelEssentials from "@/components/TravelEssentials";
 import CountrySelection from "@/components/CountrySelection";
 import Testimonials from "@/components/Testimonials";
 import FAQSection from "@/components/FAQSection";
@@ -16,8 +16,8 @@ export default function Home() {
       <HeroSection />
       <TaglineSection />
       <CountrySelection />
-      <PlacesAndDeals />
-      <StatsSection />
+      <TravelEssentials />
+      <AppSection />
       <Testimonials />
       <FAQSection />
       <DownloadAppBanner />

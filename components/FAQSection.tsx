@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
@@ -13,7 +13,7 @@ const faqData: FAQItem[] = [
   {
     id: 1,
     question: "How do I find deals for Gold Coast, Brisbane, Sydney, and Melbourne?",
-    answer: "Simply select your destination—whether it's the beaches of Gold Coast, the vibrant city of Brisbane, the iconic Sydney, or the cultural hub of Melbourne—and we'll show you the best discounts available on the Tourist Saver app."
+    answer: "Simply select your destinationâ€”whether it's the beaches of Gold Coast, the vibrant city of Brisbane, the iconic Sydney, or the cultural hub of Melbourneâ€”and we'll show you the best discounts available on the Tourist Saver app."
   },
   {
     id: 2,
@@ -46,13 +46,13 @@ export default function FAQSection() {
 
   return (
     <section className="bg-white py-16 px-4 md:px-8 w-full overflow-hidden">
-      <div className="max-w-[1600px] mx-auto w-full bg-[#f0f7f4] rounded-[28px] py-20 px-6 md:px-16 flex flex-col items-center gap-12 shadow-sm relative overflow-hidden">
+      <div className="max-w-[1600px] mx-auto w-full bg-[#F4F8FD] rounded-[28px] py-20 px-6 md:px-16 flex flex-col items-center gap-12 shadow-sm relative overflow-hidden">
         
         {/* Header Block */}
         <div className="text-center flex flex-col gap-3 max-w-2xl">
-          <h2 className="text-[38px] md:text-[44px] font-semibold text-[#005840] tracking-tight leading-tight flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
+          <h2 className="text-[38px] md:text-[44px] font-semibold text-[#2350AA] tracking-tight leading-tight flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
             <span>Frequently Asked</span>
-            <span className="font-handwritten text-[52px] md:text-[60px] font-normal bg-[#d1f843] text-[#005840] px-4 py-1.5 rounded-[16px] inline-block transform -rotate-1 leading-none shadow-[0_4px_12px_rgba(209,248,67,0.15)]">
+            <span className="font-handwritten text-[52px] md:text-[60px] font-normal bg-[#d1f843] text-[#2350AA] px-4 py-1.5 rounded-[16px] inline-block transform -rotate-1 leading-none shadow-[0_4px_12px_rgba(209,248,67,0.15)]">
               Questions
             </span>
           </h2>
@@ -70,15 +70,15 @@ export default function FAQSection() {
                 key={item.id}
                 className={`w-full rounded-[16px] overflow-hidden transition-all duration-300 border shadow-sm group ${
                   isOpen
-                    ? "bg-[#005840] border-[#004b36] text-white"
-                    : "bg-white border-neutral-100 text-[#0d2137] hover:border-[#005840]/30 hover:bg-[#f0f7f4]/40"
+                    ? "bg-[#2350AA] border-[#19397A] text-white"
+                    : "bg-white border-neutral-100 text-[#0d2137] hover:border-[#2350AA]/30 hover:bg-[#F4F8FD]/40"
                 }`}
               >
                 {/* Accordion Trigger Header */}
                 <button
                   onClick={() => toggleFAQ(item.id)}
                   className={`w-full text-left py-5 px-6 flex items-center justify-between font-semibold text-[16px] tracking-tight focus:outline-none transition-colors duration-200 ${
-                    isOpen ? "text-white" : "text-[#0d2137] group-hover:text-[#005840]"
+                    isOpen ? "text-white" : "text-[#0d2137] group-hover:text-[#2350AA]"
                   }`}
                 >
                   <span>{item.question}</span>
@@ -126,3 +126,4 @@ export default function FAQSection() {
     </section>
   );
 }
+

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -23,9 +23,9 @@ const dealsData: Record<string, Deal[]> = {
     },
     {
       id: "aus-2",
-      title: "Brisbane",
-      description: "A vibrant city built around the winding Brisbane River.",
-      image: "/australia-country-selection/brisbane_converted.avif"
+      title: "Sunshine Coast",
+      description: "Stunning sandy beaches, pristine waterways, and lush hinterland.",
+      image: "/australia-country-selection/sunshine-coast.avif"
     },
     {
       id: "aus-3",
@@ -88,7 +88,7 @@ const dealsData: Record<string, Deal[]> = {
     {
       id: "sin-4",
       title: "Jewel Changi Airport",
-      description: "An architectural marvel housing the Rain Vortex, the world’s tallest indoor waterfall.",
+      description: "An architectural marvel housing the Rain Vortex, the worldâ€™s tallest indoor waterfall.",
       image: "https://images.unsplash.com/photo-1596707328004-940ea501639c?auto=format&fit=crop&w=600&q=80"
     }
   ],
@@ -290,7 +290,7 @@ const dealsData: Record<string, Deal[]> = {
     {
       id: "irl-3",
       title: "Trinity College Library",
-      description: "The 18th-century main chamber housing 200,000 of the library’s oldest books.",
+      description: "The 18th-century main chamber housing 200,000 of the libraryâ€™s oldest books.",
       image: "https://images.unsplash.com/photo-1590487005391-7f94082dc85e?auto=format&fit=crop&w=600&q=80"
     },
     {
@@ -375,7 +375,7 @@ export default function CountrySelection() {
               </span>
               <span
                 onClick={() => setDropdownOpen(!dropdownOpen)}
-                className="text-[#005840] cursor-pointer border-2 border-[#005840]/15 rounded-full px-5 py-0.5 bg-[#ecf0ef]/20 hover:bg-[#ecf0ef]/40 hover:border-[#005840]/30 inline-flex items-center gap-1.5 relative whitespace-nowrap active:scale-[0.97] transition-all duration-200"
+                className="text-[#2350AA] cursor-pointer border-2 border-[#2350AA]/15 rounded-full px-5 py-0.5 bg-[#EDF1F7]/20 hover:bg-[#EDF1F7]/40 hover:border-[#2350AA]/30 inline-flex items-center gap-1.5 relative whitespace-nowrap active:scale-[0.97] transition-all duration-200"
               >
                 {selectedCountry}
                 <svg
@@ -384,7 +384,7 @@ export default function CountrySelection() {
                   viewBox="0 0 10 6"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`transform transition-transform duration-300 ${dropdownOpen ? "rotate-180" : "rotate-0"} inline-block ml-0.5 text-[#005840]`}
+                  className={`transform transition-transform duration-300 ${dropdownOpen ? "rotate-180" : "rotate-0"} inline-block ml-0.5 text-[#2350AA]`}
                 >
                   <path
                     d="M1 1L5 5L9 1"
@@ -416,9 +416,9 @@ export default function CountrySelection() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -12, scale: 0.95 }}
                     transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative bg-white rounded-[32px] shadow-[0_45px_90px_-15px_rgba(0,88,64,0.12),0_25px_60px_-10px_rgba(0,0,0,0.08)] p-8 w-full"
+                    className="relative bg-white rounded-[32px] shadow-[0_45px_90px_-15px_rgba(35,80,170,0.12),0_25px_60px_-10px_rgba(0,0,0,0.08)] p-8 w-full"
                   >
-                    <ShineBorder borderWidth={2} duration={8} borderRadius={32} shineColor={["#005840", "#bfff00", "#a2d2c7"]} />
+                    <ShineBorder borderWidth={2} duration={8} borderRadius={32} shineColor={["#2350AA", "#bfff00", "#A6C4F4"]} />
                     <h4 className="text-[13px] font-semibold text-neutral-400 tracking-[0.18em] uppercase mb-5 text-center relative z-10">
                       Select Destination Country
                     </h4>
@@ -430,24 +430,24 @@ export default function CountrySelection() {
                             key={country.id}
                             className={`group relative p-5 rounded-2xl border flex flex-col justify-center items-center gap-1.5 transition-all duration-200 ${
                               isSelected
-                                ? "border-[#005840] bg-[#005840]/5 shadow-[0_8px_24px_rgba(0,88,64,0.08)] ring-1 ring-[#005840]/20 cursor-default"
+                                ? "border-[#2350AA] bg-[#2350AA]/5 shadow-[0_8px_24px_rgba(35,80,170,0.08)] ring-1 ring-[#2350AA]/20 cursor-default"
                                 : "border-neutral-200 bg-white cursor-default"
                             }`}
                           >
                             {country.isAvailable && country.id !== "australia" && (
-                              <span className={`absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#005840] ${isSelected ? "ring-2 ring-emerald-200" : "animate-pulse opacity-60"}`} />
+                              <span className={`absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#2350AA] ${isSelected ? "ring-2 ring-emerald-200" : "animate-pulse opacity-60"}`} />
                             )}
                             
                             {getCountryIcon(
                               country.id,
                               `w-7 h-7 mb-1 transition-transform duration-300 ${
                                 isSelected
-                                  ? "text-[#005840] scale-110"
-                                  : "text-[#005840]/70"
+                                  ? "text-[#2350AA] scale-110"
+                                  : "text-[#2350AA]/70"
                               }`
                             )}
 
-                            <span className="text-[15px] font-semibold tracking-wide text-[#005840]">
+                            <span className="text-[15px] font-semibold tracking-wide text-[#2350AA]">
                               {country.name}
                             </span>
                             {!country.isAvailable && (
@@ -470,7 +470,7 @@ export default function CountrySelection() {
         <div className="flex flex-col lg:flex-row gap-8 w-full mt-4">
 
           {/* Left Column: Big Feature Card */}
-          <div className="w-full lg:w-[40%] min-h-[550px] lg:min-h-auto h-[600px] bg-[#e8f2ee] rounded-[28px] p-4 shadow-[0_8px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_0_20px_rgba(0,88,64,0.18),0_10px_25px_rgba(0,88,64,0.12)] transition-all duration-300 group cursor-pointer">
+          <div className="w-full lg:w-[40%] min-h-[550px] lg:min-h-auto h-[600px] bg-[#E8EEF8] rounded-[28px] p-4 shadow-[0_8px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_0_20px_rgba(35,80,170,0.18),0_10px_25px_rgba(35,80,170,0.12)] transition-all duration-300 group cursor-pointer">
             <div className="w-full h-full rounded-[20px] overflow-hidden relative">
               <Image
                 src="/australia-country-selection/1-main-Australia_converted.avif"
@@ -495,7 +495,7 @@ export default function CountrySelection() {
             {(dealsData[selectedCountry] || dealsData["International"]).map((deal) => (
               <div
                 key={deal.id}
-                className="bg-[#e8f2ee] rounded-[28px] p-4 shadow-[0_8px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_0_20px_rgba(0,88,64,0.18),0_10px_25px_rgba(0,88,64,0.12)] transition-all duration-300 flex flex-col gap-4 group cursor-pointer"
+                className="bg-[#E8EEF8] rounded-[28px] p-4 shadow-[0_8px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_0_20px_rgba(35,80,170,0.18),0_10px_25px_rgba(35,80,170,0.12)] transition-all duration-300 flex flex-col gap-4 group cursor-pointer"
               >
                 {/* Deal Image Container */}
                 <div className="w-full h-[220px] rounded-[20px] overflow-hidden relative">
@@ -510,7 +510,7 @@ export default function CountrySelection() {
 
                 {/* Deal Info */}
                 <div className="flex flex-col gap-1">
-                  <h4 className="text-[16.5px] font-semibold text-[#005840] tracking-tight leading-snug group-hover:text-[#004b36] transition-colors duration-200 px-1">
+                  <h4 className="text-[16.5px] font-semibold text-[#2350AA] tracking-tight leading-snug group-hover:text-[#19397A] transition-colors duration-200 px-1">
                     {deal.title}
                   </h4>
                 </div>
@@ -524,3 +524,4 @@ export default function CountrySelection() {
     </section>
   );
 }
+

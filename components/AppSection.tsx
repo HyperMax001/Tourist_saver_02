@@ -1,6 +1,6 @@
-"use client";
+﻿"use client";
 
-export default function StatsSection() {
+export default function AppSection() {
   const stats = [
     { value: "1K+", label: ["UNIQUE", "TOURS"] },
     { value: "10K+", label: ["HAPPY", "TRAVELERS"] },
@@ -11,7 +11,7 @@ export default function StatsSection() {
     <section className="bg-white py-16 lg:py-24 px-4 md:px-8 overflow-hidden">
       <div className="max-w-[1600px] mx-auto">
 
-        {/* ── TOP STATS ROW (Image 1) ── */}
+        {/* â”€â”€ TOP STATS ROW (Image 1) â”€â”€ */}
         <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-[1100px] mx-auto text-center mb-16 lg:mb-24">
           {stats.map((stat) => (
             <div key={stat.value} className="flex flex-col items-center">
@@ -32,25 +32,25 @@ export default function StatsSection() {
           ))}
         </div>
 
-        {/* ── MAIN CONTENT AREA (Image 2) ── */}
+        {/* â”€â”€ MAIN CONTENT AREA (Image 2) â”€â”€ */}
         <div className="max-w-[1600px] mx-auto relative">
 
           {/* Heading (above the card) */}
           <div className="mb-8 pl-6">
             <h2 className="text-[64px] sm:text-[80px] md:text-[100px] lg:text-[116px] font-semibold text-[#1C1816] leading-[1.0] tracking-tight uppercase mb-2 md:mb-3">
-              PLAN YOUR
+              Get Even More in
             </h2>
             <h3 className="text-[56px] sm:text-[72px] md:text-[90px] lg:text-[104px] font-normal italic uppercase text-[#1C1816] leading-[1.0] tracking-wide">
-              ESCAPE
+              TouristSaver App
             </h3>
           </div>
 
           {/* Lavender Card wrapping both columns */}
-          <div className="bg-[#f0f7f4] rounded-[28px] pt-6 pb-4 pl-8 pr-8 md:pt-8 md:pb-6 md:pl-10 md:pr-12 lg:pt-8 lg:pb-4 lg:pl-12 lg:pr-16 lg:h-[370px] relative overflow-visible shadow-[0_15px_45px_rgba(0,0,0,0.02)] border border-[#005840]/10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+          <div className="bg-[#F4F8FD] rounded-[28px] pt-6 pb-4 pl-8 pr-8 md:pt-8 md:pb-6 md:pl-10 md:pr-12 lg:pt-8 lg:pb-4 lg:pl-12 lg:pr-16 lg:h-[370px] relative overflow-visible shadow-[0_15px_45px_rgba(0,0,0,0.02)] border border-[#2350AA]/10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
 
             {/* Decorative Swirly Line Art cropped to the card border */}
             <div className="absolute inset-0 opacity-[0.15] pointer-events-none select-none z-0 overflow-hidden rounded-[28px]">
-              <svg width="100%" height="100%" viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#005840] scale-[1.8] translate-y-12 transform origin-center">
+              <svg width="100%" height="100%" viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#2350AA] scale-[1.8] translate-y-12 transform origin-center">
                 <path
                   d="M 40 180 C 130 220, 220 90, 180 60 C 140 30, 80 140, 180 160 C 280 185, 420 110, 470 70"
                   stroke="currentColor"
@@ -63,7 +63,7 @@ export default function StatsSection() {
             {/* Left Column (Copy & CTA) */}
             <div className="flex-1 relative z-10 max-w-lg">
               <p className="text-[16px] sm:text-[18px] font-medium text-neutral-800 leading-relaxed -mt-2 lg:-mt-6">
-                We have the largest selection of unique travel deals & even more on Tourist Saver App. Get a taste of a stress free and amazing travel!
+                Travel smarter with thoughtfully curated essentials designed to make every journey smoother, lighter and more comfortable
               </p>
 
               <div className="mt-6">
@@ -130,3 +130,4 @@ export default function StatsSection() {
     </section>
   );
 }
+
