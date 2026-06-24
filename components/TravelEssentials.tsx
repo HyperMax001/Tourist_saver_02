@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "motion/react";
-import DotField from "@/components/DotField";
 
 const GasIcon = () => (
   <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -75,22 +74,7 @@ export default function TravelEssentials() {
 
   return (
     <section className="relative py-24 bg-white overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <DotField
-          dotRadius={1.5}
-          dotSpacing={14}
-          bulgeStrength={67}
-          glowRadius={160}
-          sparkle={false}
-          waveAmplitude={0}
-          cursorRadius={500}
-          cursorForce={0.1}
-          bulgeOnly={true}
-          gradientFrom="rgba(35, 80, 170, 0.4)"
-          gradientTo="rgba(35, 80, 170, 0.15)"
-          glowColor="rgba(35, 80, 170, 0.1)"
-        />
-      </div>
+
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         
         {/* --- Part 1: Travel Essentials --- */}
@@ -146,9 +130,12 @@ export default function TravelEssentials() {
             </motion.div>
           ))}
         </div>
+      </div>
 
+      <div className="max-w-[1600px] mx-auto px-4 md:px-8 relative z-10">
         {/* --- Part 2: How It Works --- */}
-        <div className="text-center mb-16">
+        <div className="bg-[#F4F8FD] rounded-[28px] py-16 px-6 md:px-12 shadow-[0_15px_45px_rgba(0,0,0,0.02)] border border-[#2350AA]/10 w-full mx-auto relative overflow-hidden">
+          <div className="text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -198,6 +185,7 @@ export default function TravelEssentials() {
                 </motion.div>
               ))}
             </div>
+          </div>
           </div>
         </div>
 
