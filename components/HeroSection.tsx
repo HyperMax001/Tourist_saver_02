@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
@@ -108,12 +108,12 @@ export default function HeroSection() {
           </AnimatePresence>
           
           {/* Invisible Preload for the NEXT image to prevent lag on slide change */}
-          <div className="hidden relative">
+          <div className="hidden">
             <Image
               src={countries[(activeIndex + 1) % countries.length].image}
               alt="preload next"
-              fill
-              sizes="100vw"
+              width={1}
+              height={1}
               priority={true}
               unoptimized
             />

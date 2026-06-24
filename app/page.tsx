@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import TaglineSection from "@/components/TaglineSection";
 import AppSection from "@/components/AppSection";
-import ActivitySection from "@/components/ActivitySection";
+import ActivitySectionReplace from "@/components/ActivitySectionReplace";
 import TravelEssentials from "@/components/TravelEssentials";
 import CountrySelection from "@/components/CountrySelection";
 import Testimonials from "@/components/Testimonials";
@@ -17,7 +17,7 @@ export default function Home() {
       <HeroSection />
       <TaglineSection />
       <CountrySelection />
-      <ActivitySection />
+      <ActivitySectionReplace />
       <TravelEssentials />
       <AppSection />
       <Testimonials />
