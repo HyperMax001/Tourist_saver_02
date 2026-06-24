@@ -79,7 +79,7 @@ export default function TravelEssentials() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="text-5xl md:text-6xl font-semibold text-[#2350AA] mb-4 tracking-tight"
           >
@@ -88,7 +88,7 @@ export default function TravelEssentials() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-gray-500 text-sm md:text-base max-w-xl mx-auto leading-relaxed"
           >

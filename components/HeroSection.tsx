@@ -108,12 +108,12 @@ export default function HeroSection() {
           </AnimatePresence>
           
           {/* Invisible Preload for the NEXT image to prevent lag on slide change */}
-          <div className="hidden relative">
+          <div className="hidden">
             <Image
               src={countries[(activeIndex + 1) % countries.length].image}
               alt="preload next"
-              fill
-              sizes="100vw"
+              width={1}
+              height={1}
               priority={true}
               unoptimized
             />
@@ -141,7 +141,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-[14px] md:text-[15.5px] text-white/95 font-normal max-w-[620px] leading-relaxed drop-shadow-sm"
           >
-            Find the best things to do and travel essentials in one place.
+            Enjoy exclusive discounts wining & dining, attractions and fun experiences.
           </motion.p>
 
           <motion.a
