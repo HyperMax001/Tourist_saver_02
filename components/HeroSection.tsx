@@ -83,7 +83,7 @@ export default function HeroSection() {
   return (
     <section id="hero" className="w-full h-screen p-4 bg-[#EDF1F7] select-none relative">
       <div className="w-full h-full rounded-[16px] overflow-hidden relative flex flex-col justify-center items-center text-center px-8 shadow-sm">
-        
+
         {/* Background Transitions */}
         <div className="absolute inset-0 w-full h-full bg-black z-0">
           <AnimatePresence mode="popLayout">
@@ -99,14 +99,14 @@ export default function HeroSection() {
                 src={countries[activeIndex].image}
                 alt={`${countries[activeIndex].name} landscape`}
                 fill
-                sizes="100vw" 
+                sizes="100vw"
                 priority={true}
                 unoptimized
                 style={{ objectFit: 'cover', objectPosition: 'center' }}
               />
             </motion.div>
           </AnimatePresence>
-          
+
           {/* Invisible Preload for the NEXT image to prevent lag on slide change */}
           <div className="hidden">
             <Image
@@ -130,11 +130,11 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[36px] md:text-[56px] xl:text-[68px] font-black text-white uppercase tracking-tight leading-[1.0] italic max-w-[850px] drop-shadow-md"
+            className="text-[36px] md:text-[56px] xl:text-[68px] font-semibold text-white tracking-tight leading-[1.1] max-w-[850px] drop-shadow-md"
           >
             Discover More<br />Spend Less
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -220,9 +220,8 @@ export default function HeroSection() {
               <button
                 key={idx}
                 onClick={() => handleCardClick(idx)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  isActive ? "w-4 bg-white shadow-[0_0_6px_rgba(255,255,255,0.6)]" : "w-1.5 bg-white/40 hover:bg-white/60"
-                }`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${isActive ? "w-4 bg-white shadow-[0_0_6px_rgba(255,255,255,0.6)]" : "w-1.5 bg-white/40 hover:bg-white/60"
+                  }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
             );

@@ -18,7 +18,7 @@ export default function ActivitySectionReplace() {
   return (
     <section className="bg-[#F4F8FD] w-full relative z-10 pt-12 lg:pt-20 pb-12 flex flex-col h-screen">
       <div className="text-center px-4 mb-6 flex-shrink-0">
-        <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-black text-[#1C1816] uppercase tracking-tight leading-[1.0] italic">
+        <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-semibold text-[#1C1816] tracking-tight leading-[1.1]">
           Experience <span className="text-[#2350AA]">Australia</span>
         </h2>
       </div>
