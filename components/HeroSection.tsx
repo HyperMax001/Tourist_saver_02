@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
@@ -141,7 +141,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-[14px] md:text-[15.5px] text-white/95 font-normal max-w-[620px] leading-relaxed drop-shadow-sm"
           >
-            Find the best things to do and travel essentials in one place.
+            Enjoy exclusive discounts wining & dining, attractions and fun experiences.
           </motion.p>
 
           <motion.a
