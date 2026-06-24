@@ -1,4 +1,4 @@
-﻿import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function MerchantRegistration() {
@@ -29,23 +29,23 @@ export default function MerchantRegistration() {
 
             <ul className="space-y-3 text-gray-600 text-base md:text-lg">
               <li className="flex items-start gap-3">
-                <span className="text-[#2350AA] mt-1">â€¢</span>
-                <span><span className="font-semibold text-gray-900">Free for merchants</span> â€” no joining fees or hidden costs.</span>
+                <span className="text-[#2350AA] mt-1">•</span>
+                <span><span className="font-semibold text-gray-900">Free for merchants</span> — no joining fees or hidden costs.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#2350AA] mt-1">â€¢</span>
+                <span className="text-[#2350AA] mt-1">•</span>
                 <span>Attract new customers (interstate & overseas visitors).</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#2350AA] mt-1">â€¢</span>
-                <span>Update your offers in real time via online â€” any day, any hour.</span>
+                <span className="text-[#2350AA] mt-1">•</span>
+                <span>Update your offers in real time via online — any day, any hour.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#2350AA] mt-1">â€¢</span>
+                <span className="text-[#2350AA] mt-1">•</span>
                 <span>Get signage & QR stickers for your store counter/window.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#2350AA] mt-1">â€¢</span>
+                <span className="text-[#2350AA] mt-1">•</span>
                 <span>Receive 10 complimentary TouristSaver memberships.</span>
               </li>
             </ul>
