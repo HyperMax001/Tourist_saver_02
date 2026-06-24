@@ -48,6 +48,16 @@ export default function AppSection() {
           {/* Lavender Card wrapping both columns */}
           <div className="bg-[#F4F8FD] rounded-[28px] pt-6 pb-4 pl-8 pr-8 md:pt-8 md:pb-6 md:pl-10 md:pr-12 lg:pt-8 lg:pb-4 lg:pl-12 lg:pr-16 lg:h-[370px] relative overflow-visible shadow-[0_15px_45px_rgba(0,0,0,0.02)] border border-[#2350AA]/10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
 
+            {/* Pricing Sticker */}
+            <div className="absolute z-20 top-8 sm:top-12 lg:top-16 right-4 sm:right-8 lg:right-[35%] xl:right-[38%] w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 pointer-events-none drop-shadow-[0_12px_24px_rgba(0,0,0,0.15)] transform -rotate-[10deg] hover:scale-105 transition-transform duration-300">
+              <img
+                src="/pricing_sticker.png"
+                alt="TouristSaver App Only $99 pricing sticker"
+                className="w-full h-full object-contain select-none"
+                draggable={false}
+              />
+            </div>
+
             {/* Decorative Swirly Line Art cropped to the card border */}
             <div className="absolute inset-0 opacity-[0.15] pointer-events-none select-none z-0 overflow-hidden rounded-[28px]">
               <svg width="100%" height="100%" viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#2350AA] scale-[1.8] translate-y-12 transform origin-center">

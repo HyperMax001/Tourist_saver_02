@@ -165,12 +165,7 @@ export default function Navbar() {
           {/* Logo Center */}
           <div className="flex items-center justify-center gap-2.5 flex-shrink-0 lg:flex-1">
             <a href="#hero" onClick={(e) => handleNavClick(e, "#hero")} className="flex items-center gap-2 cursor-pointer">
-              <div className="relative w-8 h-8">
-                <Image src="/Touristsaver_logos/TouristSaver Logo Icon Heart transparent.webp" alt="Tourist Saver Logo" fill sizes="32px" className="object-contain" />
-              </div>
-              <span className="font-bold text-[16px] tracking-[0.15em]">
-                TOURIST SAVER
-              </span>
+              <img src="/new_logo.png" alt="Tourist Saver Logo" className="h-9 w-auto object-contain select-none" />
             </a>
           </div>
 
