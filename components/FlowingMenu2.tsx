@@ -25,6 +25,7 @@ interface MenuItemProps extends MenuItemData {
   borderColor: string;
   isFirst: boolean;
   isActive: boolean;
+  index: number;
   onHover: () => void;
 }
 
@@ -56,6 +57,7 @@ const FlowingMenu: React.FC<FlowingMenuProps> = ({
             borderColor={borderColor}
             isFirst={idx === 0}
             isActive={hoveredIndex === null ? idx === 0 : hoveredIndex === idx}
+            index={idx}
             onHover={() => setHoveredIndex(idx)}
           />
         ))}
@@ -75,6 +77,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
   borderColor,
   isFirst,
   isActive,
+  index,
   onHover
 }) => {
   const itemRef = useRef<HTMLDivElement>(null);
@@ -103,7 +106,12 @@ const MenuItem: React.FC<MenuItemProps> = ({
   useEffect(() => {
     if (isMobile) {
       if (marqueeRef.current && marqueeInnerRef.current) {
-        gsap.set([marqueeRef.current, marqueeInnerRef.current], { y: '0%' });
+        if (index % 2 === 0) {
+          gsap.set([marqueeRef.current, marqueeInnerRef.current], { y: '0%' });
+        } else {
+          gsap.set(marqueeRef.current, { y: '101%' });
+          gsap.set(marqueeInnerRef.current, { y: '-101%' });
+        }
       }
       return;
     }

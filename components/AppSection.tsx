@@ -49,7 +49,7 @@ export default function AppSection() {
           <div className="bg-[#F4F8FD] rounded-[28px] pt-6 pb-4 pl-8 pr-8 md:pt-8 md:pb-6 md:pl-10 md:pr-12 lg:pt-8 lg:pb-4 lg:pl-12 lg:pr-16 lg:h-[370px] relative overflow-visible shadow-[0_15px_45px_rgba(0,0,0,0.02)] border border-[#2350AA]/10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
 
             {/* Pricing Sticker */}
-            <div className="absolute z-20 top-8 sm:top-12 lg:top-16 right-4 sm:right-8 lg:right-[35%] xl:right-[38%] w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 pointer-events-none drop-shadow-[0_12px_24px_rgba(0,0,0,0.15)] transform -rotate-[10deg] hover:scale-105 transition-transform duration-300">
+            <div className="absolute z-20 -top-4 sm:top-12 lg:top-16 -right-2 sm:right-8 lg:right-[35%] xl:right-[38%] w-32 h-32 sm:w-48 sm:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 pointer-events-none drop-shadow-[0_12px_24px_rgba(0,0,0,0.15)] transform -rotate-[10deg] hover:scale-105 transition-transform duration-300">
               <img
                 src="/pricing_sticker.png"
                 alt="TouristSaver App Only $99 pricing sticker"
@@ -71,7 +71,7 @@ export default function AppSection() {
             </div>
 
             {/* Left Column (Copy & CTA) */}
-            <div className="flex-1 relative z-10 max-w-lg">
+            <div className="flex-1 relative z-10 max-w-lg pr-28 sm:pr-0">
               <p className="text-[16px] sm:text-[18px] font-medium text-neutral-800 leading-relaxed -mt-2 lg:-mt-6">
                 Travel smarter with thoughtfully curated essentials designed to make every journey smoother, lighter and more comfortable
               </p>
