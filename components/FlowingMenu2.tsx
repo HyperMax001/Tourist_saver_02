@@ -24,6 +24,8 @@ interface MenuItemProps extends MenuItemData {
   marqueeTextColor: string;
   borderColor: string;
   isFirst: boolean;
+  isActive: boolean;
+  onHover: () => void;
 }
 
 const FlowingMenu: React.FC<FlowingMenuProps> = ({
@@ -35,9 +37,14 @@ const FlowingMenu: React.FC<FlowingMenuProps> = ({
   marqueeTextColor = '#120F17',
   borderColor = '#fff'
 }) => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
     <div className="w-full h-full overflow-hidden" style={{ backgroundColor: bgColor }}>
-      <nav className="flex flex-col h-full m-0 p-0">
+      <nav 
+        className="flex flex-col h-full m-0 p-0"
+        onMouseLeave={() => setHoveredIndex(null)}
+      >
         {items.map((item, idx) => (
           <MenuItem
             key={idx}
@@ -48,6 +55,8 @@ const FlowingMenu: React.FC<FlowingMenuProps> = ({
             marqueeTextColor={marqueeTextColor}
             borderColor={borderColor}
             isFirst={idx === 0}
+            isActive={hoveredIndex === null ? idx === 0 : hoveredIndex === idx}
+            onHover={() => setHoveredIndex(idx)}
           />
         ))}
       </nav>
@@ -64,7 +73,9 @@ const MenuItem: React.FC<MenuItemProps> = ({
   marqueeBgColor,
   marqueeTextColor,
   borderColor,
-  isFirst
+  isFirst,
+  isActive,
+  onHover
 }) => {
   const itemRef = useRef<HTMLDivElement>(null);
   const marqueeRef = useRef<HTMLDivElement>(null);
@@ -72,6 +83,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
   const animationRef = useRef<gsap.core.Tween | null>(null);
   const [repetitions, setRepetitions] = useState(4);
   const [isMobile, setIsMobile] = useState(false);
+  const [lastEdge, setLastEdge] = useState<'top' | 'bottom'>('bottom');
 
   const animationDefaults = { duration: 0.6, ease: 'expo' };
 
@@ -82,19 +94,35 @@ const MenuItem: React.FC<MenuItemProps> = ({
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  useEffect(() => {
-    if (isMobile && marqueeRef.current && marqueeInnerRef.current) {
-      gsap.set([marqueeRef.current, marqueeInnerRef.current], { y: '0%' });
-    } else if (!isMobile && marqueeRef.current && marqueeInnerRef.current) {
-      gsap.set(marqueeRef.current, { y: '101%' });
-      gsap.set(marqueeInnerRef.current, { y: '-101%' });
-    }
-  }, [isMobile]);
   const findClosestEdge = (mouseX: number, mouseY: number, width: number, height: number): 'top' | 'bottom' => {
     const topEdgeDist = Math.pow(mouseX - width / 2, 2) + Math.pow(mouseY, 2);
     const bottomEdgeDist = Math.pow(mouseX - width / 2, 2) + Math.pow(mouseY - height, 2);
     return topEdgeDist < bottomEdgeDist ? 'top' : 'bottom';
   };
+
+  useEffect(() => {
+    if (isMobile) {
+      if (marqueeRef.current && marqueeInnerRef.current) {
+        gsap.set([marqueeRef.current, marqueeInnerRef.current], { y: '0%' });
+      }
+      return;
+    }
+
+    if (!marqueeRef.current || !marqueeInnerRef.current) return;
+
+    if (isActive) {
+      gsap
+        .timeline({ defaults: animationDefaults })
+        .set(marqueeRef.current, { y: lastEdge === 'top' ? '-101%' : '101%' }, 0)
+        .set(marqueeInnerRef.current, { y: lastEdge === 'top' ? '101%' : '-101%' }, 0)
+        .to([marqueeRef.current, marqueeInnerRef.current], { y: '0%' }, 0);
+    } else {
+      gsap
+        .timeline({ defaults: animationDefaults })
+        .to(marqueeRef.current, { y: lastEdge === 'top' ? '-101%' : '101%' }, 0)
+        .to(marqueeInnerRef.current, { y: lastEdge === 'top' ? '101%' : '-101%' }, 0);
+    }
+  }, [isActive, isMobile]);
 
   useEffect(() => {
     const calculateRepetitions = () => {
@@ -144,27 +172,19 @@ const MenuItem: React.FC<MenuItemProps> = ({
 
   const handleMouseEnter = (ev: React.MouseEvent<HTMLAnchorElement>) => {
     if (isMobile) return;
-    if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
+    if (!itemRef.current) return;
     const rect = itemRef.current.getBoundingClientRect();
     const edge = findClosestEdge(ev.clientX - rect.left, ev.clientY - rect.top, rect.width, rect.height);
-
-    gsap
-      .timeline({ defaults: animationDefaults })
-      .set(marqueeRef.current, { y: edge === 'top' ? '-101%' : '101%' }, 0)
-      .set(marqueeInnerRef.current, { y: edge === 'top' ? '101%' : '-101%' }, 0)
-      .to([marqueeRef.current, marqueeInnerRef.current], { y: '0%' }, 0);
+    setLastEdge(edge);
+    onHover();
   };
 
   const handleMouseLeave = (ev: React.MouseEvent<HTMLAnchorElement>) => {
     if (isMobile) return;
-    if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
+    if (!itemRef.current) return;
     const rect = itemRef.current.getBoundingClientRect();
     const edge = findClosestEdge(ev.clientX - rect.left, ev.clientY - rect.top, rect.width, rect.height);
-
-    gsap
-      .timeline({ defaults: animationDefaults })
-      .to(marqueeRef.current, { y: edge === 'top' ? '-101%' : '101%' }, 0)
-      .to(marqueeInnerRef.current, { y: edge === 'top' ? '101%' : '-101%' }, 0);
+    setLastEdge(edge);
   };
 
   return (
