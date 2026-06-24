@@ -15,12 +15,7 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="md:col-span-4 flex flex-col gap-6">
             <div className="flex items-center gap-2.5 text-white">
-              <div className="relative w-8 h-8">
-                <Image src="/Touristsaver_logos/TouristSaver Logo Icon Heart transparent.webp" alt="Tourist Saver Logo" fill sizes="32px" className="object-contain" />
-              </div>
-              <span className="font-bold text-[15px] tracking-[0.14em]">
-                TOURIST SAVER
-              </span>
+              <img src="/new_logo.png" alt="Tourist Saver Logo" className="h-9 w-auto object-contain select-none" />
             </div>
             <p className="text-neutral-400 text-[14px] leading-relaxed max-w-[320px]">
               Commercial in confidence Saver Saver Pty Ltd
