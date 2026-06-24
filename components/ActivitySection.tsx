@@ -86,10 +86,10 @@ export default function ActivitySection() {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#F4F8FD] w-full relative z-10"
+      className="bg-[#F4F8FD] w-full h-screen flex flex-col relative z-10"
     >
       {/* Heading */}
-      <div className="text-center px-4 pt-6 lg:pt-10 pb-4 md:pb-6">
+      <div className="text-center px-4 pt-12 lg:pt-20 pb-6 lg:pb-8 flex-shrink-0">
         <h2 className="text-[28px] sm:text-[36px] md:text-[44px] font-black text-[#1C1816] uppercase tracking-tight leading-[1.0] italic">
           Experience <span className="text-[#2350AA]">Australia</span>
         </h2>
@@ -98,13 +98,12 @@ export default function ActivitySection() {
       {/* Cards container — all cards are stacked absolutely on top of each other */}
       <div
         ref={cardsContainerRef}
-        className="relative w-full px-3 md:px-6"
-        style={{ height: "calc(100vh - 120px)" }}
+        className="relative flex-1 w-full"
       >
         {activities.map((activity, index) => (
           <div
             key={index}
-            className="activity-card absolute inset-0 w-full h-full rounded-[24px] md:rounded-[40px] overflow-hidden"
+            className="activity-card absolute top-0 bottom-6 left-4 right-4 md:bottom-10 md:left-10 md:right-10 rounded-[24px] md:rounded-[40px] overflow-hidden"
           >
             <img
               src={activity.image}
