@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 export default function AppSection() {
   const stats = [
@@ -37,10 +37,10 @@ export default function AppSection() {
 
           {/* Heading (above the card) */}
           <div className="mb-8 pl-6">
-            <h2 className="text-[64px] sm:text-[80px] md:text-[100px] lg:text-[116px] font-semibold text-[#1C1816] leading-[1.0] tracking-tight uppercase mb-2 md:mb-3">
+            <h2 className="text-[56px] sm:text-[72px] md:text-[88px] lg:text-[96px] font-semibold text-[#1C1816] leading-[1.05] tracking-tight uppercase mb-2 md:mb-3">
               Get Even More in
             </h2>
-            <h3 className="text-[56px] sm:text-[72px] md:text-[90px] lg:text-[104px] font-normal italic uppercase text-[#1C1816] leading-[1.0] tracking-wide">
+            <h3 className="text-[48px] sm:text-[64px] md:text-[78px] lg:text-[86px] font-normal italic uppercase text-[#1C1816] leading-[1.05] tracking-wide">
               TouristSaver App
             </h3>
           </div>

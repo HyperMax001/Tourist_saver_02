@@ -260,7 +260,7 @@ export default function CustomCursor() {
           className="absolute w-9 h-9 flex items-center justify-center pointer-events-none transition-transform duration-75 ease-out"
           style={{
             transform: "translate3d(-50%, -50%, 0) rotate(-45deg) scale(1)",
-            filter: "drop-shadow(0px 3px 6px rgba(0, 88, 64, 0.15)) drop-shadow(0px 1px 2px rgba(0,0,0,0.1))",
+            filter: "drop-shadow(0px 3px 6px rgba(35, 80, 170, 0.15)) drop-shadow(0px 1px 2px rgba(0,0,0,0.1))",
           }}
         >
           <img

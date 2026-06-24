@@ -36,21 +36,18 @@ export default function TravelEssentials() {
   const cards = [
     {
       title: "Fuel Discounts",
-      icon: <GasIcon />,
-      bgColor: "bg-[#ffdce5]",
-      textColor: "text-[#d65d7a]"
+      imageSrc: "/fuel_pump.png",
+      bgColor: "bg-[#ffdce5]"
     },
     {
       title: "Transport",
-      icon: <BusIcon />,
-      bgColor: "bg-[#ffdacc]",
-      textColor: "text-[#d67d4e]"
+      imageSrc: "/yellow_bus.png",
+      bgColor: "bg-[#ffdacc]"
     },
     {
       title: "Sim Cards",
-      icon: <CardIcon />,
-      bgColor: "bg-[#d4edff]",
-      textColor: "text-[#5b9bd5]"
+      imageSrc: "/sim_card.png",
+      bgColor: "bg-[#d4edff]"
     }
   ];
 
@@ -76,19 +73,19 @@ export default function TravelEssentials() {
     <section className="relative py-24 bg-white overflow-hidden">
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
-        
+
         {/* --- Part 1: Travel Essentials --- */}
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight"
+            className="text-5xl md:text-6xl font-semibold text-[#2350AA] mb-4 tracking-tight"
           >
             Travel Essentials
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -105,28 +102,28 @@ export default function TravelEssentials() {
               key={card.title}
               initial={{ opacity: 0, scale: 0.9, y: 30 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ 
-                type: "spring", 
-                stiffness: 100, 
+              viewport={{ once: true }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
                 damping: 20,
-                delay: index * 0.15 
+                delay: index * 0.15
               }}
-              whileHover={{ 
-                y: -12, 
+              whileHover={{
+                y: -12,
                 scale: 1.02,
                 transition: { type: "spring", stiffness: 300, damping: 20 }
               }}
               className={`${card.bgColor} rounded-[32px] p-8 md:p-12 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col items-center justify-center text-center aspect-square cursor-pointer`}
             >
-              <motion.div 
-                className={`${card.textColor} mb-6 drop-shadow-md`}
+              <motion.div
+                className="mb-6 drop-shadow-md"
                 whileHover={{ rotate: [-5, 5, -5, 0], scale: 1.1 }}
                 transition={{ duration: 0.4 }}
               >
-                {card.icon}
+                <img src={card.imageSrc} alt={card.title} className="w-32 h-32 object-contain select-none" />
               </motion.div>
-              <h3 className="text-lg md:text-xl font-bold text-gray-900 mt-auto">{card.title}</h3>
+              <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mt-auto">{card.title}</h3>
             </motion.div>
           ))}
         </div>
@@ -136,56 +133,56 @@ export default function TravelEssentials() {
         {/* --- Part 2: How It Works --- */}
         <div className="bg-[#F4F8FD] rounded-[28px] py-16 px-6 md:px-12 shadow-[0_15px_45px_rgba(0,0,0,0.02)] border border-[#2350AA]/10 w-full mx-auto relative overflow-hidden">
           <div className="text-center">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-12 tracking-tight"
-          >
-            How It Works
-          </motion.h2>
-          
-          <div className="relative">
-            {/* Dashed Line */}
-            <div className="absolute top-6 left-[15%] right-[15%] h-[2px] border-t-2 border-dashed border-[#f4cf65] z-0 hidden md:block">
-              <motion.div
-                initial={{ width: "0%" }}
-                whileInView={{ width: "100%" }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 1.2, ease: "easeInOut" }}
-                className="absolute top-[-2px] left-0 h-[2px] bg-[#f4cf65]"
-              />
-            </div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-5xl md:text-6xl font-semibold text-[#2350AA] mb-12 tracking-tight"
+            >
+              How It Works
+            </motion.h2>
 
-            <div className="flex flex-col md:flex-row justify-between relative z-10 gap-12 md:gap-4">
-              {steps.map((step, index) => (
+            <div className="relative">
+              {/* Dashed Line */}
+              <div className="absolute top-6 left-[15%] right-[15%] h-[2px] border-t-2 border-dashed border-[#2350AA] z-0 hidden md:block">
                 <motion.div
-                  key={step.number}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.6, delay: 0.3 + (index * 0.2) }}
-                  className="flex flex-col items-center text-center flex-1 max-w-[280px] mx-auto group"
-                >
-                  <motion.div 
-                    whileHover={{ scale: 1.1, rotate: 10 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                    className="w-12 h-12 bg-[#f4cf65] rounded-full flex items-center justify-center text-white font-bold text-xl mb-6 shadow-lg shadow-[#f4cf65]/40 ring-4 ring-white"
+                  initial={{ width: "0%" }}
+                  whileInView={{ width: "100%" }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  className="absolute top-[-2px] left-0 h-[2px] bg-[#2350AA]"
+                />
+              </div>
+
+              <div className="flex flex-col md:flex-row justify-between relative z-10 gap-12 md:gap-4">
+                {steps.map((step, index) => (
+                  <motion.div
+                    key={step.number}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.3 + (index * 0.2) }}
+                    className="flex flex-col items-center text-center flex-1 max-w-[280px] mx-auto group"
                   >
-                    {step.number}
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 10 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                      className="w-12 h-12 bg-[#2350AA] rounded-full flex items-center justify-center text-white font-bold text-xl mb-6 shadow-lg shadow-[#2350AA]/40 ring-4 ring-white"
+                    >
+                      {step.number}
+                    </motion.div>
+
+                    <h3 className="font-semibold text-xl text-gray-900 mb-3 group-hover:text-[#2350AA] transition-colors">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-500 text-[13px] md:text-sm leading-relaxed">
+                      {step.description}
+                    </p>
                   </motion.div>
-                  
-                  <h3 className="font-bold text-lg text-gray-900 mb-3 group-hover:text-[#f4cf65] transition-colors">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-500 text-[13px] md:text-sm leading-relaxed">
-                    {step.description}
-                  </p>
-                </motion.div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
           </div>
         </div>
 
