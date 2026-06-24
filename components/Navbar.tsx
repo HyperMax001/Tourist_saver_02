@@ -1,21 +1,21 @@
-﻿"use client";
+"use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useLenis } from "lenis/react";
 import { usePathname, useRouter } from "next/navigation";
 import { countriesList, getCountryIcon } from "@/data/countries";
 import { motion, AnimatePresence } from "motion/react";
-import { ShineBorder } from "@/registry/magicui/shine-border";
 import Image from "next/image";
+import { RainbowButton } from "@/registry/magicui/rainbow-button";
+import { ShineBorder } from "@/registry/magicui/shine-border";
 
-const leftLinks = [
-  { label: "Destinations", href: "#deals" },
-];
+const leftLinks: { label: string; href: string }[] = [];
 
 const rightLinks: { label: string, href: string }[] = [];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showDownloadButton, setShowDownloadButton] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [destinationsOpen, setDestinationsOpen] = useState(false);
   const lenis = useLenis();
@@ -43,23 +43,29 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      const scrolled = window.scrollY > 50;
+      setIsScrolled(scrolled);
+
+      // Show button if scrolled AND (not on home page OR scrolled past hero section)
+      // Hero section is approx 100vh, so we check window.innerHeight
+      const passedHero = pathname !== "/" || window.scrollY > window.innerHeight - 100;
+      setShowDownloadButton(scrolled && passedHero);
     };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [pathname]);
 
   return (
     <>
       <nav
         className={`fixed z-50 left-1/2 -translate-x-1/2 transition-all duration-300 ease-out select-none ${isScrolled
-            ? "top-4 w-[90%] max-w-[1200px] rounded-full bg-white/80 backdrop-blur-md border border-white/20 shadow-[0_12px_40px_rgba(0,0,0,0.08)] py-3 px-8 text-black"
+            ? `top-4 w-[90%] ${showDownloadButton ? "lg:max-w-[800px] xl:max-w-[1000px] max-w-[1200px]" : "max-w-[1200px]"} rounded-full bg-white/80 backdrop-blur-md border border-white/20 shadow-[0_12px_40px_rgba(0,0,0,0.08)] py-3 px-8 text-black`
             : `top-6 w-[calc(100%-32px)] md:w-[calc(100%-48px)] max-w-[1750px] rounded-none bg-transparent border-transparent py-4 px-6 md:px-12 ${isLightBgPage ? "text-black" : "text-white"}`
           }`}
       >
@@ -213,6 +219,43 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
+
+      {/* Floating Download App Button (Visible only on scrolled state when not on hero section) */}
+      <AnimatePresence>
+        {showDownloadButton && (
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 100 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed z-50 top-4 right-6 lg:right-4 xl:right-8 2xl:left-[calc(50%+520px)] 2xl:right-auto hidden lg:block"
+          >
+            <RainbowButton
+              href="https://touristsaver.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 h-[54px]"
+            >
+              <span>Download App</span>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="mt-0.5"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+            </RainbowButton>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Mobile Drawer menu overlay */}
       <div
