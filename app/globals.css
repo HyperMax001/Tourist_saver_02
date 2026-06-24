@@ -57,3 +57,77 @@ html.lenis-pure {
     cursor: none !important;
   }
 }
+
+:root {
+  --color-1: oklch(66.2% 0.225 25.9);
+  --color-2: oklch(60.4% 0.26 302);
+  --color-3: oklch(69.6% 0.165 251);
+  --color-4: oklch(80.2% 0.134 225);
+  --color-5: oklch(90.7% 0.231 133);
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.animate-rainbow {
+  animation: rainbow 2s infinite linear;
+}
+
+/* Rainbow Button component styles */
+.rainbow-button {
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  outline: none;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: white;
+  border: 2px solid transparent;
+  background: 
+    linear-gradient(#2350AA, #2350AA) padding-box,
+    linear-gradient(#2350AA 50%, rgba(35, 80, 170, 0.6) 80%, rgba(35, 80, 170, 0)) border-box,
+    linear-gradient(90deg, var(--color-1), var(--color-5), var(--color-3), var(--color-4), var(--color-2)) border-box;
+  background-size: 100% 100%, 100% 100%, 200% 100%;
+  background-origin: border-box;
+  box-shadow: 0 8px 25px rgba(35, 80, 170, 0.25);
+  transition: all 0.3s ease;
+  animation: rainbow 2s infinite linear;
+}
+
+.rainbow-button::before {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  z-index: -1;
+  height: 20%;
+  width: 60%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, var(--color-1), var(--color-5), var(--color-3), var(--color-4), var(--color-2));
+  background-size: 200% 100%;
+  filter: blur(12px);
+  animation: rainbow 2s infinite linear;
+}
+
+.rainbow-button:hover {
+  background-size: 100% 100%, 100% 100%, 200% 100%;
+  box-shadow: 0 10px 30px rgba(35, 80, 170, 0.4);
+}
+
+.rainbow-button:active {
+  transform: scale(0.95);
+}
+
+
