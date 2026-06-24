@@ -71,9 +71,25 @@ const MenuItem: React.FC<MenuItemProps> = ({
   const marqueeInnerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<gsap.core.Tween | null>(null);
   const [repetitions, setRepetitions] = useState(4);
+  const [isMobile, setIsMobile] = useState(false);
 
   const animationDefaults = { duration: 0.6, ease: 'expo' };
 
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile && marqueeRef.current && marqueeInnerRef.current) {
+      gsap.set([marqueeRef.current, marqueeInnerRef.current], { y: '0%' });
+    } else if (!isMobile && marqueeRef.current && marqueeInnerRef.current) {
+      gsap.set(marqueeRef.current, { y: '101%' });
+      gsap.set(marqueeInnerRef.current, { y: '-101%' });
+    }
+  }, [isMobile]);
   const findClosestEdge = (mouseX: number, mouseY: number, width: number, height: number): 'top' | 'bottom' => {
     const topEdgeDist = Math.pow(mouseX - width / 2, 2) + Math.pow(mouseY, 2);
     const bottomEdgeDist = Math.pow(mouseX - width / 2, 2) + Math.pow(mouseY - height, 2);
@@ -127,6 +143,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
   }, [text, image, repetitions, speed]);
 
   const handleMouseEnter = (ev: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isMobile) return;
     if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
     const rect = itemRef.current.getBoundingClientRect();
     const edge = findClosestEdge(ev.clientX - rect.left, ev.clientY - rect.top, rect.width, rect.height);
@@ -139,6 +156,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
   };
 
   const handleMouseLeave = (ev: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isMobile) return;
     if (!itemRef.current || !marqueeRef.current || !marqueeInnerRef.current) return;
     const rect = itemRef.current.getBoundingClientRect();
     const edge = findClosestEdge(ev.clientX - rect.left, ev.clientY - rect.top, rect.width, rect.height);

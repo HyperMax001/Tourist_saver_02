@@ -123,7 +123,7 @@ export default function AppSection() {
             </div>
 
             {/* Right Column (Smartphone Mockup overlapping parent borders) */}
-            <div className="w-full lg:w-[48%] flex items-center justify-center lg:justify-end relative -mt-32 sm:-mt-48 lg:-mt-96 lg:-mb-24 z-10 lg:pr-2">
+            <div className="w-full lg:w-[48%] flex items-center justify-center lg:justify-end relative mt-8 lg:-mt-96 lg:-mb-24 z-10 lg:pr-2">
               <img
                 src="/app_mockup.png"
                 alt="Tourist Saver Smartphone App Showcase"
