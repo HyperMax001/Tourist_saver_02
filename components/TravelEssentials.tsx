@@ -82,7 +82,7 @@ export default function TravelEssentials() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight"
           >
@@ -91,7 +91,7 @@ export default function TravelEssentials() {
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-gray-500 text-sm md:text-base max-w-xl mx-auto leading-relaxed"
           >
@@ -105,7 +105,7 @@ export default function TravelEssentials() {
               key={card.title}
               initial={{ opacity: 0, scale: 0.9, y: 30 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.4 }}
               transition={{ 
                 type: "spring", 
                 stiffness: 100, 
@@ -139,7 +139,7 @@ export default function TravelEssentials() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-12 tracking-tight"
           >
@@ -152,7 +152,7 @@ export default function TravelEssentials() {
               <motion.div
                 initial={{ width: "0%" }}
                 whileInView={{ width: "100%" }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 1.2, ease: "easeInOut" }}
                 className="absolute top-[-2px] left-0 h-[2px] bg-[#f4cf65]"
               />
@@ -164,7 +164,7 @@ export default function TravelEssentials() {
                   key={step.number}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.6, delay: 0.3 + (index * 0.2) }}
                   className="flex flex-col items-center text-center flex-1 max-w-[280px] mx-auto group"
                 >
