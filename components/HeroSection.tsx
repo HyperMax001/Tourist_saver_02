@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
@@ -130,7 +130,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[32px] md:text-[50px] xl:text-[58px] font-semibold text-white leading-[1.2] tracking-tight max-w-[850px] drop-shadow-md"
+            className="text-[36px] md:text-[56px] xl:text-[68px] font-black text-white uppercase tracking-tight leading-[1.0] italic max-w-[850px] drop-shadow-md"
           >
             Discover More<br />Spend Less
           </motion.h1>
