@@ -4,14 +4,14 @@ import React from 'react';
 import FlowingMenu from './FlowingMenu2';
 
 const demoItems = [
-  { link: '#', text: 'Sydney Opera House', image: '/activity/sydney_opera_house_converted.avif' },
-  { link: '#', text: 'Surfers Paradise Beach', image: '/activity/surfers_paradise_beach_converted.avif' },
-  { link: '#', text: 'Melbourne Bridge', image: '/activity/melbourne_bridge_converted.avif' },
-  { link: '#', text: 'Fed Square', image: '/activity/fed_square_converted.avif' },
-  { link: '#', text: 'SkyPoint Observation Deck', image: '/activity/skypoint_observation_deck_converted.avif' },
-  { link: '#', text: 'Sydney City', image: '/activity/sydney-city_converted.avif' },
-  { link: '#', text: 'Gold Coast Beaches', image: '/activity/visit_gold_coast_beaches_converted.avif' },
-  { link: '#', text: 'Warner Bros. Movie World', image: '/activity/warner_bros_movie_world_converted.avif' }
+  { link: '#', text: 'Sydney Opera House', image: '/activity/low-quality-sydney_opera_house.avif' },
+  { link: '#', text: 'Surfers Paradise Beach', image: '/activity/low-quality-surfers_paradise_beach.avif' },
+  { link: '#', text: 'Melbourne Bridge', image: '/activity/low-quality-melbourne_bridge.avif' },
+  { link: '#', text: 'Fed Square', image: '/activity/low-quality-fed_square.avif' },
+  { link: '#', text: 'SkyPoint Observation Deck', image: '/activity/low-quality-skypoint_observation_deck.avif' },
+  { link: '#', text: 'Sydney City', image: '/activity/low-quality-sydney-city.avif' },
+  { link: '#', text: 'Gold Coast Beaches', image: '/activity/low-quality-visit_gold_coast_beaches.avif' },
+  { link: '#', text: 'Warner Bros. Movie World', image: '/activity/low-quality-warner_bros_movie_world.avif' }
 ];
 
 export default function ActivitySectionReplace() {
