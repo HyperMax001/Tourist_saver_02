@@ -4,6 +4,10 @@ import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 
 const sliderData = [
+  { 
+    type: "slogan",
+    name: "Discover More, Spend Less.",
+  },
   { name: "Endless Experiences", image: "/slider_images/GC 7daypass.webp", tagline: "With the 7-Day Pass" },
   { name: "Casual Dining", image: "/slider_images/GC casual_dining.webp", tagline: "Enjoy Great Food" },
   { name: "Native Wildlife", image: "/slider_images/GC currumbin_creature.webp", tagline: "Get Up Close" },
@@ -44,7 +48,7 @@ export default function HeroSection() {
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % sliderData.length);
-    }, 6000);
+    }, 4000);
   };
 
   useEffect(() => {
@@ -74,28 +78,34 @@ export default function HeroSection() {
               transition={{ duration: 1.4, ease: "easeInOut" }}
               className="absolute inset-0 w-full h-full"
             >
-              <Image
-                src={sliderData[activeIndex].image}
-                alt={`${sliderData[activeIndex].name} landscape`}
-                fill
-                sizes="100vw"
-                priority={true}
-                unoptimized
-                style={{ objectFit: 'cover', objectPosition: 'center' }}
-              />
+              {sliderData[activeIndex].type === "slogan" ? (
+                <div className="absolute inset-0 w-full h-full bg-[#7B1113]" />
+              ) : (
+                <Image
+                  src={sliderData[activeIndex].image!}
+                  alt={`${sliderData[activeIndex].name} landscape`}
+                  fill
+                  sizes="100vw"
+                  priority={true}
+                  unoptimized
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                />
+              )}
             </motion.div>
           </AnimatePresence>
 
           {/* Invisible Preload for the NEXT image to prevent lag on slide change */}
           <div className="hidden">
-            <Image
-              src={sliderData[(activeIndex + 1) % sliderData.length].image}
-              alt="preload next"
-              width={1}
-              height={1}
-              priority={true}
-              unoptimized
-            />
+            {sliderData[(activeIndex + 1) % sliderData.length].image && (
+              <Image
+                src={sliderData[(activeIndex + 1) % sliderData.length].image!}
+                alt="preload next"
+                width={1}
+                height={1}
+                priority={true}
+                unoptimized
+              />
+            )}
           </div>
 
           {/* Soft Shadow Overlays */}
@@ -104,7 +114,7 @@ export default function HeroSection() {
         </div>
 
         {/* Center Content block */}
-        <div className="relative z-10 max-w-[900px] mx-auto flex flex-col items-center gap-4 mt-6">
+        <div className="relative z-10 max-w-[1000px] mx-auto flex flex-col items-center gap-4 mt-6">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
@@ -114,7 +124,7 @@ export default function HeroSection() {
               transition={{ duration: 0.4 }}
               className="flex flex-col items-center gap-2 md:gap-4"
             >
-              <h1 className="text-[42px] md:text-[64px] xl:text-[76px] font-bold text-white tracking-tight leading-[1.1] max-w-[850px] drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] text-center">
+              <h1 className={`font-bold text-white tracking-tight leading-[1.1] text-center drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] ${sliderData[activeIndex].type === "slogan" ? "text-[52px] md:text-[80px] xl:text-[100px] max-w-[900px]" : "text-[42px] md:text-[64px] xl:text-[76px] max-w-[850px]"}`}>
                 {sliderData[activeIndex].name}
               </h1>
               {sliderData[activeIndex].tagline && (
@@ -127,17 +137,18 @@ export default function HeroSection() {
             </motion.div>
           </AnimatePresence>
 
-          <motion.a
-            href="https://touristsaver.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="group px-8 py-3.5 mt-2 bg-white text-[#2350AA] font-semibold text-[15px] rounded-full hover:bg-[#E8EEF8] hover:shadow-[0_10px_30px_rgba(35,80,170,0.12)] active:scale-95 transition-all duration-300 flex items-center gap-2 cursor-pointer"
-          >
-            <span>Download App</span>
-            <svg
+          {sliderData[activeIndex].type !== "slogan" && (
+            <motion.a
+              href="https://touristsaver.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="group px-8 py-3.5 mt-2 bg-white text-[#2350AA] font-semibold text-[15px] rounded-full hover:bg-[#E8EEF8] hover:shadow-[0_10px_30px_rgba(35,80,170,0.12)] active:scale-95 transition-all duration-300 flex items-center gap-2 cursor-pointer"
+            >
+              <span>Download App</span>
+              <svg
               width="15"
               height="15"
               viewBox="0 0 24 24"
@@ -152,6 +163,7 @@ export default function HeroSection() {
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </motion.a>
+          )}
         </div>
 
         {/* Left & Right Navigation Arrows */}
