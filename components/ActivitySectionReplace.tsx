@@ -1,12 +1,22 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Play } from 'lucide-react';
 
 export default function ActivitySectionReplace() {
   const [showPopup, setShowPopup] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const bgVideoRef = useRef<HTMLVideoElement>(null);
+  const popupVideoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlayClick = () => {
+    if (popupVideoRef.current) {
+      popupVideoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -52,7 +62,7 @@ export default function ActivitySectionReplace() {
         playsInline
         loop
       />
-      
+
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-black/40 z-0 pointer-events-none"></div>
 
@@ -73,15 +83,30 @@ export default function ActivitySectionReplace() {
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className="absolute z-50 w-fit max-w-[1400px] rounded-[20px] md:rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.5)] ring-1 ring-[#2350AA]/10 bg-black flex flex-col justify-center"
           >
-            {/* Video Player */}
-            <video
-              className="w-auto h-auto max-h-[80vh] max-w-full object-contain"
-              src="/touristsaver-member-web-2.1-1.mp4"
-              autoPlay
-              controls
-              playsInline
-              loop
-            />
+            {/* Video Player Container */}
+            <div className="relative group">
+              <video
+                ref={popupVideoRef}
+                className="w-auto h-auto max-h-[80vh] max-w-full object-contain"
+                src="/touristsaver-member-web-2.1-1.mp4#t=1.0"
+                controls
+                playsInline
+                loop
+                preload="metadata"
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+              />
+              {!isPlaying && (
+                <div 
+                  className="absolute inset-0 flex items-center justify-center bg-black/20 cursor-pointer transition-opacity hover:bg-black/30"
+                  onClick={handlePlayClick}
+                >
+                  <div className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/40 shadow-xl hover:scale-110 transition-transform">
+                    <Play className="w-10 h-10 ml-1" fill="currentColor" />
+                  </div>
+                </div>
+              )}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
