@@ -1,26 +1,53 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function ActivitySectionReplace() {
   const [showPopup, setShowPopup] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const bgVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Pop up the video after 3.5 seconds
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 3500);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Only trigger once
+        }
+      },
+      { threshold: 0.3 } // Trigger when 30% of the section is visible
+    );
 
-    return () => clearTimeout(timer);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (isVisible) {
+      if (bgVideoRef.current) {
+        bgVideoRef.current.play().catch(e => console.error("Video play failed:", e));
+      }
+
+      // Pop up the video after 3.5 seconds
+      const timer = setTimeout(() => {
+        setShowPopup(true);
+      }, 3500);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isVisible]);
+
   return (
-    <section className="w-full relative z-10 flex flex-col items-center justify-center min-h-[60vh] md:min-h-screen overflow-hidden">
+    <section ref={sectionRef} className="w-full relative z-10 flex flex-col items-center justify-center min-h-[60vh] md:min-h-screen overflow-hidden">
       {/* Background Video */}
       <video
+        ref={bgVideoRef}
         className="absolute inset-0 w-full h-full object-cover z-0"
         src="/92839-638016611_medium.mp4"
-        autoPlay
         muted
         playsInline
         loop
