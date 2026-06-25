@@ -1,7 +1,19 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 
 export default function ActivitySectionReplace() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    // Pop up the video after 3.5 seconds
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 3500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="w-full relative z-10 flex flex-col items-center justify-center min-h-[60vh] md:min-h-screen overflow-hidden">
       {/* Background Video */}
@@ -23,6 +35,29 @@ export default function ActivitySectionReplace() {
           Experience <span className="text-[#93C5FD]">TouristSaver</span>
         </h2>
       </div>
+
+      {/* Popup Video Player */}
+      <AnimatePresence>
+        {showPopup && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 20 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            className="absolute z-50 w-fit max-w-[1400px] rounded-[20px] md:rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.5)] ring-1 ring-[#2350AA]/10 bg-black flex flex-col justify-center"
+          >
+            {/* Video Player */}
+            <video
+              className="w-auto h-auto max-h-[80vh] max-w-full object-contain"
+              src="/touristsaver-member-web-2.1-1.mp4"
+              autoPlay
+              muted
+              playsInline
+              loop
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
