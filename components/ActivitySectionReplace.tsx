@@ -90,13 +90,13 @@ export default function ActivitySectionReplace() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="absolute z-50 w-[92%] md:w-fit max-w-[1400px] rounded-[20px] md:rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.5)] ring-1 ring-[#2350AA]/10 bg-black flex flex-col justify-center"
+            className="absolute z-50 w-fit max-w-[1400px] rounded-[20px] md:rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.5)] ring-1 ring-[#2350AA]/10 bg-black flex flex-col justify-center"
           >
             {/* Video Player Container */}
-            <div className="relative group w-full h-full flex justify-center items-center">
+            <div className="relative group">
               <video
                 ref={popupVideoRef}
-                className="w-full md:w-auto h-auto max-h-[80vh] md:max-w-full object-contain"
+                className="w-auto h-auto max-h-[80vh] max-w-full object-contain"
                 src="/touristsaver-member-web-2.1-1.mp4#t=1.0"
                 controls
                 playsInline
@@ -107,11 +107,11 @@ export default function ActivitySectionReplace() {
               />
               {!isPlaying && (
                 <div 
-                  className="absolute inset-0 flex items-center justify-center bg-black/20 cursor-pointer transition-opacity hover:bg-black/30"
+                  className="hidden md:flex absolute inset-0 items-center justify-center bg-black/20 cursor-pointer transition-opacity hover:bg-black/30"
                   onClick={handlePlayClick}
                 >
-                  <div className="w-14 h-14 md:w-20 md:h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/40 shadow-xl hover:scale-110 transition-transform">
-                    <Play className="w-6 h-6 md:w-10 md:h-10 ml-1 md:ml-1.5" fill="currentColor" />
+                  <div className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/40 shadow-xl hover:scale-110 transition-transform">
+                    <Play className="w-10 h-10 ml-1" fill="currentColor" />
                   </div>
                 </div>
               )}
