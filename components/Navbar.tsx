@@ -62,9 +62,9 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed z-50 left-1/2 -translate-x-1/2 transition-all duration-300 ease-out select-none ${isScrolled
-            ? `top-4 w-[90%] ${showDownloadButton ? "lg:max-w-[800px] xl:max-w-[1000px] max-w-[1200px]" : "max-w-[1200px]"} rounded-full bg-white/80 backdrop-blur-md border border-white/20 shadow-[0_12px_40px_rgba(0,0,0,0.08)] py-3 px-8 text-black`
-            : `top-6 w-[calc(100%-32px)] md:w-[calc(100%-48px)] max-w-[1750px] rounded-none bg-transparent border-transparent py-4 px-6 md:px-12 ${isLightBgPage ? "text-black" : "text-white"}`
+        className={`absolute md:fixed z-50 left-1/2 -translate-x-1/2 transition-all duration-300 ease-out select-none ${isScrolled
+            ? `top-2 md:top-4 w-[95%] md:w-[90%] ${showDownloadButton ? "lg:max-w-[800px] xl:max-w-[1000px] max-w-[1200px]" : "max-w-[1200px]"} rounded-full bg-white/80 backdrop-blur-md border border-white/20 shadow-[0_12px_40px_rgba(0,0,0,0.08)] py-2 md:py-3 px-4 md:px-8 text-black`
+            : `top-4 md:top-6 w-[calc(100%-16px)] md:w-[calc(100%-48px)] max-w-[1750px] rounded-none bg-transparent border-transparent py-2 md:py-4 px-4 md:px-12 ${isLightBgPage ? "text-black" : "text-white"}`
           }`}
       >
         <div className="flex items-center justify-between w-full max-w-[1700px] mx-auto">
@@ -161,10 +161,10 @@ export default function Navbar() {
           </div>
 
           {/* Logo Center */}
-          <div className="flex items-center justify-center gap-2.5 flex-shrink-0 lg:flex-1">
-            <a href="#hero" onClick={(e) => handleNavClick(e, "#hero")} className="flex items-center gap-3 cursor-pointer">
-              <img src="/Touristsaver_logos/TouristSaver Logo Icon Heart.png" alt="Tourist Saver Heart" className="h-9 w-auto object-contain select-none" />
-              <img src="/new_logo.png" alt="Tourist Saver Logo" className="h-9 w-auto object-contain select-none" />
+          <div className="flex items-center justify-center gap-1.5 md:gap-2.5 flex-shrink-0 lg:flex-1">
+            <a href="#hero" onClick={(e) => handleNavClick(e, "#hero")} className="flex items-center gap-1.5 md:gap-3 cursor-pointer">
+              <img src="/Touristsaver_logos/TouristSaver Logo Icon Heart.png" alt="Tourist Saver Heart" className="h-6 md:h-9 w-auto object-contain select-none" />
+              <img src="/new_logo.png" alt="Tourist Saver Logo" className="h-6 md:h-9 w-auto object-contain select-none" />
             </a>
           </div>
 
