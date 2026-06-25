@@ -53,7 +53,6 @@ export default function ActivitySectionReplace() {
 
   return (
     <section ref={sectionRef} className="w-full relative z-10 flex flex-col items-center justify-center min-h-[60vh] md:min-h-screen overflow-hidden">
-      {/* Background Video */}
       <video
         ref={bgVideoRef}
         className="absolute inset-0 w-full h-full object-cover z-0"
@@ -61,6 +60,14 @@ export default function ActivitySectionReplace() {
         muted
         playsInline
         loop
+      />
+
+      {/* Preload popup video so it doesn't buffer */}
+      <video 
+        src="/touristsaver-member-web-2.1-1.mp4#t=1.0" 
+        preload="auto" 
+        className="hidden" 
+        muted 
       />
 
       {/* Overlay for better text readability */}
@@ -92,7 +99,7 @@ export default function ActivitySectionReplace() {
                 controls
                 playsInline
                 loop
-                preload="metadata"
+                preload="auto"
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
               />
