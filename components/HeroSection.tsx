@@ -3,57 +3,36 @@ import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 
-const countries = [
-  {
-    name: "Lake Louise, Canada",
-    image: "/hero-section-images/for-hero-section/lake-louise,-canada.avif",
-    tagline: "Alpine Serenity"
-  },
-  {
-    name: "Toronto, Canada",
-    image: "/hero-section-images/for-hero-section/beautiful-sunset-view-of-toronto-skyline-with-cn-tower-and-city-lights-reflecting-on-the-lake.avif",
-    tagline: "Sunset Skyline"
-  },
-  {
-    name: "MÃ¹ Cang Cháº£i, Vietnam",
-    image: "/hero-section-images/for-hero-section/tea-garden-vietnam.avif",
-    tagline: "Golden Terraces"
-  },
-  {
-    name: "James Bond Island, Thailand",
-    image: "/hero-section-images/for-hero-section/stunning-rock-formations-at-james-bond-island,-thailand-with-vibrant-green-waters-and-blue-skies..avif",
-    tagline: "Emerald Waters"
-  },
-  {
-    name: "TÃ¢y Ninh, Vietnam",
-    image: "/hero-section-images/for-hero-section/stunning-view-of-cao-dai-temple.avif",
-    tagline: "Temple Sunset"
-  },
-  {
-    name: "Sunshine Coast, Australia",
-    image: "/hero-section-images/for-hero-section/sunshine-coast,-queensland,-australia.avif",
-    tagline: "Golden Beaches"
-  },
-  {
-    name: "Vancouver, Canada",
-    image: "/hero-section-images/for-hero-section/vancouver,-canada.avif",
-    tagline: "Coastal Metropolis"
-  },
-  {
-    name: "London, England",
-    image: "/hero-section-images/for-hero-section/london,-england.avif",
-    tagline: "Historic Charm"
-  },
-  {
-    name: "Singapore",
-    image: "/hero-section-images/for-hero-section/singapore3.avif",
-    tagline: "Modern Marvels"
-  },
-  {
-    name: "Sydney, Australia",
-    image: "/hero-section-images/for-hero-section/sydney-opera-house-with-sea.avif",
-    tagline: "Iconic Opera House"
-  }
+const sliderData = [
+  { name: "Endless Experiences", image: "/slider_images/GC 7daypass.webp", tagline: "With the 7-Day Pass" },
+  { name: "Casual Dining", image: "/slider_images/GC casual_dining.webp", tagline: "Enjoy Great Food" },
+  { name: "Native Wildlife", image: "/slider_images/GC currumbin_creature.webp", tagline: "Get Up Close" },
+  { name: "Vibrant Nature", image: "/slider_images/GC currumbin_parrot.webp", tagline: "Colourful Encounters" },
+  { name: "Thrilling Adventures", image: "/slider_images/GC jetboat.webp", tagline: "High-Speed Jetboat" },
+  { name: "Family Fun", image: "/slider_images/GC kangaroo_with_kids.webp", tagline: "Kangaroo Encounters" },
+  { name: "Learn & Play", image: "/slider_images/GC kidssurfing.webp", tagline: "Catch the Waves" },
+  { name: "Ocean Life", image: "/slider_images/GC marine.webp", tagline: "Discover Marine Secrets" },
+  { name: "Dolphin Magic", image: "/slider_images/GC seaworld_dolphins.webp", tagline: "Unforgettable Moments" },
+  { name: "Splash & Play", image: "/slider_images/GC wetnwild.webp", tagline: "Water Park Fun" },
+  { name: "Fun in the Nature", image: "/slider_images/SC kangaroo and kids.webp", tagline: "Wildlife with the Family" },
+  { name: "Wild Encounters", image: "/slider_images/australiazoo.webp", tagline: "Australia Zoo Adventures" },
+  { name: "Action & Dirt", image: "/slider_images/brisbaneQuadbikesTour.webp", tagline: "Quad Bike Tours" },
+  { name: "Dine by the Water", image: "/slider_images/brisbane_dining_Tangalooma.webp", tagline: "Sunset Views" },
+  { name: "Sky High", image: "/slider_images/byron balloon.webp", tagline: "Peaceful Balloon Rides" },
+  { name: "Ocean Explorers", image: "/slider_images/byron bay kayak.webp", tagline: "Sea Kayaking" },
+  { name: "Dolphin Spotting", image: "/slider_images/byron kayak dolphin.webp", tagline: "Kayak Adventures" },
+  { name: "Majestic Giants", image: "/slider_images/byron_whale_watching.webp", tagline: "Whale Watching" },
+  { name: "Sunrise Magic", image: "/slider_images/byronballoning.webp", tagline: "Hot Air Ballooning" },
+  { name: "Let Go", image: "/slider_images/dreamworld.webp", tagline: "and have fun" },
+  { name: "Adrenaline Rush", image: "/slider_images/gcjetski-trip.webp", tagline: "Jetski Safari" },
+  { name: "Water Thrills", image: "/slider_images/gcjetski-trip2.webp", tagline: "Ride the Waves" },
+  { name: "Fast & Furious", image: "/slider_images/gcjetski.webp", tagline: "Jetski Fun" },
+  { name: "Travel in Style", image: "/slider_images/goldLimo.webp", tagline: "Luxury Transport" },
+  { name: "Tasty Bites", image: "/slider_images/guzmanYgomez1.webp", tagline: "Mexican Dining" },
+  { name: "Theme Parks", image: "/slider_images/movieWorld-ride.webp", tagline: "Thrilling Rides" },
+  { name: "Sea World", image: "/slider_images/seaworld-dinner.webp", tagline: "Buffet Dinner Cruise" },
+  { name: "Underwater Wonders", image: "/slider_images/sunshinecoastaquarium.webp", tagline: "Explore the Aquarium" },
+  { name: "Spectacular Shows", image: "/slider_images/sunshinecoastaquariumshow.webp", tagline: "Marine Life Displays" }
 ];
 
 export default function HeroSection() {
@@ -64,7 +43,7 @@ export default function HeroSection() {
   const startTimer = () => {
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % countries.length);
+      setActiveIndex((prevIndex) => (prevIndex + 1) % sliderData.length);
     }, 6000);
   };
 
@@ -96,8 +75,8 @@ export default function HeroSection() {
               className="absolute inset-0 w-full h-full"
             >
               <Image
-                src={countries[activeIndex].image}
-                alt={`${countries[activeIndex].name} landscape`}
+                src={sliderData[activeIndex].image}
+                alt={`${sliderData[activeIndex].name} landscape`}
                 fill
                 sizes="100vw"
                 priority={true}
@@ -110,7 +89,7 @@ export default function HeroSection() {
           {/* Invisible Preload for the NEXT image to prevent lag on slide change */}
           <div className="hidden">
             <Image
-              src={countries[(activeIndex + 1) % countries.length].image}
+              src={sliderData[(activeIndex + 1) % sliderData.length].image}
               alt="preload next"
               width={1}
               height={1}
@@ -126,23 +105,27 @@ export default function HeroSection() {
 
         {/* Center Content block */}
         <div className="relative z-10 max-w-[900px] mx-auto flex flex-col items-center gap-4 mt-6">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-[36px] md:text-[56px] xl:text-[68px] font-semibold text-white tracking-tight leading-[1.1] max-w-[850px] drop-shadow-md"
-          >
-            Discover More<br />Spend Less
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-[14px] md:text-[15.5px] text-white/95 font-normal max-w-[620px] leading-relaxed drop-shadow-sm"
-          >
-            Enjoy exclusive discounts wining & dining, attractions and fun experiences.
-          </motion.p>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+              className="flex flex-col items-center gap-2 md:gap-4"
+            >
+              <h1 className="text-[42px] md:text-[64px] xl:text-[76px] font-bold text-white tracking-tight leading-[1.1] max-w-[850px] drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] text-center">
+                {sliderData[activeIndex].name}
+              </h1>
+              {sliderData[activeIndex].tagline && (
+                <div className="bg-white/20 dark:bg-black/30 backdrop-blur-md rounded-full px-6 py-2 border border-white/20 shadow-lg mt-2">
+                  <p className="text-[16px] md:text-[22px] text-white font-medium drop-shadow-md text-center">
+                    {sliderData[activeIndex].tagline}
+                  </p>
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>
 
           <motion.a
             href="https://touristsaver.com"
@@ -174,7 +157,7 @@ export default function HeroSection() {
         {/* Left & Right Navigation Arrows */}
         <button
           onClick={() => {
-            setActiveIndex((prev) => (prev === 0 ? countries.length - 1 : prev - 1));
+            setActiveIndex((prev) => (prev === 0 ? sliderData.length - 1 : prev - 1));
             startTimer();
           }}
           className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 text-white/75 hover:text-white transition-all duration-300 active:scale-95 group"
@@ -194,7 +177,7 @@ export default function HeroSection() {
 
         <button
           onClick={() => {
-            setActiveIndex((prev) => (prev + 1) % countries.length);
+            setActiveIndex((prev) => (prev + 1) % sliderData.length);
             startTimer();
           }}
           className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 text-white/75 hover:text-white transition-all duration-300 active:scale-95 group"
@@ -214,7 +197,7 @@ export default function HeroSection() {
 
         {/* Bottom Dotted Pagination */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2 items-center justify-center py-1.5 px-3 bg-white/10 dark:bg-black/25 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.15)] rounded-full">
-          {countries.map((_, idx) => {
+          {sliderData.map((_, idx) => {
             const isActive = idx === activeIndex;
             return (
               <button
