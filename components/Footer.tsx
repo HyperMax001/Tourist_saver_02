@@ -14,7 +14,8 @@ export default function Footer() {
           
           {/* Logo and Description */}
           <div className="md:col-span-4 flex flex-col gap-6">
-            <div className="flex items-center gap-2.5 text-white">
+            <div className="flex items-center gap-3 text-white">
+              <img src="/Touristsaver_logos/TouristSaver Logo Icon Heart.png" alt="Tourist Saver Heart" className="h-9 w-auto object-contain select-none" />
               <img src="/new_logo.png" alt="Tourist Saver Logo" className="h-9 w-auto object-contain select-none" />
             </div>
             <p className="text-neutral-400 text-[14px] leading-relaxed max-w-[320px]">
