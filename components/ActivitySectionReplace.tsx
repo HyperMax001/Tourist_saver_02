@@ -51,7 +51,7 @@ export default function ActivitySectionReplace() {
               className="w-auto h-auto max-h-[80vh] max-w-full object-contain"
               src="/touristsaver-member-web-2.1-1.mp4"
               autoPlay
-              muted
+              controls
               playsInline
               loop
             />
