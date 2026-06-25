@@ -13,7 +13,7 @@ export default function BrandBackground() {
   if (!isMounted) return null;
 
   return (
-    <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden bg-white/50">
+    <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden bg-transparent">
       {/* Pink/Red Blob */}
       <motion.div
         animate={{
@@ -25,7 +25,7 @@ export default function BrandBackground() {
           repeat: Infinity,
           ease: "linear"
         }}
-        className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full opacity-[0.07] blur-[100px]"
+        className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full opacity-[0.25] blur-[100px]"
         style={{ background: "radial-gradient(circle, #e23b93 0%, #ce1126 100%)" }}
       />
       
@@ -40,7 +40,7 @@ export default function BrandBackground() {
           repeat: Infinity,
           ease: "linear"
         }}
-        className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] rounded-full opacity-[0.06] blur-[120px]"
+        className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] rounded-full opacity-[0.2] blur-[120px]"
         style={{ background: "radial-gradient(circle, #33b1e3 0%, #20aa65 100%)" }}
       />
 
@@ -55,7 +55,7 @@ export default function BrandBackground() {
           repeat: Infinity,
           ease: "linear"
         }}
-        className="absolute top-[20%] right-[10%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full opacity-[0.07] blur-[90px]"
+        className="absolute top-[20%] right-[10%] w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full opacity-[0.2] blur-[90px]"
         style={{ background: "radial-gradient(circle, #ffb81c 0%, #f17a22 100%)" }}
       />
 
@@ -70,7 +70,7 @@ export default function BrandBackground() {
           repeat: Infinity,
           ease: "linear"
         }}
-        className="absolute bottom-[20%] left-[10%] w-[45vw] h-[45vw] max-w-[550px] max-h-[550px] rounded-full opacity-[0.06] blur-[110px]"
+        className="absolute bottom-[20%] left-[10%] w-[45vw] h-[45vw] max-w-[550px] max-h-[550px] rounded-full opacity-[0.25] blur-[110px]"
         style={{ background: "radial-gradient(circle, #4a154b 0%, #104f8c 100%)" }}
       />
     </div>

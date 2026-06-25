@@ -70,7 +70,7 @@ export default function TravelEssentials() {
   ];
 
   return (
-    <section className="relative py-24 bg-white overflow-hidden">
+    <section className="relative py-24 bg-transparent overflow-hidden">
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
 

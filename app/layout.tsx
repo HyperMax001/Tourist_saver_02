@@ -33,7 +33,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
-      <body className={`${inter.variable} ${patrickHand.variable} font-sans antialiased bg-white`}>
+      <body className={`${inter.variable} ${patrickHand.variable} font-sans antialiased`}>
         <BrandBackground />
         <CustomCursor />
         <CountryProvider>

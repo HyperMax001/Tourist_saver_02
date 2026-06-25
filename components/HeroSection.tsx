@@ -79,7 +79,15 @@ export default function HeroSection() {
               className="absolute inset-0 w-full h-full"
             >
               {sliderData[activeIndex].type === "slogan" ? (
-                <div className="absolute inset-0 w-full h-full bg-[#7B1113]" />
+                <Image
+                  src="/tag-line-background_converted.avif"
+                  alt="Slogan background"
+                  fill
+                  sizes="100vw"
+                  priority={true}
+                  unoptimized
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                />
               ) : (
                 <Image
                   src={sliderData[activeIndex].image!}

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { Highlighter } from "@/registry/magicui/highlighter";
@@ -61,7 +61,7 @@ export default function PlacesAndDeals() {
   const activeDest = destinations.find((d) => d.id === activeId) || destinations[0];
 
   return (
-    <section className="bg-white pt-8 pb-20 px-4 w-full overflow-hidden">
+    <section className="bg-transparent pt-8 pb-20 px-4 w-full overflow-hidden">
       <div className="w-full mx-auto bg-[#F4F8FD] rounded-[28px] py-16 px-8 flex flex-col items-center gap-12 shadow-sm">
 
         {/* Header Block */}

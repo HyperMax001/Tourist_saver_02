@@ -47,7 +47,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-transparent">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <motion.h2 

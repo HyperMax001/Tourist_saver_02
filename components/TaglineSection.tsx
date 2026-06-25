@@ -37,7 +37,7 @@ export default function TaglineSection() {
   ];
 
   return (
-    <section className="w-full bg-white py-12 md:py-16 px-6 md:px-12 flex justify-center items-center">
+    <section className="w-full bg-transparent py-12 md:py-16 px-6 md:px-12 flex justify-center items-center">
       <motion.div
         variants={containerVariants}
         initial="hidden"
