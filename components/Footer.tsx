@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-
+import BrandText from "./BrandText";
 
 export default function Footer() {
   return (
@@ -78,7 +78,7 @@ export default function Footer() {
 
         {/* Bottom Row */}
         <div className="flex flex-col sm:flex-row items-center justify-between pt-8 gap-4 text-neutral-400 text-[13.5px]">
-          <span>©2026 Tourist Saver. All rights reserved.</span>
+          <span>©2026 <BrandText />. All rights reserved.</span>
         </div>
 
       </div>

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "motion/react";
 
@@ -26,11 +26,13 @@ const lineVariants = {
   },
 };
 
+import BrandText from "./BrandText";
+
 export default function TaglineSection() {
-  const lines = [
-    "Book with TouristSaver App - Discover the best tours and attractions, enjoy an additional TouristSaver discount of 10% on all experiences.",
-    "Your TouristSaver QR Code - Use your TouristSaver QR code at various fast food outlets and restaurants and much more.",
-    "Save Every Day with TouristSaver App. Enjoy ongoing discounts across the Gold Coast with TouristSaver",
+  const lines: React.ReactNode[] = [
+    <>Book with <BrandText withSpace={false} /> App - Discover the best tours and attractions, enjoy an additional <BrandText withSpace={false} /> discount of 10% on all experiences.</>,
+    <>Your <BrandText withSpace={false} /> QR Code - Use your <BrandText withSpace={false} /> QR code at various fast food outlets and restaurants and much more.</>,
+    <>Save Every Day with <BrandText withSpace={false} /> App. Enjoy ongoing discounts across the Gold Coast with <BrandText withSpace={false} /></>,
     "Valid Australia wide."
   ];
 

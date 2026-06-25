@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScrolling from "@/components/SmoothScrolling";
 import CustomCursor from "@/components/CustomCursor";
 import { CountryProvider } from "@/context/CountryContext";
+import BrandBackground from "@/components/BrandBackground";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
@@ -33,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
       <body className={`${inter.variable} ${patrickHand.variable} font-sans antialiased bg-white`}>
+        <BrandBackground />
         <CustomCursor />
         <CountryProvider>
           <SmoothScrolling>{children}</SmoothScrolling>

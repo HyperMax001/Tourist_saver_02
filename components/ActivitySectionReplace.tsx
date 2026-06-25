@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Play } from 'lucide-react';
 
+import BrandText from './BrandText';
+
 export default function ActivitySectionReplace() {
   const [showPopup, setShowPopup] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -75,8 +77,8 @@ export default function ActivitySectionReplace() {
 
       {/* Foreground Content */}
       <div className="relative z-10 text-center px-4">
-        <h2 className="text-[40px] sm:text-[54px] md:text-[72px] lg:text-[88px] font-bold text-white tracking-tight leading-none drop-shadow-xl">
-          Experience <span className="text-[#93C5FD]">TouristSaver</span>
+        <h2 className="text-[40px] sm:text-[54px] md:text-[72px] lg:text-[88px] font-bold text-white tracking-tight leading-none drop-shadow-xl flex items-center justify-center gap-2">
+          Experience <BrandText withSpace={false} className="drop-shadow-[0_4px_4px_rgba(255,255,255,0.5)]" />
         </h2>
       </div>
 

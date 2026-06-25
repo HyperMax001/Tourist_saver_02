@@ -2,38 +2,39 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import BrandText from "./BrandText";
 
 interface FAQItem {
   id: number;
-  question: string;
-  answer: string;
+  question: React.ReactNode;
+  answer: React.ReactNode;
 }
 
 const faqData: FAQItem[] = [
   {
     id: 1,
     question: "How do I find deals for Gold Coast, Sunshine Coast, Sydney, and Melbourne?",
-    answer: "Simply select your destination—whether it's the beaches of Gold Coast, the beautiful Sunshine Coast, iconic Sydney, or the cultural hub of Melbourne—and we'll show you the best discounts available on the Tourist Saver app."
+    answer: <>Simply select your destination—whether it's the beaches of Gold Coast, the beautiful Sunshine Coast, iconic Sydney, or the cultural hub of Melbourne—and we'll show you the best discounts available on the <BrandText /> app.</>
   },
   {
     id: 2,
-    question: "How does the Tourist Saver app save me money and hassle?",
-    answer: "Tourist Saver provides all the best deals for your destinations and many more. Instead of searching multiple sites, you get everything under one subscription, allowing you to manage the hassle and save money all in one place."
+    question: <>How does the <BrandText /> app save me money and hassle?</>,
+    answer: <><BrandText /> provides all the best deals for your destinations and many more. Instead of searching multiple sites, you get everything under one subscription, allowing you to manage the hassle and save money all in one place.</>
   },
   {
     id: 3,
     question: "Are there merchandise deals available as well?",
-    answer: "Absolutely! Tourist Saver doesn't just offer experience and food discounts—we also have the best merch deals and prices for all the places you travel to in your destinations."
+    answer: <>Absolutely! <BrandText /> doesn't just offer experience and food discounts—we also have the best merch deals and prices for all the places you travel to in your destinations.</>
   },
   {
     id: 4,
     question: "Can I use one subscription across all these Australian cities?",
-    answer: "Yes! A single Tourist Saver subscription provides seamless access to discounts and travel deals across Gold Coast, Sunshine Coast, Sydney, and Melbourne, making it incredibly easy to save everywhere you go."
+    answer: <>Yes! A single <BrandText /> subscription provides seamless access to discounts and travel deals across Gold Coast, Sunshine Coast, Sydney, and Melbourne, making it incredibly easy to save everywhere you go.</>
   },
   {
     id: 5,
     question: "Are the discounts instantly available?",
-    answer: "Yes, once you download the Tourist Saver app, you get instant access to digital coupons for experiences, dining, and merch across all our supported destinations."
+    answer: <>Yes, once you download the <BrandText /> app, you get instant access to digital coupons for experiences, dining, and merch across all our supported destinations.</>
   }
 ];
 
