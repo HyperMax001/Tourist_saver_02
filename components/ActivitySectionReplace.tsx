@@ -76,9 +76,10 @@ export default function ActivitySectionReplace() {
       <div className="absolute inset-0 bg-black/40 z-0 pointer-events-none"></div>
 
       {/* Foreground Content */}
-      <div className="relative z-10 text-center px-4">
-        <h2 className="text-[40px] sm:text-[54px] md:text-[72px] lg:text-[88px] font-bold text-white tracking-tight leading-none drop-shadow-xl flex items-center justify-center gap-2">
-          Experience <BrandText withSpace={false} className="drop-shadow-[0_4px_4px_rgba(255,255,255,0.5)]" />
+      <div className="relative z-10 text-center px-4 w-full">
+        <h2 className="text-[36px] sm:text-[54px] md:text-[72px] lg:text-[88px] font-bold text-white tracking-tight leading-[1.1] drop-shadow-xl flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 max-w-full">
+          <span>Experience</span>
+          <BrandText withSpace={false} className="drop-shadow-[0_4px_4px_rgba(255,255,255,0.5)]" />
         </h2>
       </div>
 
