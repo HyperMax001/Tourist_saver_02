@@ -16,7 +16,6 @@ const rightLinks: { label: string, href: string }[] = [];
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showDownloadButton, setShowDownloadButton] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [destinationsOpen, setDestinationsOpen] = useState(false);
   const lenis = useLenis();
   const pathname = usePathname();
@@ -37,7 +36,6 @@ export default function Navbar() {
           lenis?.scrollTo(href, { duration: 1.8 });
         }
       }
-      setMobileMenuOpen(false);
     }
   };
 
@@ -188,31 +186,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Hamburger Menu Trigger for Mobile */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden flex flex-col justify-between w-6 h-5 focus:outline-none z-50 text-current"
-            aria-label="Toggle Menu"
-          >
-            <span
-              className={`h-0.5 w-full rounded transition-all duration-300 origin-left ${mobileMenuOpen
-                  ? "rotate-45 bg-black dark:bg-white"
-                  : "bg-current"
-                }`}
-            />
-            <span
-              className={`h-0.5 w-full rounded transition-all duration-300 ${mobileMenuOpen
-                  ? "opacity-0"
-                  : "bg-current"
-                }`}
-            />
-            <span
-              className={`h-0.5 w-full rounded transition-all duration-300 origin-left ${mobileMenuOpen
-                  ? "-rotate-45 bg-black dark:bg-white"
-                  : "bg-current"
-                }`}
-            />
-          </button>
+
         </div>
       </nav>
 
@@ -253,63 +227,7 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* Mobile Drawer menu overlay */}
-      <div
-        className={`fixed inset-0 bg-white/95 dark:bg-black/95 backdrop-blur-md z-40 transition-transform duration-500 ease-in-out flex flex-col items-center justify-center gap-8 lg:hidden ${mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
-          }`}
-      >
-        <div className="flex flex-col items-center gap-6 text-[18px] font-semibold text-[#2350AA] dark:text-white w-full">
-          {[...leftLinks, ...rightLinks].map((link) => {
-            if (link.label === "Destinations") {
-              return (
-                <div key={link.label} className="flex flex-col items-center w-full">
-                  <button
-                    onClick={() => setDestinationsOpen(!destinationsOpen)}
-                    className="cursor-pointer hover:scale-105 transition-transform duration-200"
-                  >
-                    {link.label}
-                  </button>
-                  <AnimatePresence>
-                    {destinationsOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="w-full flex flex-col items-center gap-3 mt-4 overflow-hidden"
-                      >
-                        {countriesList.filter(c => c.id !== "international" && c.id !== "australia").map((country) => (
-                          <button
-                            key={country.id}
-                            onClick={() => {
-                              setDestinationsOpen(false);
-                              setMobileMenuOpen(false);
-                              router.push(`/${country.id}`);
-                            }}
-                            className="text-[15px] font-medium text-neutral-600 dark:text-neutral-300 flex items-center gap-2 hover:text-[#2350AA]"
-                          >
-                            {getCountryIcon(country.id, "w-5 h-5")}
-                            {country.name}
-                          </button>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            }
-            return (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="cursor-pointer hover:scale-105 transition-transform duration-200"
-              >
-                {link.label}
-              </a>
-            );
-          })}
-        </div>
-      </div>
+
     </>
   );
 }
