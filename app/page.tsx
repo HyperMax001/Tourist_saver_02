@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import MembershipSection from "@/components/MembershipSection";
-import TrustStrip from "@/components/TrustStrip";
 import TaglineSection from "@/components/TaglineSection";
 import AppSection from "@/components/AppSection";
 //import ActivitySectionReplace from "@/components/ActivitySectionReplace";
@@ -18,7 +17,6 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <MembershipSection />
-      <TrustStrip />
       <TaglineSection />
       {<CountrySelection /> }
       {/*<ActivitySectionReplace */}
