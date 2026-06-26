@@ -32,7 +32,7 @@ export default function MembershipSection() {
           </div>
 
           <h2 className="text-[40px] md:text-[56px] lg:text-[64px] font-bold leading-[1.05] tracking-tight text-[#1A1A2E] mb-4">
-            One pass.
+        One Membership
             <br />
             <span
               style={{
@@ -43,7 +43,7 @@ export default function MembershipSection() {
                 backgroundClip: "text",
               }}
             >
-              Endless savings.
+        Thousands of Ways to Save.
             </span>
           </h2>
 
