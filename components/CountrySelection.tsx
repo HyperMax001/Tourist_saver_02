@@ -300,7 +300,7 @@ export default function CountrySelection() {
             {(dealsData[selectedCountry] || dealsData["Australia"]).map((deal) => (
               <div key={deal.id} className="bg-[#E8EEF8] rounded-[28px] p-4">
                 <div className="w-full h-[220px] rounded-[20px] overflow-hidden relative">
-                  <Image src={deal.image} alt={deal.title} fill className="object-cover" />
+                  <Image src={deal.image} alt={deal.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 30vw" className="object-cover" />
                 </div>
 
                 <h4 className="text-[16.5px] font-semibold text-[#2350AA] px-1 mt-2">{deal.title}</h4>
