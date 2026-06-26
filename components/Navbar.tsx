@@ -67,7 +67,7 @@ export default function Navbar() {
             : `top-4 md:top-6 w-[calc(100%-16px)] md:w-[calc(100%-48px)] max-w-[1750px] rounded-none bg-transparent border-transparent py-2 md:py-4 px-4 md:px-12 ${isLightBgPage ? "text-black" : "text-white"}`
           }`}
       >
-        <div className="flex items-center justify-between w-full max-w-[1700px] mx-auto">
+        <div className="relative flex items-center justify-between w-full max-w-[1700px] mx-auto">
           {/* Left links (hidden on mobile) */}
           <div className={`hidden lg:flex items-center flex-1 transition-all duration-300 ${isScrolled ? "gap-4 xl:gap-6" : "gap-8"
             }`}>
@@ -161,7 +161,7 @@ export default function Navbar() {
           </div>
 
           {/* Logo Center */}
-          <div className="flex items-center justify-center gap-1.5 md:gap-2.5 flex-shrink-0 lg:flex-1">
+          <div className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 flex items-center justify-center gap-1.5 md:gap-2.5 flex-shrink-0 lg:flex-1">
             <a href="#hero" onClick={(e) => handleNavClick(e, "#hero")} className="flex items-center gap-1.5 md:gap-3 cursor-pointer">
               <img src="/Touristsaver_logos/TouristSaver Logo Icon Heart.png" alt="Tourist Saver Heart" className="h-6 md:h-9 w-auto object-contain select-none" />
               <img src="/new_logo.png" alt="Tourist Saver Logo" className="h-6 md:h-9 w-auto object-contain select-none" />

@@ -55,17 +55,17 @@ export default function TravelEssentials() {
     {
       number: "1",
       title: "Discover experiences",
-      description: "Travel smarter with thoughtfully curated essentials designed to make every journey smoother, lighter, and more comfortable."
+      description: "Browse hand-picked local attractions, hidden gems, and must-try activities — all tailored to your destination so you never miss what truly matters."
     },
     {
       number: "2",
       title: "Click to view deals",
-      description: "Travel smarter with thoughtfully curated essentials designed to make every journey smoother, lighter, and more comfortable."
+      description: "Tap any experience to instantly unlock exclusive savings. Compare prices, read real reviews, and find the best deal without hopping between a dozen apps."
     },
     {
       number: "3",
       title: "Book and enjoy",
-      description: "Travel smarter with thoughtfully curated essentials designed to make every journey smoother, lighter, and more comfortable."
+      description: "Confirm your booking in seconds, get your pass or voucher straight to your phone, and walk right in — no queues, no hassle, just pure enjoyment."
     }
   ];
 
