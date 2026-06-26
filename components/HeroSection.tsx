@@ -4,41 +4,15 @@ import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 
 const sliderData = [
-  { 
+  {
     type: "slogan",
     name: "Discover More, Spend Less.",
   },
-  { name: "Endless Experiences", image: "/slider_images/GC 7daypass.webp", tagline: "With the 7-Day Pass" },
-  { name: "Casual Dining", image: "/slider_images/GC casual_dining.webp", tagline: "Enjoy Great Food" },
-  { name: "Native Wildlife", image: "/slider_images/GC currumbin_creature.webp", tagline: "Get Up Close" },
-  { name: "Vibrant Nature", image: "/slider_images/GC currumbin_parrot.webp", tagline: "Colourful Encounters" },
-  { name: "Thrilling Adventures", image: "/slider_images/GC jetboat.webp", tagline: "High-Speed Jetboat" },
-  { name: "Family Fun", image: "/slider_images/GC kangaroo_with_kids.webp", tagline: "Kangaroo Encounters" },
-  { name: "Learn & Play", image: "/slider_images/GC kidssurfing.webp", tagline: "Catch the Waves" },
-  { name: "Ocean Life", image: "/slider_images/GC marine.webp", tagline: "Discover Marine Secrets" },
-  { name: "Dolphin Magic", image: "/slider_images/GC seaworld_dolphins.webp", tagline: "Unforgettable Moments" },
-  { name: "Splash & Play", image: "/slider_images/GC wetnwild.webp", tagline: "Water Park Fun" },
-  { name: "Fun in the Nature", image: "/slider_images/SC kangaroo and kids.webp", tagline: "Wildlife with the Family" },
-  { name: "Wild Encounters", image: "/slider_images/australiazoo.webp", tagline: "Australia Zoo Adventures" },
-  { name: "Action & Dirt", image: "/slider_images/brisbaneQuadbikesTour.webp", tagline: "Quad Bike Tours" },
-  { name: "Dine by the Water", image: "/slider_images/brisbane_dining_Tangalooma.webp", tagline: "Sunset Views" },
-  { name: "Sky High", image: "/slider_images/byron balloon.webp", tagline: "Peaceful Balloon Rides" },
-  { name: "Ocean Explorers", image: "/slider_images/byron bay kayak.webp", tagline: "Sea Kayaking" },
-  { name: "Dolphin Spotting", image: "/slider_images/byron kayak dolphin.webp", tagline: "Kayak Adventures" },
-  { name: "Majestic Giants", image: "/slider_images/byron_whale_watching.webp", tagline: "Whale Watching" },
-  { name: "Sunrise Magic", image: "/slider_images/byronballoning.webp", tagline: "Hot Air Ballooning" },
-  { name: "Let Go", image: "/slider_images/dreamworld.webp", tagline: "and have fun" },
-  { name: "Adrenaline Rush", image: "/slider_images/gcjetski-trip.webp", tagline: "Jetski Safari" },
-  { name: "Water Thrills", image: "/slider_images/gcjetski-trip2.webp", tagline: "Ride the Waves" },
-  { name: "Fast & Furious", image: "/slider_images/gcjetski.webp", tagline: "Jetski Fun" },
-  { name: "Travel in Style", image: "/slider_images/goldLimo.webp", tagline: "Luxury Transport" },
-  { name: "Tasty Bites", image: "/slider_images/guzmanYgomez1.webp", tagline: "Mexican Dining" },
-  { name: "Theme Parks", image: "/slider_images/movieWorld-ride.webp", tagline: "Thrilling Rides" },
-  { name: "Sea World", image: "/slider_images/seaworld-dinner.webp", tagline: "Buffet Dinner Cruise" },
-  { name: "Underwater Wonders", image: "/slider_images/sunshinecoastaquarium.webp", tagline: "Explore the Aquarium" },
-  { name: "Spectacular Shows", image: "/slider_images/sunshinecoastaquariumshow.webp", tagline: "Marine Life Displays" }
+  { name: "Dining Deals", image: "/slider_images/GC casual_dining.webp", tagline: "Save at participating restaurants" },
+  { name: "Theme Park Savings", image: "/slider_images/seaworld-dinner.webp", tagline: "Discounts at Sea World & more" },
+  { name: "Fast Food Discounts", image: "/slider_images/guzmanYgomez1.webp", tagline: "Everyday savings, every day" },
+  { name: "Adventure Deals", image: "/slider_images/gcjetski.webp", tagline: "Jet skis, tours and more" },
 ];
-
 export default function HeroSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);

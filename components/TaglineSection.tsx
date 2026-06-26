@@ -12,7 +12,7 @@ const containerVariants = {
 };
 
 const lineVariants = {
-  hidden: { 
+  hidden: {
     y: "130%",
     rotate: 1.5,
   },
@@ -21,19 +21,14 @@ const lineVariants = {
     rotate: 0,
     transition: {
       duration: 0.95,
-      ease: [0.16, 1, 0.3, 1] as const, // ultra premium exponential ease-out
+      ease: [0.16, 1, 0.3, 1] as const,
     },
   },
 };
 
-import BrandText from "./BrandText";
-
 export default function TaglineSection() {
-  const lines: React.ReactNode[] = [
-    <>Book with <BrandText withSpace={false} /> App - Discover the best tours and attractions, enjoy an additional <BrandText withSpace={false} /> discount of 10% on all experiences.</>,
-    <>Your <BrandText withSpace={false} /> QR Code - Use your <BrandText withSpace={false} /> QR code at various fast food outlets and restaurants and much more.</>,
-    <>Save Every Day with <BrandText withSpace={false} /> App. Enjoy ongoing discounts across the Gold Coast with <BrandText withSpace={false} /></>,
-    "Valid Australia wide."
+  const lines = [
+    "Discover travel, dining, attractions, wellness, fun and unforgettable experiences with up to 60% exclusive member savings and a money back guarantee.",
   ];
 
   return (
@@ -46,8 +41,8 @@ export default function TaglineSection() {
         className="max-w-[1200px] text-center mx-auto flex flex-col items-center w-full"
       >
         {lines.map((line, idx) => (
-          <div 
-            key={idx} 
+          <div
+            key={idx}
             className="overflow-hidden w-full py-0.5 flex justify-center"
           >
             <motion.p
@@ -62,4 +57,3 @@ export default function TaglineSection() {
     </section>
   );
 }
-

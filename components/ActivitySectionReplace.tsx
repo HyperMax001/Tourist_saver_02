@@ -93,7 +93,7 @@ export default function ActivitySectionReplace() {
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className="absolute z-50 w-fit max-w-[1400px] rounded-[20px] md:rounded-[32px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.5)] ring-1 ring-[#2350AA]/10 bg-black flex flex-col justify-center"
           >
-            {/* Video Player Container */}
+             { /*Video Player Container */}
             <div className="relative group">
               <video
                 ref={popupVideoRef}

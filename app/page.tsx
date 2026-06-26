@@ -1,8 +1,10 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import MembershipSection from "@/components/MembershipSection";
+import TrustStrip from "@/components/TrustStrip";
 import TaglineSection from "@/components/TaglineSection";
 import AppSection from "@/components/AppSection";
-import ActivitySectionReplace from "@/components/ActivitySectionReplace";
+//import ActivitySectionReplace from "@/components/ActivitySectionReplace";
 import TravelEssentials from "@/components/TravelEssentials";
 import CountrySelection from "@/components/CountrySelection";
 import Testimonials from "@/components/Testimonials";
@@ -15,9 +17,11 @@ export default function Home() {
     <main>
       <Navbar />
       <HeroSection />
+      <MembershipSection />
+      <TrustStrip />
       <TaglineSection />
-      <CountrySelection />
-      <ActivitySectionReplace />
+      {<CountrySelection /> }
+      {/*<ActivitySectionReplace */}
       <TravelEssentials />
       <AppSection />
       <Testimonials />
@@ -27,5 +31,3 @@ export default function Home() {
     </main>
   );
 }
-
-// we seriously need to change the names of the sections to what is actually in them...
